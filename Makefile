@@ -6,9 +6,9 @@ CURRENT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # include vars.mk
 
-.PHONY: check
-check: ## checks all ontologies
-	
+.PHONY: validate
+validate: ## validates all ontologies
+	riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.ttl
 
 .PHONY: help
 help: ## this help

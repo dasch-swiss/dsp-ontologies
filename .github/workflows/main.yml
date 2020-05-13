@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  validate:
+    name: Validate Ontologies
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v1
+          with:
+            fetch-depth: 1
+        - name: install requirements
+          run: sudo apt-get install jena
+        - name: run validate
+          run: make validate
