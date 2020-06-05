@@ -1,0 +1,265 @@
+# Metadata BEOL, MLS, Parzival and Dietrich
+#
+
+@prefix dsp-repo: <http://ns.dasch.swiss/repository#> .
+@prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
+@prefix knora-admin: <http://www.knora.org/ontology/knora-admin#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+@prefix vowl: <http://purl.org/vowl/spec/v2/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@base <http://ns.dasch.swiss/repository#> .
+
+
+<beol> rdf:type dsp-repo:Collection .
+<beol> dsp-repo:hasTitle "Bernoulli-Euler Online (BEOL)" .
+<beol> dsp-repo:hasDescription "The project Bernoulli-Euler Online (BEOL) integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) into one digital platform available on the web. In addition, Jacob Bernoulli's scientific notebook Meditationes - a document of outstanding significance for the history of mathematics at its turning point around 1700 - is published for the first time in its entirety on the BEOL platform as a region-based multilayer interactive digital edition providing access to facsimiles, transcriptions, translations, indices, and commentaries. Besides being an edition platform, BEOL is a virtual research environment for the study of early modern mathematics and science as a data graph using sophisticated analysis tools. Currently BEOL is connected to two third-party repositories: The Newton Project and the Briefportal Leibniz, initiating the formation of a network of digital editions of the early modern scientific correspondence data.The goal of BEOL is thus twofold: it focuses on the mathematics influenced by the Bernoulli dynasty and Leonhard Euler and undertakes a methodological effort to present these materials to the public and researchers in a highly functional way." .
+<beol> dsp-repo:hasKeywords "mathematics" .
+<beol> dsp-repo:hasKeywords "science" .
+<beol> dsp-repo:hasKeywords "history of science" .
+<beol> dsp-repo:hasKeywords "history of mathematics" .
+<beol> dsp-repo:hasKeywords "Bernoulli" .
+<beol> dsp-repo:hasKeywords "Euler" .
+<beol> dsp-repo:hasKeywords "Newton" .
+<beol> dsp-repo:hasKeywords "Leibniz" .
+<beol> dsp-repo:dataCharacteristic "qualitative" .
+<beol> dsp-repo:mediaCharacteristic "text" . 
+<beol> dsp-repo:mediaCharacteristic "image" . 
+<beol> dsp-repo:hasDocumentation "yes" . 
+<beol> dsp-repo:hasLicense "CC-BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/" . 
+<beol> dsp-repo:hasAccessRights "http://purl.org/eprint/accessRights/OpenAccess" . 
+<beol> dsp-repo:hasCitation "Bernoulli-Euler Online (BEOL), 2019, https://beol.dasch.swiss" .
+<beol> dsp-repo:hasARK "http://ark.dasch.swiss/ark:/72163/1/0801" . 
+<beol> dsp-repo:hasContributor <beol-mattmüller> .
+<beol> dsp-repo:hasContributor <beol-nagel> .
+<beol> dsp-repo:hasContributor <beol-gehr> .
+<beol> dsp-repo:hasContributor <beol-schweizer> .
+<beol> dsp-repo:hasContributor <beol-alassi> .
+<beol> dsp-repo:hasContactPoint "tbd" . 
+<beol> dsp-repo:hasStatus "data will be added continuously" . 
+<beol> dsp-repo:hasReleaseDate "2019" . 
+<beol> dsp-repo:hasReferences "Dissertation: From the Mechanics of Jacob Bernoulli to Digital History of Science: Infrastructure, tools, and Methods, Sepideh Alassi, April 2020" . 
+<beol> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/de" .
+<beol> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/en" .
+<beol> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/fr" .
+<beol> dsp-repo:hasStartDate "2016.07" . 
+<beol> dsp-repo:hasEndDate "2020.01" . 
+<beol> dsp-repo:hasTemporalCoverage "17th century and 18th century CE" . 
+<beol> dsp-repo:hasSpatialCoverage "6255148" .
+<beol> dsp-repo:hasSpatialCoverage "2017370" .
+<beol> dsp-repo:hasSpatialCoverage "3017382" .
+<beol> dsp-repo:hasSpatialCoverage "2658434" .
+<beol> dsp-repo:hasSpatialCoverage "2921044" .
+<beol> dsp-repo:hasSpatialCoverage "3175395" .
+<beol> dsp-repo:hasSpatialCoverage "6269131" .
+<beol> dsp-repo:hasFunding "Schweizerischer Nationalfonds (SNSF) Nr.166072" . 
+<beol> dsp-repo:hasLandingPage "https://beol.dasch.swiss/" . 
+<beol> dsp-repo:hasIssueDate "09.2017" . 
+<beol> dsp-repo:hasRecentDate "04.2020" . 
+<beol> dsp-repo:hasShortcode "0801" . 
+<beol> dsp-repo:hasShortTitle "beol" .
+
+<beol-mattmüller> rdf:type dsp-repo:Person . 
+<beol-mattmüller> dsp-repo:hasGivenName "Martin" . 
+<beol-mattmüller> dsp-repo:hasFamilyname "Mattmüller" . 
+
+<beol-nagel> rdf:type dsp-repo:Person . 
+<beol-nagel> dsp-repo:hasGivenName "Fritz" . 
+<beol-nagel> dsp-repo:hasFamilyname "Nagel" . 
+<beol-nagel> dsp-repo:hasRole "Dr." . 
+
+<beol-gehr> rdf:type dsp-repo:Person . 
+<beol-gehr> dsp-repo:hasGivenName "Sulamith" . 
+<beol-gehr> dsp-repo:hasFamilyname "Gehr" . 
+
+<beol-schweizer> rdf:type dsp-repo:Person . 
+<beol-schweizer> dsp-repo:hasGivenName "Tobias" . 
+<beol-schweizer> dsp-repo:hasFamilyname "Schweizer" . 
+<beol-schweizer> dsp-repo:isMember <beol-dasch> . 
+<beol-schweizer> dsp-repo:hasRole "Dr." . 
+
+<beol-alassi> rdf:type dsp-repo:Person . 
+<beol-alassi> dsp-repo:hasGivenName "Sepideh" . 
+<beol-alassi> dsp-repo:hasFamilyname "Alassi" . 
+<beol-alassi> dsp-repo:hasEmail "sepideh.alassi@dasch.swiss" . 
+<beol-alassi> dsp-repo:isMember <beol-dasch> . 
+<beol-alassi> dsp-repo:hasRole "Dr. des." . 
+
+<beol-dasch> dsp-repo:hasOrganizationName "DaSCH" . 
+<beol-dasch> dsp-repo:hasOrganizationAddress "Gewerbestrasse 24, 4123 Allschwil" .
+<beol-dasch> dsp-repo:hasOrganizationURL "https://dasch.swiss" .
+
+<mls> rdf:type dsp-repo:Collection .
+<mls> dsp-repo:hasTitle "MLS Musiklexikon der Schweiz" .
+<mls> dsp-repo:hasDescription  """ Das Musiklexikon der Schweiz will fundierte und zeitgemässe Information über die Musikgeschichte in der Schweiz online unentgeltlich zur Verfügung stellen. Relevante Personen der Schweizer Musikgeschichte, Institutionen und musikbezogene Objekte zu allen Sparten des Musiklebens werden berücksichtigt: Volks- und Popularmusik, Klassik, Musikerziehung oder Festivals.
+                        In einem ersten Schritt ermöglicht das MLS den Zugang zur älteren Lexikographie und vernetzt die Information national und international mit wissenschaftlichen Informationsquellen.
+                        Rechtsfreie Lexika sind im Volltext digitalisiert zugänglich.
+                        Unentgeltlich zugängliche wissenschaftliche Online-Lexika werden verlinkt.
+                        Auf den Inhalt urheberrechtlich geschützter Lexika wird verwiesen, ohne den Text zur Verfügung zu stellen. Die Inhalte werden bei Verfall des Urheberschutzes laufend ergänzt.
+                        Wissenschaftliche Stichwortlisten sind als Platzhalter für neue Artikel berücksichtigt worden.
+                        Die vorhandene Lexikographie beschränkt sich auf Personenartikel, daher erscheinen in dieser Phase nur personenbezogene Inhalte.
+                        Damit kann der Leser die zeitliche Entwicklung musikhistorischen Wissens und den Vorgang der Informationsgewinnung und Verdichtung einfach und intuitiv erleben.
+                        Die nächste Phase soll neue Artikel zu Personen, Objekten und Institutionen hinzufügen.""" .
+<mls> dsp-repo:hasKeywords "Musik" .
+<mls> dsp-repo:hasKeywords "Schweiz" .
+<mls> dsp-repo:hasKeywords "Musikgeschichte" .
+<mls> dsp-repo:hasKeywords "Volksmusik" .
+<mls> dsp-repo:hasKeywords "Klassik" .
+<mls> dsp-repo:hasKeywords "Popularmusik" .
+<mls> dsp-repo:hasKeywords "Musikerziehung" .
+<mls> dsp-repo:hasKeywords "Festival" .
+<mls> dsp-repo:dataCharacteristic "qualitative" .
+<mls> dsp-repo:mediaCharacteristic "text" .
+<mls> dsp-repo:hasDocumentation "no" .
+<mls> dsp-repo:hasLicense "<https://creativecommons.org/licenses/by/4.0/>" .
+<mls> dsp-repo:hasAccessRights "http://purl.org/eprint/accessRights/OpenAccess" .
+<mls> dsp-repo:hasCitation "Musiklexikon der Schweiz Online (MLS Online), 2020, https://mls.0807.dasch.swiss/home".
+<mls> dsp-repo:hasARK "fakeARKstring".
+<mls> dsp-repo:hasContributor <MLS-christina-urchueguia> .
+<mls> dsp-repo:hasContributor <mls-minder> .
+<mls> dsp-repo:hasContactPoint "urchueguia@musik.unibe.ch" .
+<mls> dsp-repo:hasStatus "data will be added continuously" .
+<mls> dsp-repo:hasReleaseDate "2020" .
+<mls> dsp-repo:hasReferences "Musinfo (https://musinfo.ch/de/)" .
+<mls> dsp-repo:hasReferences " Neo.mx3 (https://neo.mx3.ch/)" .
+<mls> dsp-repo:hasReferences "Österreichisches Musiklexikon" .
+<mls> dsp-repo:hasReferences "Bayerisches Musiklexikon" .
+<mls> dsp-repo:hasReferences "Historisches Lexikon der Schweiz" .
+<mls> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/de" .
+<mls> dsp-repo:hasStartDate "2019" .
+<mls> dsp-repo:hasEndDate "12.2222".
+<mls> dsp-repo:hasTemporalCoverage "8th-21st century CE".
+<mls> dsp-repo:hasSpatialCoverage "2658434".
+<mls> dsp-repo:hasFunding "SAGW" .
+<mls> dsp-repo:hasLandingPage "https://mls.0807.dasch.swiss/home" .
+<mls> dsp-repo:hasIssueDate "13.02.2020" .
+<mls> dsp-repo:hasRecentDate "13.02.2020" .
+<mls> dsp-repo:hasShortcode "0807" .
+<mls> dsp-repo:hasShortTitle "mls" .
+
+<mls-christina-urchueguia> rdf:type dsp-repo:Person .        
+<mls-christina-urchueguia> dsp-repo:hasGivenName "Cristina" .        
+<mls-christina-urchueguia> dsp-repo:hasFamilyName "Urchueguía" .
+<mls-christina-urchueguia> dsp-repo:hasEmail "urchueguia@musik.unibe.ch" .
+<mls-christina-urchueguia> dsp-repo:hasAddress "GLAM Institution, Schweizerische musikforschende Gesellschaft, Hallerstr. 5, 3012 Bern" .
+<mls-christina-urchueguia> dsp-repo:isMember <mls-organization> .
+<mls-christina-urchueguia> dsp-repo:hasRole "Professor" .
+
+<mls-minder> rdf:type dsp-repo:Person .        
+<mls-minder> dsp-repo:hasGivenName "Irène" .        
+<mls-minder> dsp-repo:hasFamilyName "Minder-Jeanneret" .
+<mls-minder> dsp-repo:hasAddress "GLAM Institution, Schweizerische musikforschende Gesellschaft, Hallerstr. 5, 3012 Bern" .
+<mls-minder> dsp-repo:isMember <mls-organization> .
+
+<mls-organization> rdf:type dsp-repo:Organization . 
+<mls-organization> dsp-repo:hasOrganizationName "Schweizerische musikforschende Gesellschaft" .
+<mls-organization> dsp-repo:hasOrganizationEmail "blbabla@blabl.ch" .
+<mls-organization> dsp-repo:hasOrganizationAddress "Hallerstr. 5, 3012 Bern" .
+<mls-organization> dsp-repo:hasOrganizationURL "http://blabla.ch" .
+
+<parzival> rdf:type dsp-repo:Dataset .
+<parzival> dsp-repo:hasTitle "Wolfram von Eschenbach, Parzival, Digitale Edition" .
+<parzival> dsp-repo:hasDescription "blaablaaa blubb blabla blubblubb" .
+<parzival> dsp-repo:hasKeywords "blablubb" .
+<parzival> dsp-repo:dataCharacteristic "qualitative" .
+<parzival> dsp-repo:mediaCharacteristic "image" .
+<parzival> dsp-repo:mediaCharacteristic "text" .
+<parzival> dsp-repo:hasDocumentation "yes" .
+<parzival> dsp-repo:hasLicense "fakelicense" .
+<parzival> dsp-repo:hasAccessRights "http://purl.org/eprint/accessRights/OpenAccess" .
+<parzival> dsp-repo:hasCitation "Wolfram von Eschenbach, ›Parzival‹, Digitale Edition, Parzival-Projekt, www.parzival.unibe.ch/parzDB/, (Zugriff: [aktuelles Datum])".
+<parzival> dsp-repo:hasARK "fakeARKstring" .
+<parzival> dsp-repo:hasContributor <parzival-stolz> .
+<parzival> dsp-repo:hasContributor <parzival-hauenstein> .
+<parzival> dsp-repo:hasContactPoint "Universität Bern, Institut für Germanistik, Parzival-Projekt, Länggasstr. 49, 3012 Bern, Schweiz" .
+<parzival> dsp-repo:hasStatus "data will be added continuously" .
+<parzival> dsp-repo:hasReleaseDate "2019" .
+<parzival> dsp-repo:hasReferences "yes" .
+<parzival> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/de" .
+<parzival> dsp-repo:hasStartDate "01.2050" .
+<parzival> dsp-repo:hasEndDate "12.2050".
+<parzival> dsp-repo:hasTemporalCoverage "13th-15th century CE".
+<parzival> dsp-repo:hasSpatialCoverage "2921044".
+<parzival> dsp-repo:hasFunding "SNF" .
+<parzival> dsp-repo:hasFunding "DfG" .
+<parzival> dsp-repo:hasLandingPage "http://www.parzival.unibe.ch/parzdb/" .
+<parzival> dsp-repo:hasIssueDate "02.2050" .
+<parzival> dsp-repo:hasRecentDate "03.2150" .
+<parzival> dsp-repo:hasShortcode "0000" .
+<parzival> dsp-repo:hasShortTitle "Parzival-Projekt" .
+
+<parzival-stolz> rdf:type dsp-repo:Person .        
+<parzival-stolz> dsp-repo:hasGivenName "Michael" .        
+<parzival-stolz> dsp-repo:hasFamilyName "Stolz" .
+<parzival-stolz> dsp-repo:isMember <parzival-organization> .
+<parzival-stolz> dsp-repo:hasRole "Prof. Dr." .
+
+<parzival-hauenstein> rdf:type dsp-repo:Person . 
+<parzival-hauenstein> dsp-repo:hasGivenName "Jens" .        
+<parzival-hauenstein> dsp-repo:hasFamilyName "Hauenstein" .
+<parzival-hauenstein> dsp-repo:hasRole "Prof. Dr." .
+
+<parzival-organization> rdf:type dsp-repo:Organization . 
+<parzival-organization> dsp-repo:hasOrganizationName "Universität Bern, Institut für Germanistik, Parzival-Projekt" .
+<parzival-organization> dsp-repo:hasOrganizationAddress "Länggasstr. 49, 3012 Bern, Schweiz" .
+
+<dietrich> rdf:type dsp-repo:Dataset .
+<dietrich> dsp-repo:hasTitle "Das Kloster-Tagebuch des Einsiedler Pater Joseph Dietrich, 1670-1704, Kommentierte Online-Edition" .
+<dietrich> dsp-repo:hasDescription "Das Einsiedler Klostertagebuch der Jahre 1670-1704 von Pater Joseph Dietrich (1645-1704) gehört mit seinen 18 Bänden und insgesamt 12‘000 Seiten zu den wichtigsten und vielfältigsten Quellen der damaligen Zentral- und Ostschweiz. Die digitale Edition erschliesst den Zugang zur detailreichen Beschreibung des klösterlichen Alltags und zum regionalen und überregionalen Geschehen.
+                                    Die Edition ist an die Abteilung für Wirtschafts-, Sozial- und Umweltgeschichte (WSU) am Historischen Institut der Universität Bern angebunden. Die nun vorliegende Pilot-Version umfasst den Band 6 (ohne Index), der ausgewählt worden war, um die Editionsgrundsätze auf der Basis eines schon gefestigten Tagebuchschreibens zu entwickeln. Die Grundsätze sollen die Erstellung eines diplomatischen und textkritisch kommentierten Transkriptionstextes erlauben, der sowohl mittels Volltextsuche als auch per Schlagwortsuche abfragbar sein wird und somit interdisziplinären Fragestellungen leicht zugänglich ist. Die Interdisziplinarität bedingt aber auch einen lesefreundlichen Text mit einem erhöhten Aufwand an philologischen und sachspezifischen Kommentaren." .
+<dietrich> dsp-repo:hasKeywords "Kloster" .
+<dietrich> dsp-repo:dataCharacteristic "qualitative" .
+<dietrich> dsp-repo:mediaCharacteristic "image" .
+<dietrich> dsp-repo:mediaCharacteristic "text" .
+<dietrich> dsp-repo:hasDocumentation "yes" .
+<dietrich> dsp-repo:hasLicense "fakelicense" .
+<dietrich> dsp-repo:hasAccessRights "http://purl.org/eprint/accessRights/OpenAccess" .
+<dietrich> dsp-repo:hasCitation "fakecitation".
+<dietrich> dsp-repo:hasARK "fakeARKstring".
+<dietrich> dsp-repo:hasContributor <dietrich-schwarz> .
+<dietrich> dsp-repo:hasContributor <dietrich-rohr> .
+<dietrich> dsp-repo:hasContactPoint "gabriela.schwarz@hist.unibe.ch" .
+<dietrich> dsp-repo:hasStatus "data will be added continuously" .
+<dietrich> dsp-repo:hasReleaseDate "2019" .
+<dietrich> dsp-repo:hasReferences "yes" .
+<dietrich> dsp-repo:hasLanguage "http://id.loc.gov/vocabulary/iso639-1/de" .
+<dietrich> dsp-repo:hasStartDate "01.2015" .
+<dietrich> dsp-repo:hasEndDate "12.2050".
+<dietrich> dsp-repo:hasTemporalCoverage "17th century and 18th century CE".
+<dietrich> dsp-repo:hasSpatialCoverage "2658434".
+<dietrich> dsp-repo:hasFunding "Schweizerischer Nationalfonds SNF" .
+<dietrich> dsp-repo:hasFunding "Kanton Aargau (Lotteriefonds)" .
+<dietrich> dsp-repo:hasFunding "Kanton Schwyz (Lotteriefonds)" .
+<dietrich> dsp-repo:hasFunding "Kanton Thurgau (Kulturamt)" .
+<dietrich> dsp-repo:hasFunding "AVINA-Stiftung" .
+<dietrich> dsp-repo:hasFunding "Ernst Göhner-Stiftung" .
+<dietrich> dsp-repo:hasFunding "Cogito Stiftung" .
+<dietrich> dsp-repo:hasLandingPage "http://www.dietrich-edition.unibe.ch/" .
+<dietrich> dsp-repo:hasIssueDate "12.2050" .
+<dietrich> dsp-repo:hasRecentDate "12.2050" .
+<dietrich> dsp-repo:hasShortcode "0000" .
+<dietrich> dsp-repo:hasShortTitle "Dietrich-Projekt" .
+
+<dietrich-schwarz> rdf:type dsp-repo:Person .        
+<dietrich-schwarz> dsp-repo:hasGivenName "G." .        
+<dietrich-schwarz> dsp-repo:hasFamilyName "Schwarz-Zanetti" .
+<dietrich-schwarz> dsp-repo:isMember <dietrich-organization> .
+<dietrich-schwarz> dsp-repo:hasRole "Dr." .
+
+<dietrich-rohr> rdf:type dsp-repo:Person .        
+<dietrich-rohr> dsp-repo:hasGivenName "Christian" .        
+<dietrich-rohr> dsp-repo:hasFamilyName "Rohr" .
+<dietrich-rohr> dsp-repo:isMember <dietrich-organization> .
+<dietrich-rohr> dsp-repo:hasRole "Prof. Dr." .
+
+<dietrich-organization> rdf:type dsp-repo:Organization . 
+<dietrich-organization> dsp-repo:hasOrganizationName "Universität Bern" .
