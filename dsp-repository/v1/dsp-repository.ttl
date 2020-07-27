@@ -564,7 +564,6 @@ dsp-repo:Person rdf:type owl:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
     rdfs:subClassOf schema:Person ,
-     rdfs:subClassOf prov:Agent ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasQualifiedAttribution ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
