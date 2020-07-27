@@ -124,11 +124,10 @@ dsp-repo:hasFunder rdf:type owl:DatatypeProperty ;
 
 # http://ns.dasch.swiss/repository#hasGrant
 dsp-repo:hasGrant rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf schema:grant ;
     knora-base:subjectClassConstraint dsp-repo:Project ;
-    knora-base:objectDatatypeConstraint xsd:string ;
+    knora-base:objectDatatypeConstraint dsp-repo:Grant ;
     rdfs:domain dsp-repo:Project ;
-    rdfs:range dsp-repo:Person ;
+    rdfs:range dsp-repo:Grant ;
     rdfs:comment "Grant"@en ;
     rdfs:label "dsp-repo:hasGrant"@en .
 
@@ -196,6 +195,16 @@ dsp-repo:hasDataManagementPlan rdf:type owl:ObjectProperty ;
 
 
 ### dsp-repo:Dataset
+# http://ns.dasch.swiss/repository#hasIdentifier
+dsp-repo:hasIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:identifier ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Identifier/ARK"@en ;
+    rdfs:label "dsp-repo:hasIdentifier"@en .
+
 # http://ns.dasch.swiss/repository#hasAbstract
 dsp-repo:hasAbstract rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf schema:abstract ;
@@ -218,11 +227,10 @@ dsp-repo:hasEncodingFormat rdf:type owl:DatatypeProperty ;
 
 # http://ns.dasch.swiss/repository#hasDocumentation
 dsp-repo:hasDocumentation rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf schema:isPartOf ;
     knora-base:subjectClassConstraint dsp-repo:Dataset ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Dataset ;
-    rdfs:range dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
     rdfs:comment "Documentation to the project"@en ;
     rdfs:label "dsp-repo:hasDocumentation"@en .   
 
@@ -256,15 +264,6 @@ dsp-repo:hasCitation rdf:type owl:DatatypeProperty ;
     rdfs:comment "Citation"@en ;
     rdfs:label "dsp-repo:hasCitation"@en .
  
-# http://ns.dasch.swiss/repository#hasIdentifier
-dsp-repo:hasIdentifier rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf schema:identifier ;
-    knora-base:subjectClassConstraint dsp-repo:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dsp-repo:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Identifier/ARK"@en ;
-    rdfs:label "dsp-repo:hasIdentifier"@en .
 
 # http://ns.dasch.swiss/repository#hasStatus
 dsp-repo:hasStatus rdf:type owl:DatatypeProperty ;
@@ -404,7 +403,7 @@ dsp-repo:hasOrganizationIdentifier rdf:type owl:ObjectProperty ;
     knora-base:subjectClassConstraint dsp-repo:Organization ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Organization ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range schema:url ;
     rdfs:comment "Identifier of the organization"@en ;
     rdfs:label "dsp-repo:hasOrganizationIdentifier"@en . 
 ### Note: https://www.grid.ac/
@@ -450,6 +449,11 @@ dsp-repo:hasOrganizationURL rdf:type owl:ObjectProperty ;
     rdfs:label "dsp-repo:hasOrganizationURL"@en . 
 
 ###
+###dsp-repo:Grant
+###
+
+
+
 
 ###dsp-repo:DataManagementPlan
 ###
@@ -516,8 +520,14 @@ dsp-repo:Dataset rdf:type owl:Class ;
     rdfs:label "dsp-repo:Dataset"@en ;
     rdfs:subClassOf schema:Dataset ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasAbstract ;
+                    owl:onProperty dsp-repo:hasIdentifier ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty schema:sameAs ;
                     owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasAbstract ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasEncodingFormat ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
@@ -532,9 +542,6 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasCitation ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasIdentifier ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasStatus ;
@@ -557,6 +564,7 @@ dsp-repo:Person rdf:type owl:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
     rdfs:subClassOf schema:Person ,
+     rdfs:subClassOf prov:Agent ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasQualifiedAttribution ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
@@ -604,6 +612,22 @@ dsp-repo:Organization rdf:type owl:Class ;
                   [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasOrganizationURL ;
                     owl:maxCardinality "1"^^xsd:nonNegativeInteger ] .
+
+# http://ns.dasch.swiss/repository#Grant
+dsp-repo:Grant rdf:type owl:Class ;
+    rdfs:comment "Grant"@en ;
+    rdfs:label "dsp-repo:Grant"@en ;
+    rdfs:subClassOf schema:Grant ,
+                    [ rdf:type owl:Restriction ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onProperty schema:name ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onProperty schema:identifier ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onProperty schema:url ] .
+
 
 
 # http://ns.dasch.swiss/repository#DataManagementPlan
