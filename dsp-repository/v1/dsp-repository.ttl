@@ -12,11 +12,13 @@
 @prefix foaf:<http://xmlns.com/foaf/0.1/> .
 @prefix vowl: <http://purl.org/vowl/spec/v2/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unesco6: <http://skos.um.es/unesco6/> .
 @base <http://ns.dasch.swiss/repository#> .
 
 # --- Ontology metadata ---
@@ -31,288 +33,310 @@
 
 
 ### --- Datatype properties definition ---
-## CQ: What kind of material/data can be found in this domain?
-# http://ns.dasch.swiss/repository#hasTitle
-dsp-repo:hasTitle rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:title ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+### dsp-repo:Project
+
+# http://ns.dasch.swiss/repository#hasName
+dsp-repo:hasName rdf:type owl:DatatypeProperty ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "Official long title of the project"@en ;
-    rdfs:label "dsp-repo:hasTitle"@en .
+    rdfs:label "dsp-repo:hasName"@en .
 
 # http://ns.dasch.swiss/repository#hasDescription
 dsp-repo:hasDescription rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:description ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    rdfs:subPropertyOf schema:description ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "Project Description"@en ;
     rdfs:label "dsp-repo:hasDescription"@en .
 
 # http://ns.dasch.swiss/repository#hasKeywords
 dsp-repo:hasKeywords rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dcat:keyword ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    rdfs:subPropertyOf schema:keywords ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "Project Keywords"@en ;
     rdfs:label "dsp-repo:hasKeywords"@en .
 
- # http://ns.dasch.swiss/repository#dataCharacteristic
-dsp-repo:dataCharacteristic rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasCategories
+dsp-repo:hasCategories rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:about ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Data Type"@en ;
-    rdfs:label "dsp-repo:dataCharacteristic"@en .   
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range skos:ConceptScheme ;
+    rdfs:comment "Research/Study fields of the project"@en ;
+    rdfs:label "dsp-repo:hasCategories"@en . 
 
-# http://ns.dasch.swiss/repository#mediaCharacteristic
-dsp-repo:mediaCharacteristic rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Media Type"@en ;
-    rdfs:label "dsp-repo:mediaCharacteristic"@en .   
-
-# http://ns.dasch.swiss/repository#hasDocumentation
-dsp-repo:hasDocumentation rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Documentation to the project"@en ;
-    rdfs:label "dsp-repo:hasDocumentation"@en .   
-
-## CQ: How may I use the data?
-# http://ns.dasch.swiss/repository#hasLicense
-dsp-repo:hasLicense rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:license ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dct:LicenseDocument ;
-    rdfs:comment "License(s)"@en ;
-    rdfs:label "dsp-repo:hasLicense"@en .
-### Usage note: https://creativecommons.org/about/cclicenses/
-
-# http://ns.dasch.swiss/repository#hasAccessRights
-dsp-repo:hasAccessRights rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:accessRights ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dct:RightsStatement ;
-    rdfs:comment "Access Rights"@en ;
-    rdfs:label "dsp-repo:hasAccessRights"@en .
-### Usage note: http://www.ukoln.ac.uk/repositories/digirep/index/Eprints_AccessRights_Vocabulary_Encoding_Scheme
-
-## CQ: How can I cite the data?
-# http://ns.dasch.swiss/repository#hasCitation
-dsp-repo:hasCitation rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Citation"@en ;
-    rdfs:label "dsp-repo:hasCitation"@en .
-
-#    
-# http://ns.dasch.swiss/repository#dsp-repo:hasARK
-dsp-repo:hasARK rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:identifier ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "ARK"@en ;
-    rdfs:label "dsp-repo:hasARK"@en .
-
-
-## CQ: Who assembled the data?
-# http://ns.dasch.swiss/repository#hasContributor
-dsp-repo:hasContributor rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dsp-repo:Person ;
-    rdfs:comment "Contributor"@en ;
-    rdfs:label "dsp-repo:hasContributor"@en .
-
-#
-# http://ns.dasch.swiss/repository#hasContactPoint
-dsp-repo:hasContactPoint rdf:type owl:ObjectProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Contact point of the researcher"@en ;
-    rdfs:label "dsp-repo:hasContactPoint"@en .
-
-
-## CQ: What is the status of a project?
-# http://ns.dasch.swiss/repository#hasStatus
-dsp-repo:hasStatus rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Maturity information"@en ;
-    rdfs:label "dsp-repo:hasStatus"@en .
-
-## CQ: When were the data published?
-# http://ns.dasch.swiss/repository#hasReleaseDate
-dsp-repo:hasReleaseDate rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:issued ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:date ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range xsd:dateTime ;
-    rdfs:comment "Release Date" ;
-    rdfs:label "dsp-repo:hasReleaseDate" .
-
-## CQ: Is there any related publication?
-# http://ns.dasch.swiss/repository#hasReferences
-dsp-repo:hasReferences rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:bibliographicCitation ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "References related to or citing these data"@en ;
-    rdfs:label "dsp-repo:hasReferences"@en .
-
-
-## CQ: In which language(s) is the content written?
-# http://ns.dasch.swiss/repository#hasLanguage
-dsp-repo:hasLanguage rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:language ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dct:LinguisticSystem ;
-    rdfs:comment "Language"@en ;
-    rdfs:label "dsp-repo:hasLanguage"@en .
-### Usage note: http://id.loc.gov/vocabulary/iso639-1.html
- 
-
-## CQ: When were the data collected?
 # http://ns.dasch.swiss/repository#hasStartDate
 dsp-repo:hasStartDate rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:date ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range xsd:dateTime ;
     rdfs:comment "Start date of data collection"@en ;
     rdfs:label "dsp-repo:hasStartDate"@en .
 
 # http://ns.dasch.swiss/repository#hasEndDate
 dsp-repo:hasEndDate rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:date ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range xsd:dateTime ;
     rdfs:comment "End date of data collection"@en ;
     rdfs:label "dsp-repo:hasEndDate"@en .
 
-
-## Which period and/or which geographical area does it cover?
 # http://ns.dasch.swiss/repository#hasTemporalCoverage
 dsp-repo:hasTemporalCoverage rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:temporal ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    rdfs:subPropertyOf schema:temporalCoverage ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dct:PeriodOfTime ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range rdfs:Literal ;
     rdfs:comment "Temporal coverage of project"@en ;
     rdfs:label "dsp-repo:hasTemporalCoverage"@en .
-### Usage note: An interval of time that is named or defined by its start and end dates.
 
 # http://ns.dasch.swiss/repository#hasSpatialCoverage
 dsp-repo:hasSpatialCoverage rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf dct:spatial ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    rdfs:subPropertyOf schema:spatialCoverage ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range dct:Location ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range schema:Place ;
     rdfs:comment "Spatial coverage of project"@en ;
     rdfs:label "dsp-repo:hasSpatialCoverage"@en .
-### Usage note: Geonames. http://www.geonames.org/
 
-## CQ: Which funding does the data have/had?
-# http://ns.dasch.swiss/repository#hasFunding
-dsp-repo:hasFunding rdf:type owl:DatatypeProperty ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasFunder
+dsp-repo:hasFunder rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:funder ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range prov:Agent ;
-    rdfs:comment "Information about funding agency"@en ;
-    rdfs:label "dsp-repo:hasFunding"@en .
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range dsp-repo:Person ;
+    rdfs:comment "Funder"@en ;
+    rdfs:label "dsp-repo:hasFunder"@en .
 
+# http://ns.dasch.swiss/repository#hasGrant
+dsp-repo:hasGrant rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:grant ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range dsp-repo:Person ;
+    rdfs:comment "Grant"@en ;
+    rdfs:label "dsp-repo:hasGrant"@en .
 
-
-## CQ: Is there any additional information about the project?
-# http://ns.dasch.swiss/repository#hasLandingPage
-dsp-repo:hasLandingPage rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf dcat:landingPage ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasURL
+dsp-repo:hasURL rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:hasURL ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:anyURI ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range foaf:Document ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range xsd:anyURI ;
     rdfs:comment "Website of the project"@en ;
-    rdfs:label "dsp-repo:hasLandingPage"@en .
+    rdfs:label "dsp-repo:hasURL"@en .
 ### Usage note: URL.
 
-# http://ns.dasch.swiss/repository#hasIssueDate
-dsp-repo:hasIssueDate rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf dct:issued ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasDateCreated
+dsp-repo:hasDateCreated rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:dateCreated ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:date ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range xsd:dateTime ;
     rdfs:comment "Date of formal issuance (e.g., publication) of the project"@en ;
-    rdfs:label "dsp-repo:hasIssueDate"@en .
+    rdfs:label "dsp-repo:hasDateCreated"@en .
 
-# http://ns.dasch.swiss/repository#hasRecentDate
-dsp-repo:hasRecentDate rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf dct:modified ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasDateModified
+dsp-repo:hasDateModified rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:dateModified ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:date ;
-    rdfs:domain dcat:Dataset ;
-    rdfs:range rdfs:Literal ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range xsd:dateTime ;
     rdfs:comment "Most recent date on which the project was changed, updated or modified"@en ;
-    rdfs:label "dsp-repo:hasRecentDate"@en .    
+    rdfs:label "dsp-repo:hasDateModified"@en .   
 
  # http://ns.dasch.swiss/repository#hasShortcode
 dsp-repo:hasShortcode rdf:type owl:ObjectProperty ;
-    rdfs:subClassOf dct:identifier ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+    rdfs:subClassOf schema:identifier ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "Shortcode of the project."@en ;
     rdfs:label "dsp-repo:hasShortcode"@en .    
 
-# http://ns.dasch.swiss/repository#hasShortTitle
-dsp-repo:hasShortTitle rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf dct:title ;
-    knora-base:subjectClassConstraint dcat:Dataset ;
+# http://ns.dasch.swiss/repository#hasAlternateName
+dsp-repo:hasAlternateName rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:alternateName ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dcat:Dataset ;
+    rdfs:domain dsp-repo:Project ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "Short title of the project"@en ;
-    rdfs:label "dsp-repo:hasShortTitle"@en .  
+    rdfs:label "dsp-repo:hasAlternateName"@en .  
+
+# http://ns.dasch.swiss/repository#hasDataManagementPlan
+dsp-repo:hasDataManagementPlan rdf:type owl:ObjectProperty ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
+    knora-base:objectDatatypeConstraint dsp-repo:hasDataManagementPlan ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range dsp-repo:DataManagementPlan ;
+    rdfs:comment "Data Management Plan of the project"@en ;
+    rdfs:label "dsp-repo:hasDataManagementPlan"@en .  
+
+###
 
 
-## CQ: Is there any additional information about the researcher?
+### dsp-repo:Dataset
+# http://ns.dasch.swiss/repository#hasAbstract
+dsp-repo:hasAbstract rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:abstract ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Project Abstract"@en ;
+    rdfs:label "dsp-repo:hasAbstract"@en .
+
+# http://ns.dasch.swiss/repository#hasEncodingFormat
+dsp-repo:hasEncodingFormat rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:encoding ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Encoding Format"@en ;
+    rdfs:label "dsp-repo:hasEncodingFormat"@en .   
+
+# http://ns.dasch.swiss/repository#hasDocumentation
+dsp-repo:hasDocumentation rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:isPartOf ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range dsp-repo:Dataset ;
+    rdfs:comment "Documentation to the project"@en ;
+    rdfs:label "dsp-repo:hasDocumentation"@en .   
+
+# http://ns.dasch.swiss/repository#hasLicense
+dsp-repo:hasLicense rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:license ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range schema:URL ;
+    rdfs:comment "License(s)"@en ;
+    rdfs:label "dsp-repo:hasLicense"@en .
+
+# http://ns.dasch.swiss/repository#hasConditionsOfAccess
+dsp-repo:hasConditionsOfAccess rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:conditionsOfAccess ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Conditions of Access"@en ;
+    rdfs:label "dsp-repo:hasConditionsOfAccess"@en .
+
+# http://ns.dasch.swiss/repository#hasCitation
+dsp-repo:hasCitation rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:citation ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Citation"@en ;
+    rdfs:label "dsp-repo:hasCitation"@en .
+ 
+# http://ns.dasch.swiss/repository#hasIdentifier
+dsp-repo:hasIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:identifier ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Identifier/ARK"@en ;
+    rdfs:label "dsp-repo:hasIdentifier"@en .
+
+# http://ns.dasch.swiss/repository#hasStatus
+dsp-repo:hasStatus rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:creativeWorkStatus ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "The status of a project in terms of its stage in a lifecycle"@en ;
+    rdfs:label "dsp-repo:hasStatus"@en .
+
+# http://ns.dasch.swiss/repository#hasDatePublished
+dsp-repo:hasDatePublished rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:datePublished ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:date ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Date published" ;
+    rdfs:label "dsp-repo:hasDatePublished" .
+
+# http://ns.dasch.swiss/repository#hasLanguage
+dsp-repo:hasLanguage rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:inLanguage ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Language"@en ;
+    rdfs:label "dsp-repo:hasLanguage"@en .
+### Usage note: https://tools.ietf.org/html/bcp47
+
+# http://ns.dasch.swiss/repository#isPartOf
+dsp-repo:isPartOf rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:isPartOf ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:date ;
+    rdfs:domain dsp-repo:Dataset ;
+    rdfs:range dsp-repo:Project ;
+    rdfs:comment "Dataset is part of the project" ;
+    rdfs:label "dsp-repo:isPartOf" .
+
+
+
+###
+
+
+### dsp-repo:Person
+# http://ns.dasch.swiss/repository#hasQualifiedAttribution
+dsp-repo:hasQualifiedAttribution rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf prov:qualifiedAttribution ;
+    knora-base:subjectClassConstraint dsp-repo:Person ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Person ;
+    rdfs:range prov:Attribution ;
+    rdfs:comment "Different roles"@en ;
+    rdfs:label "dsp-repo:hasQualifiedAttribution"@en .
+
+
+# http://ns.dasch.swiss/repository#hasContactPoint
+dsp-repo:hasContactPoint rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:contactPoint ;
+    knora-base:subjectClassConstraint dsp-repo:Person ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Person ;
+    rdfs:range schema:contactPoint ;
+    rdfs:comment "Contact point of the researcher"@en ;
+    rdfs:label "dsp-repo:hasContactPoint"@en .
+
 # http://ns.dasch.swiss/repository#hasGivenName
 dsp-repo:hasGivenName rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf foaf:givenName ;
+    rdfs:subPropertyOf schema:givenName ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Person ;
@@ -322,7 +346,7 @@ dsp-repo:hasGivenName rdf:type owl:ObjectProperty ;
 
 # http://ns.dasch.swiss/repository#hasFamilyName
 dsp-repo:hasFamilyName rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf foaf:familyName ;
+    rdfs:subPropertyOf schema:familyName ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Person ;
@@ -332,7 +356,7 @@ dsp-repo:hasFamilyName rdf:type owl:ObjectProperty ;
 
 # http://ns.dasch.swiss/repository#hasEmail
 dsp-repo:hasEmail rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf foaf:mbox ;
+    rdfs:subPropertyOf schema:email ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Person ;
@@ -342,35 +366,52 @@ dsp-repo:hasEmail rdf:type owl:ObjectProperty ;
 
 # http://ns.dasch.swiss/repository#hasAddress
 dsp-repo:hasAddress rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:address ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Person ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Address of the researcher"@en ;
+    rdfs:comment "Postal address of the researcher"@en ;
     rdfs:label "dsp-repo:hasAddress"@en . 
 
-# http://ns.dasch.swiss/repository#isMember
-dsp-repo:isMember rdf:type owl:ObjectProperty ;
+# http://ns.dasch.swiss/repository#isMemberOf
+dsp-repo:isMemberOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:memberOf ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint dsp-repo:Organization ;
     rdfs:domain dsp-repo:Person ;
     rdfs:range dsp-repo:Organization ;
     rdfs:comment "Membership of the researcher"@en ;
-    rdfs:label "dsp-repo:isMember"@en . 
+    rdfs:label "dsp-repo:isMemberOf"@en . 
 
-# http://ns.dasch.swiss/repository#hasRole
-dsp-repo:hasRole rdf:type owl:ObjectProperty ;
+# http://ns.dasch.swiss/repository#hasJobTitle
+dsp-repo:hasJobTitle rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:jobTitle ;
     knora-base:subjectClassConstraint dsp-repo:Person ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Person ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Role of the researcher"@en ;
-    rdfs:label "dsp-repo:hasRole"@en . 
+    rdfs:comment "Role/Job title of the researcher"@en ;
+    rdfs:label "dsp-repo:hasJobTitle"@en . 
 
 
- ## CQ: Is there any additional information about the organization?   
- # http://ns.dasch.swiss/repository#hasOrganizationName
+###
+
+### dsp-repo:Organization 
+# http://ns.dasch.swiss/repository#hasOrganizationIdentifier
+dsp-repo:hasOrganizationIdentifier rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:identifier ;
+    knora-base:subjectClassConstraint dsp-repo:Organization ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:domain dsp-repo:Organization ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Identifier of the organization"@en ;
+    rdfs:label "dsp-repo:hasOrganizationIdentifier"@en . 
+### Note: https://www.grid.ac/
+
+# http://ns.dasch.swiss/repository#hasOrganizationName
 dsp-repo:hasOrganizationName rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:legalName ;
     knora-base:subjectClassConstraint dsp-repo:Organization ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Organization ;
@@ -380,6 +421,7 @@ dsp-repo:hasOrganizationName rdf:type owl:ObjectProperty ;
    
 # http://ns.dasch.swiss/repository#hasOrganizationEmail
 dsp-repo:hasOrganizationEmail rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:email ;
     knora-base:subjectClassConstraint dsp-repo:Organization ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Organization ;
@@ -389,6 +431,7 @@ dsp-repo:hasOrganizationEmail rdf:type owl:ObjectProperty ;
 
 # http://ns.dasch.swiss/repository#hasOrganizationAddress
 dsp-repo:hasOrganizationAddress rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:address ;
     knora-base:subjectClassConstraint dsp-repo:Organization ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Organization ;
@@ -398,34 +441,85 @@ dsp-repo:hasOrganizationAddress rdf:type owl:ObjectProperty ;
 
 # http://ns.dasch.swiss/repository#hasOrganizationURL
 dsp-repo:hasOrganizationURL rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:url ;
     knora-base:subjectClassConstraint dsp-repo:Organization ;
     knora-base:objectDatatypeConstraint xsd:anyURI ;
     rdfs:domain dsp-repo:Organization ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range xsd:anyURI ;
     rdfs:comment "URL of the organization"@en ;
     rdfs:label "dsp-repo:hasOrganizationURL"@en . 
 
+###
 
-### --- Class definition ---               
+###dsp-repo:DataManagementPlan
+###
+
+### --- Class definition --- 
+# http://ns.dasch.swiss/repository#Project
+dsp-repo:Project rdf:type owl:Class ;
+    rdfs:comment "A project"@en ;
+    rdfs:label "dsp-repo:Project"@en ;
+    rdfs:subClassOf schema:Project ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasName ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasDescription ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasKeywords ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasCategories ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasStartDate ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasEndDate ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasTemporalCoverage ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasSpatialCoverage ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasFunder ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasGrant ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasURL ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasDateCreated ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasDateModified ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasShortcode ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasAlternateName ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
+                    owl:onProperty dsp-repo:hasDataManagementPlan ] .
+
+
 # http://ns.dasch.swiss/repository#Dataset
 dsp-repo:Dataset rdf:type owl:Class ;
     rdfs:comment "A dataset"@en ;
     rdfs:label "dsp-repo:Dataset"@en ;
-    rdfs:subClassOf dcat:Dataset ,
+    rdfs:subClassOf schema:Dataset ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasTitle ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    owl:onProperty dsp-repo:hasAbstract ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasDescription ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasKeywords ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:dataCharacteristic ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:mediaCharacteristic ;
+                    owl:onProperty dsp-repo:hasEncodingFormat ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasDocumentation ;
@@ -434,155 +528,41 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     owl:onProperty dsp-repo:hasLicense ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasAccessRights ;
+                    owl:onProperty dsp-repo:hasConditionsOfAccess ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasCitation ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasARK ;
+                    owl:onProperty dsp-repo:hasIdentifier ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasContributor ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasContactPoint ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasStatus ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasReleaseDate ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasReferences ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    owl:onProperty dsp-repo:hasDatePublished ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,  
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasLanguage ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasStartDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasEndDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasTemporalCoverage ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasSpatialCoverage ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasFunding ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasLandingPage ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasIssueDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasRecentDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasShortcode ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasShortTitle ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
+                     [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:isPartOf ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] .
-                 
 
-# 
-# http://ns.dasch.swiss/repository#Collection
-dsp-repo:Collection rdf:type owl:Class ;
-    rdfs:comment "A collection"@en ;
-    rdfs:label "dsp-repo:Collection"@en ;
-    rdfs:subClassOf dcat:Dataset ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasTitle ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasDescription ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasKeywords ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:dataCharacteristic ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:mediaCharacteristic ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasDocumentation ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasLicense ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasAccessRights ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasCitation ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasARK ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasContributor ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasContactPoint ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasStatus ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasReleaseDate ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasReferences ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasLanguage ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasStartDate ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasEndDate ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasTemporalCoverage ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasSpatialCoverage ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasFunding ;
-                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasLandingPage ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasIssueDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasRecentDate ;
-                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasShortcode ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasShortTitle ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] .
+                        
 
 #
 # http://ns.dasch.swiss/repository#Person
 dsp-repo:Person rdf:type owl:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
-    rdfs:subClassOf prov:Person ,
+    rdfs:subClassOf schema:Person ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasQualifiedAttribution ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasContactPoint ;
+                    owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasGivenName ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
@@ -599,15 +579,19 @@ dsp-repo:Person rdf:type owl:Class ;
                     owl:onProperty dsp-repo:isMember ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasRole ;
+                    owl:onProperty dsp-repo:hasJobTitle ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
+                    
 
 #
 # http://ns.dasch.swiss/repository#Organization
 dsp-repo:Organization rdf:type owl:Class ;
     rdfs:comment "An organization"@en ;
     rdfs:label "dsp-repo:Organization"@en ;
-    rdfs:subClassOf prov:Organization ,
+    rdfs:subClassOf schema:Organization ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasOrganizationIdentifier ;
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                   [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasOrganizationName ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
@@ -626,19 +610,11 @@ dsp-repo:Organization rdf:type owl:Class ;
 dsp-repo:DataManagementPlan rdf:type owl:Class ;
     rdfs:comment "A Data Management Plan"@en ;
     rdfs:label "dsp-repo:DataManagementPlan"@en ;
-    rdfs:subClassOf dcat:Dataset ,
+    rdfs:subClassOf schema:Thing ,
                     [ rdf:type owl:Restriction ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                    owl:onProperty dsp-repo:hasARK ] .
+                    owl:onProperty dsp-repo:hasIdentifier ] .
 
 
-# http://ns.dasch.swiss/repository#Distribution
-dsp-repo:Distribution rdf:type owl:Class ;
-    rdfs:comment "Distribution"@en ;
-    rdfs:label "dsp-repo:Distribution"@en ;
-    rdfs:subClassOf dcat:Distribution ,
-                    [ rdf:type owl:Restriction ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                    owl:onProperty dsp-repo:hasARK ] .
   
 ###
