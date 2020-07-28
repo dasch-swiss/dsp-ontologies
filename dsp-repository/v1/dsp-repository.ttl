@@ -118,7 +118,7 @@ dsp-repo:hasFunder rdf:type owl:DatatypeProperty ;
     knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Project ;
-    rdfs:range dsp-repo:Person ;
+    rdfs:range dsp-repo:Person, dsp-repo:Organization ;
     rdfs:comment "Funder"@en ;
     rdfs:label "dsp-repo:hasFunder"@en .
 
@@ -191,6 +191,16 @@ dsp-repo:hasDataManagementPlan rdf:type owl:ObjectProperty ;
     rdfs:comment "Data Management Plan of the project"@en ;
     rdfs:label "dsp-repo:hasDataManagementPlan"@en .  
 
+# http://ns.dasch.swiss/repository#hasPublication
+dsp-repo:hasPublication rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:citation ;
+    knora-base:subjectClassConstraint dsp-repo:Project ;
+    knora-base:objectDatatypeConstraint dsp-repo:hasPublication ;
+    rdfs:domain dsp-repo:Project ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "Publication of the project"@en ;
+    rdfs:label "dsp-repo:hasPublication"@en .  
+### Note: A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
 ###
 
 
@@ -254,15 +264,15 @@ dsp-repo:hasConditionsOfAccess rdf:type owl:DatatypeProperty ;
     rdfs:comment "Conditions of Access"@en ;
     rdfs:label "dsp-repo:hasConditionsOfAccess"@en .
 
-# http://ns.dasch.swiss/repository#hasCitation
-dsp-repo:hasCitation rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf schema:citation ;
+# http://ns.dasch.swiss/repository#hasUsageInfo
+dsp-repo:hasUsageInfo rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:usageInfo ;
     knora-base:subjectClassConstraint dsp-repo:Dataset ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Dataset ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment "Citation"@en ;
-    rdfs:label "dsp-repo:hasCitation"@en .
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Citation of the dataset"@en ;
+    rdfs:label "dsp-repo:hasUsageInfo"@en .
  
 
 # http://ns.dasch.swiss/repository#hasStatus
@@ -453,8 +463,6 @@ dsp-repo:hasOrganizationURL rdf:type owl:ObjectProperty ;
 ###
 
 
-
-
 ###dsp-repo:DataManagementPlan
 ###
 
@@ -511,7 +519,10 @@ dsp-repo:Project rdf:type owl:Class ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
-                    owl:onProperty dsp-repo:hasDataManagementPlan ] .
+                    owl:onProperty dsp-repo:hasDataManagementPlan ] ,
+                    [ rdf:type owl:Restriction ;
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                    owl:onProperty dsp-repo:hasPublication ] .
 
 
 # http://ns.dasch.swiss/repository#Dataset
@@ -541,14 +552,14 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     owl:onProperty dsp-repo:hasConditionsOfAccess ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasCitation ;
+                    owl:onProperty dsp-repo:hasUsageInfo ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasStatus ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasDatePublished ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,  
+                    owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,  
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasLanguage ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
@@ -563,7 +574,7 @@ dsp-repo:Dataset rdf:type owl:Class ;
 dsp-repo:Person rdf:type owl:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
-    rdfs:subClassOf schema:Person ,
+    rdfs:subClassOf schema:Person , prov:Agent ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasQualifiedAttribution ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
@@ -626,7 +637,6 @@ dsp-repo:Grant rdf:type owl:Class ;
                     [ rdf:type owl:Restriction ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ;
                     owl:onProperty schema:url ] .
-
 
 
 # http://ns.dasch.swiss/repository#DataManagementPlan
