@@ -108,7 +108,7 @@ dsp-repo:hasSpatialCoverage rdf:type owl:DatatypeProperty ;
     knora-base:subjectClassConstraint dsp-repo:Project ;
     knora-base:objectDatatypeConstraint xsd:string ;
     rdfs:domain dsp-repo:Project ;
-    rdfs:range schema:Place ;
+    rdfs:range xsd:string ;
     rdfs:comment "Spatial coverage of project"@en ;
     rdfs:label "dsp-repo:hasSpatialCoverage"@en .
 
@@ -316,23 +316,25 @@ dsp-repo:isPartOf rdf:type owl:DatatypeProperty ;
     rdfs:comment "Dataset is part of the project" ;
     rdfs:label "dsp-repo:isPartOf" .
 
-
-
-###
-
-
-### dsp-repo:Person
 # http://ns.dasch.swiss/repository#hasQualifiedAttribution
 dsp-repo:hasQualifiedAttribution rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf prov:qualifiedAttribution ;
-    knora-base:subjectClassConstraint dsp-repo:Person ;
-    knora-base:objectDatatypeConstraint xsd:string ;
-    rdfs:domain dsp-repo:Person ;
+    rdfs:domain dsp-repo:Dataset ;
     rdfs:range prov:Attribution ;
     rdfs:comment "Different roles"@en ;
     rdfs:label "dsp-repo:hasQualifiedAttribution"@en .
 
+### PROV-O Custom Role Property
+# http://ns.dasch.swiss/repository#hasRole
+dsp-repo:hasRole rdf:type owl:DatatypeProperty ;
+    rdfs:domain prov:Attribution ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Different roles of the researcher, tied to Attribution"@en ;
+    rdfs:label "dsp-repo:hasRole"@en .
 
+
+
+### dsp-repo:Person
 # http://ns.dasch.swiss/repository#hasContactPoint
 dsp-repo:hasContactPoint rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf schema:contactPoint ;
@@ -565,7 +567,10 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
                      [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:isPartOf ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] .
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                     [ rdf:type owl:Restriction ;
+                    owl:onProperty dsp-repo:hasQualifiedAttribution ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
 
                         
 
@@ -575,9 +580,6 @@ dsp-repo:Person rdf:type owl:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
     rdfs:subClassOf schema:Person , prov:Agent ,
-                    [ rdf:type owl:Restriction ;
-                    owl:onProperty dsp-repo:hasQualifiedAttribution ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasContactPoint ;
                     owl:maxCardinality "1"^^xsd:nonNegativeInteger ] ,
