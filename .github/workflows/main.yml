@@ -4,13 +4,13 @@ on: [push]
 
 jobs:
   validate:
-    name: Validate Ontologies
+    name: Validate Ontologies and Example Data
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v1
           with:
             fetch-depth: 1
-        - name: install requirements
-          run: sudo apt-get install jena
-        - name: run validate
+        - name: install jena
+          run: make install
+        - name: validate example data
           run: make validate

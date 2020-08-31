@@ -19,7 +19,7 @@
 @prefix schema: <https://schema.org/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unesco6: <http://skos.um.es/unesco6/> .
-@base <http://ns.dasch.swiss/repository#> .
+
 
 # --- Ontology metadata ---
 
