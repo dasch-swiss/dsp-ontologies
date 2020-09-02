@@ -29,31 +29,24 @@
   owl:imports <http://datashapes.org/dash> ;
 .
 
-
-family:Person
-    a rdfs:Class, sh:NodeShape ;
-    rdfs:label "Person" ;
-    rdfs:subClassOf rdfs:Resource ;
-    sh:property [
-        sh:path family:lastName ;
-        sh:name "last name" ;
-        sh:description "A Person's last name (aka family name)." ;
-        sh:datatype xsd:string ;
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-    ] ;
-.
+# http://ns.dasch.swiss/repository#hasIdentifier
+dsp-repo:hasIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:identifier ;
+    knora-base:subjectClassConstraint dsp-repo:Dataset ;
+    knora-base:objectDatatypeConstraint xsd:string ;
+    rdfs:comment "Identifier/ARK"@en ;
+    rdfs:label "dsp-repo:hasIdentifier"@en .
 
 # http://ns.dasch.swiss/repository#DataManagementPlan
 dsp-repo:DataManagementPlan
     a owl:Class, sh:NodeShape ;
     rdfs:label "dsp-repo:DataManagementPlan"@en ;
     rdfs:comment "A Data Management Plan"@en ;
-    rdfs:subClassOf rdfs:Thing ;
+    rdfs:subClassOf schema:Thing ;
     sh:property [
-        sh:path family:lastName ;
-        sh:name "last name" ;
-        sh:description "A Person's last name (aka family name)." ;
+        sh:path dsp-repo:hasIdentifier ;
+        sh:name "identifier" ;
+        sh:description "Identifier/ARK."@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
         sh:minCount 1 ;

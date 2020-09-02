@@ -535,40 +535,52 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasIdentifier ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty schema:sameAs ;
                     owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasAbstract ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasEncodingFormat ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasDocumentation ;
                     owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasLicense ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasConditionsOfAccess ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasUsageInfo ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasStatus ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasDatePublished ;
                     owl:minCardinality "0"^^xsd:nonNegativeInteger ] ,  
+                    
                     [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasLanguage ;
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
-                     [ rdf:type owl:Restriction ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ] ,
+                    
+                    [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:isPartOf ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
-                     [ rdf:type owl:Restriction ;
+                    
+                    [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasQualifiedAttribution ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
 

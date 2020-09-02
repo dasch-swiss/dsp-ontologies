@@ -24,8 +24,8 @@ validate-shape: ## validate shape
 
 .PHONY: validate-example
 validate-example: ## validate example
-	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/example/example-metadata.ttl
-	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/dsp-repository/example/example-metadata.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl
 
 .PHONY: validate
 validate: validate-ontology validate-shape validate-example ## validate all
