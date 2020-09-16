@@ -567,7 +567,7 @@ dsp-repo:Dataset rdf:type owl:Class ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
                      [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:isPartOf ;
-                    owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                    owl:cardinality "1"^^xsd:nonNegativeInteger ] .
                      [ rdf:type owl:Restriction ;
                     owl:onProperty dsp-repo:hasQualifiedAttribution ;
                     owl:minCardinality "1"^^xsd:nonNegativeInteger ] .
