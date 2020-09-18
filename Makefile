@@ -6,9 +6,33 @@ CURRENT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # include vars.mk
 
+.PHONY: install
+install: clean ## install jena tools
+	@mkdir $(CURRENT_DIR)/.tmp
+	cd $(CURRENT_DIR)/.tmp && \
+		wget https://downloads.apache.org/jena/binaries/apache-jena-3.16.0.tar.gz && \
+		tar xzf apache-jena-3.16.0.tar.gz && \
+		ln -s apache-jena-3.16.0 jena
+
+.PHONY: validate-ontology
+validate-ontology: ## validate ontology
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.owl.ttl
+
+.PHONY: validate-shape
+validate-shape: ## validate shape
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl
+
+.PHONY: validate-example
+validate-example: ## validate example
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl
+
 .PHONY: validate
-validate: ## validates all ontologies
-	riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.ttl
+validate: validate-ontology validate-shape validate-example ## validate all
+
+.PHONY: clean
+clean: ## remove temporary artifacts
+	@rm -rf $(CURRENT_DIR)/.tmp || true
 
 .PHONY: help
 help: ## this help

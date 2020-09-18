@@ -55,10 +55,7 @@
 
 <beol-dataset> rdf:type dsp-repo:Dataset .
 <beol-dataset> dsp-repo:hasIdentifier "http://ark.dasch.swiss/ark:/72163/1/0801" . 
-<beol-dataset> dsp-repo:hasAbstract "The Bernoulli-Euler Online (BEOL) project is a research platform for the study of early modern mathematics and science.
-This Beta release integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) IVA/IV into one platform.
-As a next step, Jacob Bernoulli's scientific notebook Meditationes will be also integrated in this platform.
-Currently BEOL is connected to the repositories of The Newton Project and the Briefportal Leibniz initiating the formation of a network of digital editions of the correspondence among the early modern mathematicians." .
+<beol-dataset> dsp-repo:hasAbstract "The Bernoulli-Euler Online (BEOL) project is a research platform for the study of early modern mathematics and science. This Beta release integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) IVA/IV into one platform. As a next step, Jacob Bernoulli's scientific notebook Meditationes will be also integrated in this platform. Currently BEOL is connected to the repositories of The Newton Project and the Briefportal Leibniz initiating the formation of a network of digital editions of the correspondence among the early modern mathematicians." .
 <beol-dataset> dsp-repo:hasEncodingFormat "text" . 
 <beol-dataset> dsp-repo:hasEncodingFormat "image" . 
 <beol-dataset> dsp-repo:hasDocumentation "Work in progress" . 
@@ -141,15 +138,7 @@ Currently BEOL is connected to the repositories of The Newton Project and the Br
 ### MLS ###
 <mls> rdf:type dsp-repo:Project .
 <mls> dsp-repo:hasName "MLS Musiklexikon der Schweiz" .
-<mls> dsp-repo:hasDescription  "Das Musiklexikon der Schweiz will fundierte und zeitgemässe Information über die Musikgeschichte in der Schweiz online unentgeltlich zur Verfügung stellen. Relevante Personen der Schweizer Musikgeschichte, Institutionen und musikbezogene Objekte zu allen Sparten des Musiklebens werden berücksichtigt: Volks- und Popularmusik, Klassik, Musikerziehung oder Festivals.
-                        In einem ersten Schritt ermöglicht das MLS den Zugang zur älteren Lexikographie und vernetzt die Information national und international mit wissenschaftlichen Informationsquellen.
-                        Rechtsfreie Lexika sind im Volltext digitalisiert zugänglich.
-                        Unentgeltlich zugängliche wissenschaftliche Online-Lexika werden verlinkt.
-                        Auf den Inhalt urheberrechtlich geschützter Lexika wird verwiesen, ohne den Text zur Verfügung zu stellen. Die Inhalte werden bei Verfall des Urheberschutzes laufend ergänzt.
-                        Wissenschaftliche Stichwortlisten sind als Platzhalter für neue Artikel berücksichtigt worden.
-                        Die vorhandene Lexikographie beschränkt sich auf Personenartikel, daher erscheinen in dieser Phase nur personenbezogene Inhalte.
-                        Damit kann der Leser die zeitliche Entwicklung musikhistorischen Wissens und den Vorgang der Informationsgewinnung und Verdichtung einfach und intuitiv erleben.
-                        Die nächste Phase soll neue Artikel zu Personen, Objekten und Institutionen hinzufügen." .
+<mls> dsp-repo:hasDescription  "Das Musiklexikon der Schweiz will fundierte und zeitgemässe Information über die Musikgeschichte in der Schweiz online unentgeltlich zur Verfügung stellen. Relevante Personen der Schweizer Musikgeschichte, Institutionen und musikbezogene Objekte zu allen Sparten des Musiklebens werden berücksichtigt: Volks- und Popularmusik, Klassik, Musikerziehung oder Festivals. In einem ersten Schritt ermöglicht das MLS den Zugang zur älteren Lexikographie und vernetzt die Information national und international mit wissenschaftlichen Informationsquellen. Rechtsfreie Lexika sind im Volltext digitalisiert zugänglich. Unentgeltlich zugängliche wissenschaftliche Online-Lexika werden verlinkt. Auf den Inhalt urheberrechtlich geschützter Lexika wird verwiesen, ohne den Text zur Verfügung zu stellen. Die Inhalte werden bei Verfall des Urheberschutzes laufend ergänzt. Wissenschaftliche Stichwortlisten sind als Platzhalter für neue Artikel berücksichtigt worden. Die vorhandene Lexikographie beschränkt sich auf Personenartikel, daher erscheinen in dieser Phase nur personenbezogene Inhalte. Damit kann der Leser die zeitliche Entwicklung musikhistorischen Wissens und den Vorgang der Informationsgewinnung und Verdichtung einfach und intuitiv erleben. Die nächste Phase soll neue Artikel zu Personen, Objekten und Institutionen hinzufügen." .
 <mls> dsp-repo:hasKeywords "Musik" .
 <mls> dsp-repo:hasKeywords "Schweiz" .
 <mls> dsp-repo:hasKeywords "Musikgeschichte" .
@@ -281,8 +270,7 @@ Currently BEOL is connected to the repositories of The Newton Project and the Br
 ### JOSEPH DIETRICH ###
 <dietrich> rdf:type dsp-repo:Project .
 <dietrich> dsp-repo:hasName "Das Kloster-Tagebuch des Einsiedler Pater Joseph Dietrich, 1670-1704, Kommentierte Online-Edition" .
-<dietrich> dsp-repo:hasDescription "Das Einsiedler Klostertagebuch der Jahre 1670-1704 von Pater Joseph Dietrich (1645-1704) gehört mit seinen 18 Bänden und insgesamt 12‘000 Seiten zu den wichtigsten und vielfältigsten Quellen der damaligen Zentral- und Ostschweiz. Die digitale Edition erschliesst den Zugang zur detailreichen Beschreibung des klösterlichen Alltags und zum regionalen und überregionalen Geschehen.
-                                    Die Edition ist an die Abteilung für Wirtschafts-, Sozial- und Umweltgeschichte (WSU) am Historischen Institut der Universität Bern angebunden. Die nun vorliegende Pilot-Version umfasst den Band 6 (ohne Index), der ausgewählt worden war, um die Editionsgrundsätze auf der Basis eines schon gefestigten Tagebuchschreibens zu entwickeln. Die Grundsätze sollen die Erstellung eines diplomatischen und textkritisch kommentierten Transkriptionstextes erlauben, der sowohl mittels Volltextsuche als auch per Schlagwortsuche abfragbar sein wird und somit interdisziplinären Fragestellungen leicht zugänglich ist. Die Interdisziplinarität bedingt aber auch einen lesefreundlichen Text mit einem erhöhten Aufwand an philologischen und sachspezifischen Kommentaren." .
+<dietrich> dsp-repo:hasDescription "Das Einsiedler Klostertagebuch der Jahre 1670-1704 von Pater Joseph Dietrich (1645-1704) gehört mit seinen 18 Bänden und insgesamt 12‘000 Seiten zu den wichtigsten und vielfältigsten Quellen der damaligen Zentral- und Ostschweiz. Die digitale Edition erschliesst den Zugang zur detailreichen Beschreibung des klösterlichen Alltags und zum regionalen und überregionalen Geschehen. Die Edition ist an die Abteilung für Wirtschafts-, Sozial- und Umweltgeschichte (WSU) am Historischen Institut der Universität Bern angebunden. Die nun vorliegende Pilot-Version umfasst den Band 6 (ohne Index), der ausgewählt worden war, um die Editionsgrundsätze auf der Basis eines schon gefestigten Tagebuchschreibens zu entwickeln. Die Grundsätze sollen die Erstellung eines diplomatischen und textkritisch kommentierten Transkriptionstextes erlauben, der sowohl mittels Volltextsuche als auch per Schlagwortsuche abfragbar sein wird und somit interdisziplinären Fragestellungen leicht zugänglich ist. Die Interdisziplinarität bedingt aber auch einen lesefreundlichen Text mit einem erhöhten Aufwand an philologischen und sachspezifischen Kommentaren." .
 <dietrich> dsp-repo:hasKeywords "Kloster" .
 <dietrich> dsp-repo:hasStartDate "01.2015" .
 <dietrich> dsp-repo:hasEndDate "12.2050".
