@@ -45,6 +45,7 @@ dsp-repo:DataManagementPlan
     rdfs:subClassOf schema:Thing ;
     sh:property [
         sh:path dsp-repo:hasIdentifier ;
+        sh:Class dsp-repo:Dataset ;
         sh:name "identifier" ;
         sh:description "Identifier/ARK."@en ;
         sh:datatype xsd:string ;
@@ -55,3 +56,5 @@ dsp-repo:DataManagementPlan
                     [ rdf:type owl:Restriction ;
                     owl:cardinality "1"^^xsd:nonNegativeInteger ;
                     owl:onProperty dsp-repo:hasIdentifier ] .
+
+
