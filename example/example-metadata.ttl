@@ -44,7 +44,7 @@
 <beol> dsp-repo:hasSpatialCoverage "Switzerland" .
 <beol> dsp-repo:hasSpatialCoverage "Germany" .
 <beol> dsp-repo:hasSpatialCoverage "Italy" .
-<beol> dsp-repo:hasSpatialCoverage "England" .
+<beol> dsp-repo:hasSpatialCoverage "England"^^xsd:string .
 <beol> dsp-repo:hasFunder "Schweizerischer Nationalfonds (SNSF)" . 
 <beol> dsp-repo:hasGrant <beol-grant> .
 <beol> dsp-repo:hasURL "https://beol.dasch.swiss/" . 
@@ -165,6 +165,8 @@
 <mls> dsp-repo:hasAlternateName "mls" .
 
 <mls-dataset> rdf:type dsp-repo:Dataset .
+<mls-dataset> dsp-repo:hasIdentifier "fakemlsARKstring"^^xsd:string .
+<mls-dataset> dsp-repo:hasDMPIdentifier "fakemlsARKstring"^^xsd:string .
 <mls-dataset> dsp-repo:hasEncodingFormat "text" .
 <mls-dataset> dsp-repo:hasDocumentation "no" .
 <mls-dataset> dsp-repo:hasConditionsOfAccess "Open Access" .
@@ -224,7 +226,7 @@
 <parzival> dsp-repo:hasPublication "yes" .
 
 <parzival-dataset> rdf:type dsp-repo:Dataset .
-<parzival-dataset> dsp-repo:hasIdentifier "fakeARKstring" .
+<parzival-dataset> dsp-repo:hasIdentifier "fakeparzivalARKstring"^^xsd:string .
 <parzival-dataset> dsp-repo:hasEncodingFormat "image" .
 <parzival-dataset> dsp-repo:hasEncodingFormat "text" .
 <parzival-dataset> dsp-repo:hasDocumentation "yes" .
@@ -289,7 +291,7 @@
 <dietrich> dsp-repo:hasPublication "yes" .
 
 <dietrich-dataset> rdf:type dsp-repo:Dataset .
-<dietrich-dataset> dsp-repo:hasIdentifier "fakeARKstring".
+<dietrich-dataset> dsp-repo:hasIdentifier "fakedietrichARKstring"^^xsd:string .
 <dietrich-dataset> dsp-repo:hasEncodingFormat "image" .
 <dietrich-dataset> dsp-repo:hasEncodingFormat "text" .
 <dietrich-dataset> dsp-repo:hasDocumentation "yes" .
