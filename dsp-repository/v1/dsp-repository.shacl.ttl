@@ -445,7 +445,7 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasQualifiedAttribution ;
         sh:name "Qualified attribution" ;
-        sh:description "Person/Organization involved in the creation of the dataset"@en ;
+        sh:description "Persons/Organization involved in the creation of the dataset"@en ;
         sh:class prov:Attribution ;
         sh:minCount 1 ;
     ] ;
@@ -465,9 +465,203 @@ dsp-repo:DatasetShape
     ] .
 
 
+### --- Class definition of dsp-repo:Person --- 
+# http://ns.dasch.swiss/repository#Person
+dsp-repo:Dataset 
+    a rdfs:Class ;
+    rdfs:comment "A person"@en ;
+    rdfs:label "dsp-repo:Person"@en ;
+    rdfs:subClassOf schema:Person , prov:Agent . 
+
+### --- Properties definition of dsp-repo:Person ---
+# http://ns.dasch.swiss/repository#hasContactPoint
+#dsp-repo:hasContactPoint
+  #  a rdf:Property ;
+   # rdfs:subPropertyOf schema:contactPoint .
+
+# http://ns.dasch.swiss/repository#hasGivenName
+dsp-repo:hasGivenName
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:givenName .
+
+# http://ns.dasch.swiss/repository#hasFamilyName
+dsp-repo:hasFamilyName
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:familyName .
+
+# http://ns.dasch.swiss/repository#hasEmail
+dsp-repo:hasEmail
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:email .
+
+# http://ns.dasch.swiss/repository#hasAddress
+dsp-repo:hasAddress
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:address .
+
+# http://ns.dasch.swiss/repository#isMemberOf
+dsp-repo:isMemberOf
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:memberOf .
+
+# http://ns.dasch.swiss/repository#hasJobTitle
+dsp-repo:hasJobTitle
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:jobTitle .
+
+# http://ns.dasch.swiss/repository#hasIdentifier
+dsp-repo:hasIdentifier
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:identifier .
+
+# http://ns.dasch.swiss/repository#hasRole
+dsp-repo:hasRole
+    a rdf:Property ;
+    rdfs:subPropertyOf prov:hadRole .
+
+### --- Shape of dsp-repo:Person ---
+dsp-repo:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass dsp-repo:Person ;
+    sh:closed "true"^^xsd:boolean ;
+    #sh:property [
+       # sh:path dsp-repo:hasContactPoint ;
+      #  sh:name "Contact Point" ;
+       # sh:description "Contact information"@en ;
+       # sh:datatype xsd:string ;
+       # sh:maxCount 1 ;
+    #] ;
+    sh:property [
+        sh:path dsp-repo:hasGivenName ;
+        sh:name "Given name" ;
+        sh:description "Given name"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasFamilyName ;
+        sh:name "Family name" ;
+        sh:description "Family name"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasEmail ;
+        sh:name "E-mail" ;
+        sh:description "E-mail address"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasAddress ;
+        sh:name "Address" ;
+        sh:description "Postal address"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:isMemberOf ;
+        sh:name "Member of" ;
+        sh:description "Affiliation"@en ;
+        sh:class dsp-repo:Organization ;
+        sh:minCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasJobTitle ;
+        sh:name "Job title" ;
+        sh:description "Position / Job title"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasIdentifier ;
+        sh:name "Identifier" ;
+        sh:description "Identifier"@en ;
+        sh:datatype xsd:string ;
+    ] ;
+     sh:property [
+        sh:path dsp-repo:hasRole ;
+        sh:name "Role" ;
+        sh:description "Role within the project/dataset"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] .
 
 
+### --- Class definition of dsp-repo:Organization --- 
+# http://ns.dasch.swiss/repository#Organization
+dsp-repo:Organization 
+    a rdfs:Class ;
+    rdfs:comment "An organization"@en ;
+    rdfs:label "dsp-repo:Organization"@en ;
+    rdfs:subClassOf schema:Organization , prov:Agent . 
 
+### --- Properties definition of dsp-repo:Organization ---
+# http://ns.dasch.swiss/repository#hasOrganizationIdentifier
+dsp-repo:hasOrganizationIdentifier
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:identifier .
+
+# http://ns.dasch.swiss/repository#hasOrganizationName
+dsp-repo:hasOrganizationName
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:legalName .
+
+# http://ns.dasch.swiss/repository#hasOrganizationEmail
+dsp-repo:hasOrganizationEmail
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:email .
+
+# http://ns.dasch.swiss/repository#hasOrganizationAddress
+dsp-repo:hasOrganizationAddress
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:address .
+
+# http://ns.dasch.swiss/repository#hasOrganizationURL
+#dsp-repo:hasOrganizationURL
+ #   a rdf:Property ;
+   # rdfs:subPropertyOf schema:url .
+
+### --- Shape of dsp-repo:Organization ---
+dsp-repo:OrganizationShape
+    a sh:NodeShape ;
+    sh:targetClass dsp-repo:Organization ;
+    sh:closed "true"^^xsd:boolean ;
+    sh:property [
+        sh:path dsp-repo:hasOrganizationIdentifier ;
+        sh:name "Identifier" ;
+        sh:description "Identifier"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path dsp-repo:hasOrganizationName ;
+        sh:name "Legal name" ;
+        sh:description "Legal name"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path dsp-repo:hasOrganizationEmail ;
+        sh:name "Organization e-mail" ;
+        sh:description "E-mail address"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path dsp-repo:hasOrganizationAddress ;
+        sh:name "Address" ;
+        sh:description "Postal address"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] .
+    #sh:property [
+      #  sh:path dsp-repo:hasOrganizationURL ;
+      #  sh:name "URL" ;
+       # sh:description "URL"@en ;
+       # sh:datatype xsd:string ;
+       # sh:maxCount 1 ;
+    #] .
 
 
 ####### Example
