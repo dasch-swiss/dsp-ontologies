@@ -35,76 +35,140 @@
 <beol> dsp-repo:hasKeywords "Newton" .
 <beol> dsp-repo:hasKeywords "Leibniz" .
 <beol> dsp-repo:hasDiscipline "http://skos.um.es/unesco6/12" .
-<beol> dsp-repo:hasStartDate "2016-07-01" . 
-<beol> dsp-repo:hasEndDate "2020-01-01" . 
+<beol> dsp-repo:hasStartDate "2016-07-26T21:32:52"^^xsd:dateTime . 
+<beol> dsp-repo:hasEndDate "2020-01-26T21:32:52"^^xsd:dateTime . 
 <beol> dsp-repo:hasTemporalCoverage "http://chronontology.dainst.org/period/Ef9SyESSafJ1" .
 <beol> dsp-repo:hasTemporalCoverage "http://chronontology.dainst.org/period/6d870DTmD2FA" . 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/6255148/europe.html" ;
-       ] .
-
-<beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/2017370/russian-federation.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/6255148/europe.html" ; 
+        ]
     ].
 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/3017382/republic-of-france.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2017370/russian-federation.html" ; 
+        ]
     ].
 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/2658434/switzerland.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/3017382/republic-of-france.html" ; 
+        ]
     ].
 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/2921044/federal-republic-of-germany.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2658434/switzerland.html" ; 
+        ]
     ].
 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/3175395/italian-republic.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2921044/federal-republic-of-germany.html" ; 
+        ]
     ].
 
 
 <beol> dsp-repo:hasSpatialCoverage [
-        a schema:URL ;
-        schema:url "https://www.geonames.org/6269131/england.html" ;
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/3175395/italian-republic.html" ; 
+        ]
     ].
 
-<beol> dsp-repo:hasFunder "Schweizerischer Nationalfonds (SNSF)" . 
+<beol> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/6269131/england.html" ; 
+        ]
+    ].
+
+
+#<dietrich> dsp-repo:hasDiscipline [
+  #  a schema:URL ;
+  #  schema:propertyID [
+  #      a schema:PropertyValue ;
+  #      schema:propertyID "SKOS UNESCO Nomenclature" ;
+  #  ] .
+   # schema:url "http://skos.um.es/unesco6/11" ;
+#] .
+
+<beol> dsp-repo:hasFunder <beol-funder> . 
 <beol> dsp-repo:hasGrant <beol-grant> .
 
-<beol> dsp-repo:hasURL [
-        a schema:URL ;
-        schema:url "https://beol.dasch.swiss/" ;
-    ].
+<beol> dsp-repo:hasURL "https://beol.dasch.swiss/" .
 
-<beol> dsp-repo:hasDateCreated "2017-09-01" . 
-<beol> dsp-repo:hasDateModified "2020-04-01" . 
 <beol> dsp-repo:hasShortcode "0801" . 
 <beol> dsp-repo:hasAlternateName "beol" .
-<beol> dsp-repo:hasDataManagementPlan "Yes" .
-<beol> dsp-repo:hasPublication "https://beol.dasch.swiss/" .
+<beol> dsp-repo:hasDataManagementPlan <beol-DMP> .
+<beol> dsp-repo:hasContactPoint "https://beol.dasch.swiss/" .
 
 
 <beol-dataset> rdf:type dsp-repo:Dataset .
 <beol-dataset> dsp-repo:hasIdentifier "http://ark.dasch.swiss/ark:/72163/1/0801" . 
+<beol-dataset> schema:sameAs "https://beol.dasch.swiss/" .
+<beol-dataset> dsp-repo:hasTitle "Bernoulli-Euler Online" .
+<beol-dataset> dsp-repo:hasAlternativeTitle "BEOL" .
 <beol-dataset> dsp-repo:hasAbstract "The Bernoulli-Euler Online (BEOL) project is a research platform for the study of early modern mathematics and science. This Beta release integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) IVA/IV into one platform. As a next step, Jacob Bernoulli's scientific notebook Meditationes will be also integrated in this platform. Currently BEOL is connected to the repositories of The Newton Project and the Briefportal Leibniz initiating the formation of a network of digital editions of the correspondence among the early modern mathematicians." .
 <beol-dataset> dsp-repo:hasEncodingFormat "text" . 
 <beol-dataset> dsp-repo:hasEncodingFormat "image" . 
-<beol-dataset> dsp-repo:hasDocumentation "Work in progress" . 
+<beol-dataset> dsp-repo:hasDocumentation "Work in progress" .
+<beol-dataset> dsp-repo:hasLicense "CC BY Test" .
 <beol-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
-<beol-dataset> dsp-repo:hasUsageInfo "Bernoulli-Euler Online (BEOL), 2019, https://beol.dasch.swiss" .
-<beol-dataset> dsp-repo:hasStatus "data will be added continuously" . 
-<beol-dataset> dsp-repo:hasDatePublished "09.2019" . 
+<beol-dataset> dsp-repo:hasHowToCite "Bernoulli-Euler Online (BEOL), 2019, https://beol.dasch.swiss" .
+<beol-dataset> dsp-repo:hasStatus "ongoing" . 
+<beol-dataset> dsp-repo:hasDatePublished "2019-09-26T21:32:52"^^xsd:dateTime . 
 <beol-dataset> dsp-repo:hasLanguage "DE" .
 <beol-dataset> dsp-repo:hasLanguage "EN" .
 <beol-dataset> dsp-repo:hasLanguage "FR" .
 <beol-dataset> dsp-repo:isPartOf <beol> .
+<beol-dataset> dsp-repo:hasDateCreated "2017-09-26T21:32:52"^^xsd:dateTime .  
+<beol-dataset> dsp-repo:hasDateModified "2020-04-26T21:32:52"^^xsd:dateTime .  
+<beol-dataset> dsp-repo:hasDistribution [
+    a schema:DataDownload ;
+    schema:url "https://beol.dasch.swiss" ;
+].
 
 <beol-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
@@ -138,39 +202,72 @@
 
 <beol-mattmüller> rdf:type dsp-repo:Person . 
 <beol-mattmüller> dsp-repo:hasGivenName "Martin" . 
-<beol-mattmüller> dsp-repo:hasFamilyname "Mattmüller" . 
+<beol-mattmüller> dsp-repo:hasFamilyName "Mattmüller" . 
+<beol-mattmüller> dsp-repo:hasEmail "martin.mattmüller@test.ch" . 
+<beol-mattmüller> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
+<beol-mattmüller> dsp-repo:isMemberOf <beol-dasch> .
+<beol-mattmüller> dsp-repo:hasJobTitle "Dr." .
+<beol-mattmüller> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-mattmüller> dsp-repo:hasRole "Editor" .
 
 <beol-nagel> rdf:type dsp-repo:Person . 
-<beol-nagel> dsp-repo:hasGivenName "Fritz"^^xsd:string . 
-<beol-nagel> dsp-repo:hasFamilyname "Nagel"^^xsd:string . 
-<beol-nagel> dsp-repo:hasJobTitle "Dr."^^xsd:string . 
+<beol-nagel> dsp-repo:hasGivenName "Fritz" . 
+<beol-nagel> dsp-repo:hasFamilyName "Nagel" . 
+<beol-nagel> dsp-repo:hasEmail "fritz.nagel@test.ch" . 
+<beol-nagel> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
+<beol-nagel> dsp-repo:isMemberOf <beol-dasch> .
+<beol-nagel> dsp-repo:hasJobTitle "Dr." .
+<beol-nagel> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-nagel> dsp-repo:hasRole "Editor" .
 
 <beol-gehr> rdf:type dsp-repo:Person . 
 <beol-gehr> dsp-repo:hasGivenName "Sulamith" . 
-<beol-gehr> dsp-repo:hasFamilyname "Gehr" . 
+<beol-gehr> dsp-repo:hasFamilyName "Gehr" . 
+<beol-gehr> dsp-repo:hasEmail "sulamith.gehr@test.ch" . 
+<beol-gehr> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
+<beol-gehr> dsp-repo:isMemberOf <beol-dasch> .
+<beol-gehr> dsp-repo:hasJobTitle "Dr." .
+<beol-gehr> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-gehr> dsp-repo:hasRole "Editor" .
 
 <beol-schweizer> rdf:type dsp-repo:Person . 
 <beol-schweizer> dsp-repo:hasGivenName "Tobias" . 
-<beol-schweizer> dsp-repo:hasFamilyname "Schweizer" . 
-<beol-schweizer> dsp-repo:isMemberOf <beol-dasch> . 
-<beol-schweizer> dsp-repo:hasJobTitle "Dr." . 
+<beol-schweizer> dsp-repo:hasFamilyName "Schweizer" . 
+<beol-schweizer> dsp-repo:hasEmail "tobias.schweizer@unibas.ch" . 
+<beol-schweizer> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
+<beol-schweizer> dsp-repo:isMemberOf <beol-dasch> .
+<beol-schweizer> dsp-repo:hasJobTitle "Dr." .
+<beol-schweizer> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-schweizer> dsp-repo:hasRole "Contributor" .
 
 <beol-alassi> rdf:type dsp-repo:Person . 
 <beol-alassi> dsp-repo:hasGivenName "Sepideh" . 
-<beol-alassi> dsp-repo:hasFamilyname "Alassi" . 
-<beol-alassi> dsp-repo:hasEmail "sepideh.alassi@dasch.swiss" . 
-<beol-alassi> dsp-repo:isMemberOf <beol-dasch> . 
-<beol-alassi> dsp-repo:hasJobTitle "Dr. des." . 
+<beol-alassi> dsp-repo:hasFamilyName "Alassi" . 
+<beol-alassi> dsp-repo:hasEmail "sepideh.alassi@dasch.swiss" .  
+<beol-alassi> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
+<beol-alassi> dsp-repo:isMemberOf <beol-dasch> .
+<beol-alassi> dsp-repo:hasJobTitle "Dr. des." .
+<beol-alassi> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-alassi> dsp-repo:hasRole "Contributor" . 
 
 <beol-dasch> rdf:type dsp-repo:Organization . 
-<beol-dasch> dsp-repo:hasOrganizationName "DaSCH" . 
+<beol-dasch> dsp-repo:hasOrganizationIdentifier "DaSCH" .
+<beol-dasch> dsp-repo:hasOrganizationName "DaSCH" .
+<beol-dasch> dsp-repo:hasOrganizationEmail "info@dasch.swiss" . 
 <beol-dasch> dsp-repo:hasOrganizationAddress "Gewerbestrasse 24, 4123 Allschwil" .
 <beol-dasch> dsp-repo:hasOrganizationURL "https://dasch.swiss" .
 
 <beol-grant> rdf:type dsp-repo:Grant . 
-<beol-grant> schema:name "Prof. Lukas Rosenthaler, Prof. Helmut Harbrecht" .
-<beol-grant> schema:identifier "166072" .
-<beol-grant> schema:url "http://p3.snf.ch/project-166072" .
+<beol-grant> dsp-repo:hasName "Prof. Lukas Rosenthaler, Prof. Helmut Harbrecht" .
+<beol-grant> dsp-repo:hasGrantURL "http://p3.snf.ch/project-166072" .
+
+<beol-DMP> rdf:type dsp-repo:DataManagementPlan .
+<beol-DMP> dsp-repo:hasURL "https://snf.ch" .
+<beol-DMP> dsp-repo:hasDescription "Yes" .
+
+<beol-funder> rdf:type dsp-repo:Organization .
+<beol-funder> dsp-repo:hasOrganizationName "Schweizerischer Nationalfonds (SNSF)" .
+#<beol-funder> dsp-repo:hasGaga "gaga" .
 
 ### Examples
 #<dietrich> dsp-repo:hasDiscipline [

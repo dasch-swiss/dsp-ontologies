@@ -26,8 +26,7 @@
 
 <http://ns.dasch.swiss/repository>
   rdf:type owl:Ontology ;
-  owl:imports <http://datashapes.org/dash> ;
-.
+  owl:imports <http://datashapes.org/dash> .
 
 ### --- Class definition of dsp-repo:Project --- 
 # http://ns.dasch.swiss/repository#Project
@@ -118,7 +117,6 @@ dsp-repo:hasContactPoint
 dsp-repo:ProjectShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Project ;
-    sh:closed "true"^^xsd:boolean ;
     sh:property [
         sh:path dsp-repo:hasName ;
         sh:name "Name" ;
@@ -146,7 +144,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasDiscipline ;
         sh:name "Discipline" ;
         sh:description "Discipline and research fields from UNESCO nomenclature: https://skos.um.es/unesco6/?l=en"@en ;
-        sh:datatype sh:IRI ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -167,14 +165,13 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasTemporalCoverage ;
         sh:name "Temporal coverage" ;
         sh:description "Temporal coverage of the project from http://perio.do/en/ or https://chronontology.dainst.org/"@en ;
-        sh:datatype sh:IRI ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasSpatialCoverage ;
         sh:name "Spatial coverage" ;
         sh:description "Spatial coverage of the project from Geonames URL: https://www.geonames.org/"@en ;
         sh:class schema:Place ;
-        sh:datatype sh:IRI ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasFunder ;
@@ -221,7 +218,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasPublication ;
         sh:name "Publication" ;
         sh:description "Publications resulted during the lifetime of the project"@en ;
-        sh:datatype sh:IRI ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasContactPoint ;
@@ -229,7 +226,9 @@ dsp-repo:ProjectShape
         sh:description "Contact information"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-    ] .
+    ] ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
 
 ### --- Class definition of dsp-repo:Dataset --- 
 # http://ns.dasch.swiss/repository#Dataset
@@ -331,7 +330,6 @@ dsp-repo:hasDistribution
 dsp-repo:DatasetShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Dataset ;
-    sh:closed "true"^^xsd:boolean ;
     sh:property [
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
@@ -417,7 +415,7 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasDatePublished ;
         sh:name "Date published" ;
         sh:description "Date of publication"@en ;
-        sh:datatype xsd:string ;
+        sh:datatype xsd:dateTime  ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -446,14 +444,14 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasDateCreated ;
         sh:name "Date created" ;
         sh:description "Creation date of the dataset"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:dateTime   ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasDateModified ;
         sh:name "Date modified" ;
         sh:description "Modification date of the dataset"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:dateTime   ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -462,7 +460,9 @@ dsp-repo:DatasetShape
         sh:description "A downloadable form of this dataset, at a specific location, in a specific format"@en ;
         sh:class schema:DataDownload ;
         sh:maxCount 1 ;
-    ] .
+    ] ;  
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
 
 ### --- Class definition of dsp-repo:Person --- 
 # http://ns.dasch.swiss/repository#Person
@@ -517,7 +517,6 @@ dsp-repo:hasRole
 dsp-repo:PersonShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Person ;
-    sh:closed "true"^^xsd:boolean ;
     sh:property [
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
@@ -564,7 +563,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
         sh:description "Identifier"@en ;
-        sh:datatype sh:IRI ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasRole ;
@@ -572,7 +571,9 @@ dsp-repo:PersonShape
         sh:description "Role within the project/dataset"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-    ] .
+    ] ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
 
 
 ### --- Class definition of dsp-repo:Organization --- 
@@ -609,16 +610,19 @@ dsp-repo:hasOrganizationURL
     a rdf:Property ;
     rdfs:subPropertyOf schema:url .
 
+# http://ns.dasch.swiss/repository#hasGaga
+# dsp-repo:hasGaga
+#     a rdf:Property .
+
 ### --- Shape of dsp-repo:Organization ---
 dsp-repo:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Organization ;
-    sh:closed "true"^^xsd:boolean ;
     sh:property [
         sh:path dsp-repo:hasOrganizationIdentifier ;
         sh:name "Identifier" ;
         sh:description "Identifier from https://www.grid.ac/"@en ;
-        sh:datatype sh:IRI ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -648,7 +652,9 @@ dsp-repo:OrganizationShape
         sh:description "URL"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-    ] .
+    ] ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
 
 ### --- Class definition of dsp-repo:Grant --- 
 # http://ns.dasch.swiss/repository#Grant
@@ -673,7 +679,6 @@ dsp-repo:hasGrantURL
 dsp-repo:GrantShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Grant ;
-    sh:closed "true"^^xsd:boolean ;
     sh:property [
         sh:path dsp-repo:hasName ;
         sh:name "Name" ;
@@ -687,7 +692,9 @@ dsp-repo:GrantShape
         sh:description "URL of the grant"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-    ] .
+    ] ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
 
 ### --- Class definition of dsp-repo:DataManagementPlan --- 
 # http://ns.dasch.swiss/repository#DataManagementPlan
@@ -725,4 +732,6 @@ dsp-repo:DataManagementPlanShape
         sh:description "Data Management Plan available [Yes/No]"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-    ] .
+    ] ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .
