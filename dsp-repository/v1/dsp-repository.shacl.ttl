@@ -388,7 +388,8 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasLicense ;
         sh:name "License" ;
         sh:description "The license terms of the dataset"@en ;
-        sh:datatype xsd:string ; ##blanknode? link and description needed
+        # sh:datatype xsd:string ; ##blanknode? link and description needed
+        # sh:datatype schema:CreativeWork ;  FIXME: this clearly doesn't do the trick.
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -567,7 +568,11 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
         sh:description "Identifier"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ; ## add Orcid, GND, ISNI, VIAF, NACO
+        sh:or ( [ sh:datatype xsd:string ] 
+                [ sh:nodeKind sh:IRI ] 
+                [ sh:class schema:PropertyValue ] ) ; # TODO: does that something?
+                # [ sh:nodeKind sh:BlankNode ] ) ; # TODO: no idea, whether or not that's a good idea. probably, that just allows everything
+                ## add Orcid, GND, ISNI, VIAF, NACO
     ] ;
      sh:property [
         sh:path dsp-repo:hasRole ;

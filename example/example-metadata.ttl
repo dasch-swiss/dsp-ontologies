@@ -163,7 +163,19 @@
 <beol-dataset> dsp-repo:hasEncodingFormat "text" . 
 <beol-dataset> dsp-repo:hasEncodingFormat "image" . 
 <beol-dataset> dsp-repo:hasDocumentation "Work in progress" .
-<beol-dataset> dsp-repo:hasLicense "CC BY Test" .
+<beol-dataset> dsp-repo:hasLicense [
+        a schema:CreativeWork ;
+        schema:url "https://creativecommons.org/licenses/by/3.0" ;
+        schema:name "CC BY 3.0" ;
+        schema:description "All transcriptions are published under CC BY 3.0 license."
+    ] .
+<beol-dataset> dsp-repo:hasLicense [
+        a schema:CreativeWork ;
+        schema:url "https://creativecommons.org/publicdomain/zero/1.0" ;
+        schema:name "CC" ;
+        schema:description "All images are public domain." ;
+        schema:obviouselyInvalid "can't be"  # FIXME: this should not be valid! How can we ensure this doesn't validate?
+    ] .
 <beol-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
 <beol-dataset> dsp-repo:hasHowToCite "Bernoulli-Euler Online (BEOL), 2019, https://beol.dasch.swiss" .
 <beol-dataset> dsp-repo:hasStatus "ongoing" . 
@@ -216,7 +228,22 @@
 <beol-mattmüller> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <beol-mattmüller> dsp-repo:isMemberOf <beol-dasch> .
 <beol-mattmüller> dsp-repo:hasJobTitle "Dr." .
-<beol-mattmüller> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+# <beol-mattmüller> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<beol-mattmüller> dsp-repo:hasIdentifier [
+        a schema:PropertyValue ;
+        schema:name "ORCID" ;
+        schema:identifier "https://orcid.org/0000-0000-0000-000X"
+    ] .
+<beol-mattmüller> dsp-repo:hasIdentifier [
+        a schema:PropertyValue ;
+        schema:name "VIAF" ;
+        schema:identifier "69100561" ;
+        schema:url "https://www.viaf.org/"
+    ] .
+<beol-mattmüller> dsp-repo:hasIdentifier [
+        a schema:PropertyValue ;
+        schema:nanannananana "blah"  # TODO: this, again, should not be valid
+    ] .
 <beol-mattmüller> dsp-repo:hasRole "Editor" .
 
 <beol-nagel> rdf:type dsp-repo:Person . 
