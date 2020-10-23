@@ -143,7 +143,7 @@ dsp-repo:ProjectShape
     sh:property [
         sh:path dsp-repo:hasDiscipline ;
         sh:name "Discipline" ;
-        sh:description "Discipline and research fields from UNESCO nomenclature: https://skos.um.es/unesco6/?l=en"@en ;
+        sh:description "Discipline and research fields from UNESCO nomenclature: https://skos.um.es/unesco6/?l=en or from http://www.snf.ch/SiteCollectionDocuments/allg_disziplinenliste.pdf"@en ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         sh:minCount 1 ;
     ] ;
@@ -153,6 +153,7 @@ dsp-repo:ProjectShape
         sh:description "Start date of the project"@en ;
         sh:datatype xsd:dateTime ;
         sh:maxCount 1 ;
+        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasEndDate ;
@@ -166,18 +167,20 @@ dsp-repo:ProjectShape
         sh:name "Temporal coverage" ;
         sh:description "Temporal coverage of the project from http://perio.do/en/ or https://chronontology.dainst.org/"@en ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasSpatialCoverage ;
         sh:name "Spatial coverage" ;
-        sh:description "Spatial coverage of the project from Geonames URL: https://www.geonames.org/"@en ;
+        sh:description "Spatial coverage of the project from Geonames URL: https://www.geonames.org/ and or from Pleiades URL: https://pleiades.stoa.org/places"@en ; ## +pleiades??
         sh:class schema:Place ;
+        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasFunder ;
         sh:name "Funder" ;
         sh:description "Funding person or institution of the project"@en ;
-        sh:or ( [ sh:class dsp-repo:Person ] [ sh:class dsp-repo:Organization ] ) ;
+        sh:or( [ sh:class dsp-repo:Person ] [ sh:class dsp-repo:Organization ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -191,7 +194,8 @@ dsp-repo:ProjectShape
         sh:name "URL" ;
         sh:description "Landing page or Website of the project. We recommend DSP Landing Page"@en ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
+        sh:maxCount 2 ;
+        sh:minCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasShortcode ;
@@ -224,7 +228,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasContactPoint ;
         sh:name "Contact point" ;
         sh:description "Contact information"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:ContactPoint ;
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;
@@ -384,7 +388,7 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasLicense ;
         sh:name "License" ;
         sh:description "The license terms of the dataset"@en ;
-        sh:datatype xsd:string ;
+        sh:datatype xsd:string ; ##blanknode? link and description needed
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -536,7 +540,7 @@ dsp-repo:PersonShape
         sh:name "E-mail" ;
         sh:description "E-mail address"@en ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
+        sh:maxCount 2 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasAddress ;
@@ -563,7 +567,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
         sh:description "Identifier"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ; ## add Orcid, GND, ISNI, VIAF, NACO
     ] ;
      sh:property [
         sh:path dsp-repo:hasRole ;
@@ -675,6 +679,15 @@ dsp-repo:hasGrantURL
     a rdf:Property ;
     rdfs:subPropertyOf schema:url .
 
+# http://ns.dasch.swiss/repository#hasGrantNumber
+dsp-repo:hasGrantNumber
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasFunder
+dsp-repo:hasFunder
+    a rdf:Property ;
+     rdfs:subPropertyOf schema:funder .
+
 ### --- Shape of dsp-repo:Grant ---
 dsp-repo:GrantShape
     a sh:NodeShape ;
@@ -692,7 +705,21 @@ dsp-repo:GrantShape
         sh:description "URL of the grant"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-    ] ;
+    ] ; 
+     sh:property [
+        sh:path dsp-repo:hasGrantNumber ;
+        sh:name "Number" ;
+        sh:description "Number of the grant"@en ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+    ] ; 
+     sh:property [
+        sh:path dsp-repo:hasFunder ;
+        sh:name "Funder" ;
+        sh:description "Funder of the grant"@en ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:maxCount 1 ;
+    ] ; 
     sh:closed true ;
 	sh:ignoredProperties ( rdf:type ) .
 

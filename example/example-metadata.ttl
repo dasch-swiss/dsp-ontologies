@@ -1,4 +1,4 @@
-# Metadata BEOL, MLS, Parzival and Dietrich
+# Metadata BEOL
 #
 
 @prefix dsp-repo: <http://ns.dasch.swiss/repository#> .
@@ -125,14 +125,14 @@
     ].
 
 
-#<dietrich> dsp-repo:hasDiscipline [
-  #  a schema:URL ;
-  #  schema:propertyID [
-  #      a schema:PropertyValue ;
-  #      schema:propertyID "SKOS UNESCO Nomenclature" ;
-  #  ] .
-   # schema:url "http://skos.um.es/unesco6/11" ;
-#] .
+# <dietrich> dsp-repo:hasDiscipline [
+#    a schema:URL ;
+#    schema:propertyID [
+#        a schema:PropertyValue ;
+#        schema:propertyID "SKOS UNESCO Nomenclature" ;
+#    ] .
+#    schema:url "http://skos.um.es/unesco6/11" ;
+# ] .
 
 <beol> dsp-repo:hasFunder <beol-funder> . 
 <beol> dsp-repo:hasGrant <beol-grant> .
@@ -142,8 +142,17 @@
 <beol> dsp-repo:hasShortcode "0801" . 
 <beol> dsp-repo:hasAlternateName "beol" .
 <beol> dsp-repo:hasDataManagementPlan <beol-DMP> .
-<beol> dsp-repo:hasContactPoint "https://beol.dasch.swiss/" .
-
+<beol> dsp-repo:hasContactPoint  [
+        a schema:ContactPoint ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Contact Point" ;
+            ] ;
+            schema:url "https://beol.dasch.swiss/" ; 
+        ]
+    ].
 
 <beol-dataset> rdf:type dsp-repo:Dataset .
 <beol-dataset> dsp-repo:hasIdentifier "http://ark.dasch.swiss/ark:/72163/1/0801" . 
@@ -260,6 +269,8 @@
 <beol-grant> rdf:type dsp-repo:Grant . 
 <beol-grant> dsp-repo:hasName "Prof. Lukas Rosenthaler, Prof. Helmut Harbrecht" .
 <beol-grant> dsp-repo:hasGrantURL "http://p3.snf.ch/project-166072" .
+<beol-grant> dsp-repo:hasGrantNumber "0123456789" .
+<beol-grant> dsp-repo:hasFunder <beol-funder> .
 
 <beol-DMP> rdf:type dsp-repo:DataManagementPlan .
 <beol-DMP> dsp-repo:hasURL "https://snf.ch" .
