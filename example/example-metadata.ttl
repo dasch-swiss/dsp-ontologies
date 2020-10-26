@@ -224,11 +224,11 @@
 <test-weiteretestperson> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <test-weiteretestperson> dsp-repo:isMemberOf <test-dasch> .
 <test-weiteretestperson> dsp-repo:hasJobTitle "Dr." .
-# <test-weiteretestperson> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<test-weiteretestperson> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-1825-0097" .
 <test-weiteretestperson> dsp-repo:hasIdentifier [
         a schema:PropertyValue ;
         schema:name "ORCID" ;
-        schema:identifier "https://orcid.org/0000-0000-0000-000X"
+        schema:identifier "https://orcid.org/0000-0002-1825-0097"
     ] .
 <test-weiteretestperson> dsp-repo:hasIdentifier [
         a schema:PropertyValue ;
@@ -249,7 +249,7 @@
 <test-person> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <test-person> dsp-repo:isMemberOf <test-dasch> .
 <test-person> dsp-repo:hasJobTitle "Dr. des." .
-<test-person> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<test-person> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-1825-0097" .
 <test-person> dsp-repo:hasRole "Editor" .
 
 <test-persona> rdf:type dsp-repo:Person . 
@@ -259,7 +259,7 @@
 <test-persona> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <test-persona> dsp-repo:isMemberOf <test-dasch> .
 <test-persona> dsp-repo:hasJobTitle "Prof." .
-<test-persona> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<test-persona> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-1825-0097" .
 <test-persona> dsp-repo:hasRole "Editor" .
 
 <test-testperson> rdf:type dsp-repo:Person . 
@@ -269,7 +269,7 @@
 <test-testperson> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <test-testperson> dsp-repo:isMemberOf <test-dasch> .
 <test-testperson> dsp-repo:hasJobTitle "Dr." .
-<test-testperson> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<test-testperson> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-1825-0097" .
 <test-testperson> dsp-repo:hasRole "Contributor" .
 
 <test-testpersona> rdf:type dsp-repo:Person . 
@@ -279,7 +279,7 @@
 <test-testpersona> dsp-repo:hasAddress "Teststrasse 12, 4000 Basel" .
 <test-testpersona> dsp-repo:isMemberOf <test-dasch> .
 <test-testpersona> dsp-repo:hasJobTitle "Dr. des." .
-<test-testpersona> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-9896-112X" .
+<test-testpersona> dsp-repo:hasIdentifier "https://orcid.org/0000-0002-1825-0097" .
 <test-testpersona> dsp-repo:hasRole "Contributor" . 
 
 <test-dasch> rdf:type dsp-repo:Organization . 
