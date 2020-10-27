@@ -28,34 +28,24 @@
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> .
 
-### --- Class definition of dsp-repo:Project --- 
-# http://ns.dasch.swiss/repository#Project
-dsp-repo:Project 
-    a rdfs:Class ;
-    rdfs:label "dsp-repo:Project"@en ;
-    rdfs:comment "A project"@en ;
-    rdfs:subClassOf schema:Project , prov:Entity .
 
+##### PROPERTIES #####
 ### --- Properties definition of dsp-repo:Project ---
 # http://ns.dasch.swiss/repository#hasName
 dsp-repo:hasName 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:name .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasDescription
 dsp-repo:hasDescription 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:description .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasKeywords
 dsp-repo:hasKeywords
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:keywords .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasDiscipline
 dsp-repo:hasDiscipline 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:about .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasStartDate
 dsp-repo:hasStartDate
@@ -91,13 +81,11 @@ dsp-repo:hasURL
 
  # http://ns.dasch.swiss/repository#hasShortcode
 dsp-repo:hasShortcode 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:identifier .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasAlternateName
 dsp-repo:hasAlternateName 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:alternateName .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasDataManagementPlan
 dsp-repo:hasDataManagementPlan 
@@ -105,14 +93,239 @@ dsp-repo:hasDataManagementPlan
 
 # http://ns.dasch.swiss/repository#hasPublication
 dsp-repo:hasPublication 
-    a rdf:Property ;
-    rdfs:subPropertyOf prov:wasDerivedFrom .
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasContactPoint
 dsp-repo:hasContactPoint
     a rdf:Property ;
     rdfs:subPropertyOf schema:contactPoint .
 
+### --- Properties definition of dsp-repo:Dataset ---
+# http://ns.dasch.swiss/repository#hasIdentifier
+dsp-repo:hasIdentifier
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:identifier .
+
+# http://ns.dasch.swiss/repository#dsp-repo:sameAs
+dsp-repo:sameAs
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:sameAs .
+
+# http://ns.dasch.swiss/repository#hasTitle
+dsp-repo:hasTitle
+    a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasAlternativeTitle
+# dsp-repo:hasAlternativeTitle
+#     a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasAbstract
+dsp-repo:hasAbstract
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasEncodingFormat
+dsp-repo:hasEncodingFormat
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasDocumentation
+dsp-repo:hasDocumentation
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasLicense
+dsp-repo:hasLicense
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:license .
+
+# http://ns.dasch.swiss/repository#hasConditionsOfAccess
+dsp-repo:hasConditionsOfAccess
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasHowToCite
+dsp-repo:hasHowToCite
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasStatus
+dsp-repo:hasStatus
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasDatePublished
+dsp-repo:hasDatePublished
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasLanguage
+dsp-repo:hasLanguage
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#isPartOf
+dsp-repo:isPartOf
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:isPartOf .
+
+# http://ns.dasch.swiss/repository#hasQualifiedAttribution
+dsp-repo:hasQualifiedAttribution
+    a rdf:Property ;
+    rdfs:subPropertyOf prov:qualifiedAttribution .
+
+# http://ns.dasch.swiss/repository#hasDateCreated
+dsp-repo:hasDateCreated
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasDateModified
+dsp-repo:hasDateModified
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasDistribution
+dsp-repo:hasDistribution
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:distribution .
+
+### --- Properties definition of dsp-repo:Person ---
+# http://ns.dasch.swiss/repository#hasGivenName
+dsp-repo:hasGivenName
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasFamilyName
+dsp-repo:hasFamilyName
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasEmail
+dsp-repo:hasEmail
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasAddress
+dsp-repo:hasAddress
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#isMemberOf
+dsp-repo:isMemberOf
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:memberOf .
+
+# http://ns.dasch.swiss/repository#hasJobTitle
+dsp-repo:hasJobTitle
+    a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasIdentifier
+# dsp-repo:hasIdentifier
+#     a rdf:Property ;
+#     rdfs:subPropertyOf schema:identifier .
+
+# http://ns.dasch.swiss/repository#hasRole
+dsp-repo:hasRole
+    a rdf:Property ;
+    rdfs:subPropertyOf prov:hadRole .
+
+
+### --- Properties definition of dsp-repo:Organization ---
+# # http://ns.dasch.swiss/repository#hasOrganizationIdentifier
+# dsp-repo:hasOrganizationIdentifier
+#     a rdf:Property ;
+#     rdfs:subPropertyOf schema:identifier .
+
+# # http://ns.dasch.swiss/repository#hasOrganizationName
+# dsp-repo:hasOrganizationName
+#     a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasOrganizationEmail
+# dsp-repo:hasOrganizationEmail
+#     a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasOrganizationAddress
+dsp-repo:hasOrganizationAddress
+    a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasOrganizationURL
+# dsp-repo:hasOrganizationURL
+#     a rdf:Property ;
+#     rdfs:subPropertyOf schema:url .
+
+
+### --- Properties definition of dsp-repo:Grant ---
+# # http://ns.dasch.swiss/repository#hasName
+# dsp-repo:hasName
+#     a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasGrantURL
+# dsp-repo:hasGrantURL
+#     a rdf:Property ;
+#     rdfs:subPropertyOf schema:url .
+
+# http://ns.dasch.swiss/repository#hasNumber
+dsp-repo:hasNumber
+    a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasBooBoo
+# dsp-repo:hasBooBoo
+#     a rdf:Property .
+
+# # http://ns.dasch.swiss/repository#hasFunder
+# dsp-repo:hasFunder
+#     a rdf:Property ;
+#      rdfs:subPropertyOf schema:funder .
+
+
+### --- Properties definition of dsp-repo:DataManagementPlan ---
+# # http://ns.dasch.swiss/repository#hasURL
+# dsp-repo:hasURL 
+#     a rdf:Property ;
+#     rdfs:subPropertyOf schema:url .
+
+# # http://ns.dasch.swiss/repository#hasDescription
+# dsp-repo:hasDescription
+#     a rdfs:Property .
+
+##### CLASS DEFINITIONS #####
+### --- Class definition of dsp-repo:Project --- 
+# http://ns.dasch.swiss/repository#Project
+dsp-repo:Project 
+    a rdfs:Class ;
+    rdfs:label "dsp-repo:Project"@en ;
+    rdfs:comment "A project"@en ;
+    rdfs:subClassOf schema:Project , prov:Entity .   
+
+### --- Class definition of dsp-repo:Dataset --- 
+# http://ns.dasch.swiss/repository#Dataset
+dsp-repo:Dataset 
+    a rdfs:Class ;
+    rdfs:comment "A dataset"@en ;
+    rdfs:label "dsp-repo:Dataset"@en ;
+    rdfs:subClassOf schema:Dataset .
+
+### --- Class definition of dsp-repo:Person --- 
+# http://ns.dasch.swiss/repository#Person
+dsp-repo:Person 
+    a rdfs:Class ;
+    rdfs:comment "A person"@en ;
+    rdfs:label "dsp-repo:Person"@en ;
+    rdfs:subClassOf schema:Person , prov:Agent . 
+
+### --- Class definition of dsp-repo:Organization --- 
+# http://ns.dasch.swiss/repository#Organization
+dsp-repo:Organization 
+    a rdfs:Class ;
+    rdfs:comment "An organization"@en ;
+    rdfs:label "dsp-repo:Organization"@en ;
+    rdfs:subClassOf schema:Organization , prov:Agent . 
+
+
+### --- Class definition of dsp-repo:Grant --- 
+# http://ns.dasch.swiss/repository#Grant
+dsp-repo:Grant 
+    a rdfs:Class ;
+    rdfs:comment "A grant"@en ;
+    rdfs:label "dsp-repo:Grant"@en ;
+    rdfs:subClassOf schema:Grant . 
+
+### --- Class definition of dsp-repo:DataManagementPlan --- 
+# http://ns.dasch.swiss/repository#DataManagementPlan
+dsp-repo:DataManagementPlan
+    a rdfs:Class ;
+    rdfs:comment "A Data Management Plan"@en ;
+    rdfs:label "dsp-repo:DataManagementPlan"@en ;
+    rdfs:subClassOf schema:Thing .
+
+
+##### SHAPES #####
 ### --- Shape of dsp-repo:Project ---
 dsp-repo:ProjectShape
     a sh:NodeShape ;
@@ -144,7 +357,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasDiscipline ;
         sh:name "Discipline" ;
         sh:description "Discipline and research fields from UNESCO nomenclature: https://skos.um.es/unesco6/?l=en or from http://www.snf.ch/SiteCollectionDocuments/allg_disziplinenliste.pdf"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:class schema:URL ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -166,7 +379,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasTemporalCoverage ;
         sh:name "Temporal coverage" ;
         sh:description "Temporal coverage of the project from http://perio.do/en/ or https://chronontology.dainst.org/"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:class schema:URL ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -193,7 +406,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasURL ;
         sh:name "URL" ;
         sh:description "Landing page or Website of the project. We recommend DSP Landing Page"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
         sh:maxCount 2 ;
         sh:minCount 1 ;
     ] ;
@@ -222,7 +435,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasPublication ;
         sh:name "Publication" ;
         sh:description "Publications resulted during the lifetime of the project"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:datatype xsd:string ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasContactPoint ;
@@ -232,103 +445,8 @@ dsp-repo:ProjectShape
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) .
+    sh:ignoredProperties (rdf:type) .
 
-### --- Class definition of dsp-repo:Dataset --- 
-# http://ns.dasch.swiss/repository#Dataset
-dsp-repo:Dataset 
-    a rdfs:Class ;
-    rdfs:comment "A dataset"@en ;
-    rdfs:label "dsp-repo:Dataset"@en ;
-    rdfs:subClassOf schema:Dataset .
-
-### --- Properties definition of dsp-repo:Dataset ---
-# http://ns.dasch.swiss/repository#hasIdentifier
-dsp-repo:hasIdentifier
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:identifier .
-
-# http://ns.dasch.swiss/repository#dsp-repo:sameAs
-schema:sameAs
-    a rdf:Property .
-
-# http://ns.dasch.swiss/repository#hasTitle
-dsp-repo:hasTitle
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:name .
-
-# http://ns.dasch.swiss/repository#hasAlternativeTitle
-dsp-repo:hasAlternativeTitle
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:name .
-
-# http://ns.dasch.swiss/repository#hasAbstract
-dsp-repo:hasAbstract
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:abstract .
-
-# http://ns.dasch.swiss/repository#hasEncodingFormat
-dsp-repo:hasEncodingFormat
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:encodingFormat .
-
-# http://ns.dasch.swiss/repository#hasDocumentation
-dsp-repo:hasDocumentation
-    a rdf:Property .
-
-# http://ns.dasch.swiss/repository#hasLicense
-dsp-repo:hasLicense
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:license .
-
-# http://ns.dasch.swiss/repository#hasConditionsOfAccess
-dsp-repo:hasConditionsOfAccess
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:conditionsOfAccess .
-
-# http://ns.dasch.swiss/repository#hasHowToCite
-dsp-repo:hasHowToCite
-    a rdf:Property .
-
-# http://ns.dasch.swiss/repository#hasStatus
-dsp-repo:hasStatus
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:creativeWorkStatus .
-
-# http://ns.dasch.swiss/repository#hasDatePublished
-dsp-repo:hasDatePublished
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:datePublished .
-
-# http://ns.dasch.swiss/repository#hasLanguage
-dsp-repo:hasLanguage
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:inLanguage .
-
-# http://ns.dasch.swiss/repository#isPartOf
-dsp-repo:isPartOf
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:isPartOf .
-
-# http://ns.dasch.swiss/repository#hasQualifiedAttribution
-dsp-repo:hasQualifiedAttribution
-    a rdf:Property ;
-    rdfs:subPropertyOf prov:qualifiedAttribution .
-
-# http://ns.dasch.swiss/repository#hasDateCreated
-dsp-repo:hasDateCreated
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:dateCreated .
-
-# http://ns.dasch.swiss/repository#hasDateModified
-dsp-repo:hasDateModified
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:dateModified .
-
-# http://ns.dasch.swiss/repository#hasDistribution
-dsp-repo:hasDistribution
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:distribution .
 
 ### --- Shape of dsp-repo:Dataset ---
 dsp-repo:DatasetShape
@@ -338,15 +456,15 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
         sh:description "Persistent identifier of the dataset"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:path schema:sameAs ;
+        sh:path dsp-repo:sameAs ;
         sh:name "Alternative URL" ;
         sh:description "Alternative URL"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasTitle ;
@@ -388,6 +506,8 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasLicense ;
         sh:name "License" ;
         sh:description "The license terms of the dataset"@en ;
+        sh:class schema:URL ;
+        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         # sh:datatype xsd:string ; ##blanknode? link and description needed
         # sh:datatype schema:CreativeWork ;  FIXME: this clearly doesn't do the trick.
         sh:minCount 1 ;
@@ -467,56 +587,7 @@ dsp-repo:DatasetShape
         sh:maxCount 1 ;
     ] ;  
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) .
-
-### --- Class definition of dsp-repo:Person --- 
-# http://ns.dasch.swiss/repository#Person
-dsp-repo:Person 
-    a rdfs:Class ;
-    rdfs:comment "A person"@en ;
-    rdfs:label "dsp-repo:Person"@en ;
-    rdfs:subClassOf schema:Person , prov:Agent . 
-
-### --- Properties definition of dsp-repo:Person ---
-# http://ns.dasch.swiss/repository#hasGivenName
-dsp-repo:hasGivenName
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:givenName .
-
-# http://ns.dasch.swiss/repository#hasFamilyName
-dsp-repo:hasFamilyName
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:familyName .
-
-# http://ns.dasch.swiss/repository#hasEmail
-dsp-repo:hasEmail
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:email .
-
-# http://ns.dasch.swiss/repository#hasAddress
-dsp-repo:hasAddress
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:address .
-
-# http://ns.dasch.swiss/repository#isMemberOf
-dsp-repo:isMemberOf
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:memberOf .
-
-# http://ns.dasch.swiss/repository#hasJobTitle
-dsp-repo:hasJobTitle
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:jobTitle .
-
-# http://ns.dasch.swiss/repository#hasIdentifier
-dsp-repo:hasIdentifier
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:identifier .
-
-# http://ns.dasch.swiss/repository#hasRole
-dsp-repo:hasRole
-    a rdf:Property ;
-    rdfs:subPropertyOf prov:hadRole .
+    sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:Person ---
 dsp-repo:PersonShape
@@ -525,173 +596,109 @@ dsp-repo:PersonShape
     sh:property [
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
-        sh:description "Given name"@en ;
+        sh:description "Given name of the person"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasFamilyName ;
         sh:name "Family name" ;
-        sh:description "Family name"@en ;
+        sh:description "Family name of the person"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasEmail ;
         sh:name "E-mail" ;
-        sh:description "E-mail address"@en ;
+        sh:description "E-mail address of the person"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 2 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasAddress ;
         sh:name "Address" ;
-        sh:description "Postal address"@en ;
+        sh:description "Postal address of the person"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:isMemberOf ;
         sh:name "Member of" ;
-        sh:description "Affiliation"@en ;
+        sh:description "Affiliation of the person"@en ;
         sh:class dsp-repo:Organization ;
         sh:minCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasJobTitle ;
         sh:name "Job title" ;
-        sh:description "Position / Job title"@en ;
+        sh:description "Position / Job title of the person"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
-        sh:description "Identifier"@en ;
-        sh:or ( [ sh:datatype xsd:string ] 
-                # [ sh:nodeKind sh:IRI ] ) ;
-                # [ sh:class schema:PropertyValue ] ) ; # TODO: does that something?
-                [ sh:nodeKind sh:BlankNode ] ) ; # TODO: no idea, whether or not that's a good idea. probably, that just allows everything
+        sh:description "Identifier of the person"@en ;
+        sh:class schema:URL ;
+        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        # sh:or ( [ sh:datatype xsd:string ] 
+        #         # [ sh:nodeKind sh:IRI ] ) ;
+        #         # [ sh:class schema:PropertyValue ] ) ; # TODO: does that something?
+        #         [ sh:nodeKind sh:BlankNode ] ) ; # TODO: no idea, whether or not that's a good idea. probably, that just allows everything
                 ## add Orcid, GND, ISNI, VIAF, NACO
      ] ;
      sh:property [
         sh:path dsp-repo:hasRole ;
         sh:name "Role" ;
-        sh:description "Role within the project/dataset"@en ;
+        sh:description "Role  of the person within the project/dataset"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
-    sh:closed true ; # TODO: check, if there is a more appropriate usage for this
-	sh:ignoredProperties ( rdf:type ) .
-
-
-### --- Class definition of dsp-repo:Organization --- 
-# http://ns.dasch.swiss/repository#Organization
-dsp-repo:Organization 
-    a rdfs:Class ;
-    rdfs:comment "An organization"@en ;
-    rdfs:label "dsp-repo:Organization"@en ;
-    rdfs:subClassOf schema:Organization , prov:Agent . 
-
-### --- Properties definition of dsp-repo:Organization ---
-# http://ns.dasch.swiss/repository#hasOrganizationIdentifier
-dsp-repo:hasOrganizationIdentifier
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:identifier .
-
-# http://ns.dasch.swiss/repository#hasOrganizationName
-dsp-repo:hasOrganizationName
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:legalName .
-
-# http://ns.dasch.swiss/repository#hasOrganizationEmail
-dsp-repo:hasOrganizationEmail
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:email .
-
-# http://ns.dasch.swiss/repository#hasOrganizationAddress
-dsp-repo:hasOrganizationAddress
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:address .
-
-# http://ns.dasch.swiss/repository#hasOrganizationURL
-dsp-repo:hasOrganizationURL
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:url .
-
-# http://ns.dasch.swiss/repository#hasGaga
-# dsp-repo:hasGaga
-#     a rdf:Property .
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) . # TODO: check, if there is a more appropriate usage for this
 
 ### --- Shape of dsp-repo:Organization ---
 dsp-repo:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Organization ;
     sh:property [
-        sh:path dsp-repo:hasOrganizationIdentifier ;
+        sh:path dsp-repo:hasIdentifier ;
         sh:name "Identifier" ;
-        sh:description "Identifier from https://www.grid.ac/"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:description "Identifier of the organization from https://www.grid.ac/"@en ;
+        sh:class schema:URL ;
+        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasOrganizationName ;
+        sh:path dsp-repo:hasName ;
         sh:name "Legal name" ;
-        sh:description "Legal name"@en ;
+        sh:description "Legal name of the organization"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasOrganizationEmail ;
+        sh:path dsp-repo:hasEmail ;
         sh:name "Organization e-mail" ;
-        sh:description "E-mail address"@en ;
+        sh:description "E-mail address of the organization"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasOrganizationAddress ;
+        sh:path dsp-repo:hasAddress ;
         sh:name "Address" ;
-        sh:description "Postal address"@en ;
+        sh:description "Postal address of the organization"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasOrganizationURL ;
-        sh:name "URL" ;
+        sh:path dsp-repo:hasURL ;
+        sh:name "URL of the organization" ;
         sh:description "URL"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) .
-
-### --- Class definition of dsp-repo:Grant --- 
-# http://ns.dasch.swiss/repository#Grant
-dsp-repo:Grant 
-    a rdfs:Class ;
-    rdfs:comment "A grant"@en ;
-    rdfs:label "dsp-repo:Grant"@en ;
-    rdfs:subClassOf schema:Grant . 
-
-### --- Properties definition of dsp-repo:Grant ---
-# http://ns.dasch.swiss/repository#hasName
-dsp-repo:hasName
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:name .
-
-# http://ns.dasch.swiss/repository#hasGrantURL
-dsp-repo:hasGrantURL
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:url .
-
-# http://ns.dasch.swiss/repository#hasGrantNumber
-dsp-repo:hasGrantNumber
-    a rdf:Property .
-
-# http://ns.dasch.swiss/repository#hasFunder
-dsp-repo:hasFunder
-    a rdf:Property ;
-     rdfs:subPropertyOf schema:funder .
+    sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:Grant ---
 dsp-repo:GrantShape
@@ -705,14 +712,14 @@ dsp-repo:GrantShape
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasGrantURL ;
+        sh:path dsp-repo:hasURL ;
         sh:name "URL" ;
         sh:description "URL of the grant"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
         sh:maxCount 1 ;
     ] ; 
      sh:property [
-        sh:path dsp-repo:hasGrantNumber ;
+        sh:path dsp-repo:hasNumber ;
         sh:name "Number" ;
         sh:description "Number of the grant"@en ;
         sh:datatype xsd:string ;
@@ -722,30 +729,11 @@ dsp-repo:GrantShape
         sh:path dsp-repo:hasFunder ;
         sh:name "Funder" ;
         sh:description "Funder of the grant"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+        sh:or( [ sh:class dsp-repo:Person ] [ sh:class dsp-repo:Organization ] ) ;
         sh:maxCount 1 ;
     ] ; 
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) .
-
-### --- Class definition of dsp-repo:DataManagementPlan --- 
-# http://ns.dasch.swiss/repository#DataManagementPlan
-dsp-repo:DataManagementPlan
-    a rdfs:Class ;
-    rdfs:label "dsp-repo:DataManagementPlan"@en ;
-    rdfs:comment "A Data Management Plan"@en ;
-    rdfs:subClassOf schema:Thing .
-
-### --- Properties definition of dsp-repo:DataManagementPlan ---
-# http://ns.dasch.swiss/repository#hasURL
-dsp-repo:hasURL 
-    a rdf:Property ;
-    rdfs:subPropertyOf schema:url .
-
-# http://ns.dasch.swiss/repository#hasDescription
-dsp-repo:hasDescription
-    a rdfs:Property ;
-    rdfs:subPropertyOf schema:description .
+    sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:DataManagementPlan ---
 dsp-repo:DataManagementPlanShape
@@ -755,7 +743,7 @@ dsp-repo:DataManagementPlanShape
         sh:path dsp-repo:hasURL ;
         sh:name "URL" ;
         sh:description "URL of the data management plan"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:URL ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -766,4 +754,5 @@ dsp-repo:DataManagementPlanShape
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) .
+    sh:ignoredProperties (rdf:type) .
+
