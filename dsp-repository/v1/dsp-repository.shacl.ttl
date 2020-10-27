@@ -471,7 +471,7 @@ dsp-repo:DatasetShape
 
 ### --- Class definition of dsp-repo:Person --- 
 # http://ns.dasch.swiss/repository#Person
-dsp-repo:Dataset 
+dsp-repo:Person 
     a rdfs:Class ;
     rdfs:comment "A person"@en ;
     rdfs:label "dsp-repo:Person"@en ;
