@@ -30,7 +30,6 @@
 
 
 ##### PROPERTIES #####
-### --- Properties definition of dsp-repo:Project ---
 # http://ns.dasch.swiss/repository#hasName
 dsp-repo:hasName 
     a rdf:Property .
@@ -100,7 +99,6 @@ dsp-repo:hasContactPoint
     a rdf:Property ;
     rdfs:subPropertyOf schema:contactPoint .
 
-### --- Properties definition of dsp-repo:Dataset ---
 # http://ns.dasch.swiss/repository#hasIdentifier
 dsp-repo:hasIdentifier
     a rdf:Property ;
@@ -179,7 +177,6 @@ dsp-repo:hasDistribution
     a rdf:Property ;
     rdfs:subPropertyOf schema:distribution .
 
-### --- Properties definition of dsp-repo:Person ---
 # http://ns.dasch.swiss/repository#hasGivenName
 dsp-repo:hasGivenName
     a rdf:Property .
@@ -205,50 +202,10 @@ dsp-repo:isMemberOf
 dsp-repo:hasJobTitle
     a rdf:Property .
 
-# # http://ns.dasch.swiss/repository#hasIdentifier
-# dsp-repo:hasIdentifier
-#     a rdf:Property ;
-#     rdfs:subPropertyOf schema:identifier .
-
 # http://ns.dasch.swiss/repository#hasRole
 dsp-repo:hasRole
     a rdf:Property ;
     rdfs:subPropertyOf prov:hadRole .
-
-
-### --- Properties definition of dsp-repo:Organization ---
-# # http://ns.dasch.swiss/repository#hasOrganizationIdentifier
-# dsp-repo:hasOrganizationIdentifier
-#     a rdf:Property ;
-#     rdfs:subPropertyOf schema:identifier .
-
-# # http://ns.dasch.swiss/repository#hasOrganizationName
-# dsp-repo:hasOrganizationName
-#     a rdf:Property .
-
-# # http://ns.dasch.swiss/repository#hasOrganizationEmail
-# dsp-repo:hasOrganizationEmail
-#     a rdf:Property .
-
-# http://ns.dasch.swiss/repository#hasOrganizationAddress
-dsp-repo:hasOrganizationAddress
-    a rdf:Property .
-
-# # http://ns.dasch.swiss/repository#hasOrganizationURL
-# dsp-repo:hasOrganizationURL
-#     a rdf:Property ;
-#     rdfs:subPropertyOf schema:url .
-
-
-### --- Properties definition of dsp-repo:Grant ---
-# # http://ns.dasch.swiss/repository#hasName
-# dsp-repo:hasName
-#     a rdf:Property .
-
-# # http://ns.dasch.swiss/repository#hasGrantURL
-# dsp-repo:hasGrantURL
-#     a rdf:Property ;
-#     rdfs:subPropertyOf schema:url .
 
 # http://ns.dasch.swiss/repository#hasNumber
 dsp-repo:hasNumber
@@ -257,22 +214,6 @@ dsp-repo:hasNumber
 # # http://ns.dasch.swiss/repository#hasBooBoo
 # dsp-repo:hasBooBoo
 #     a rdf:Property .
-
-# # http://ns.dasch.swiss/repository#hasFunder
-# dsp-repo:hasFunder
-#     a rdf:Property ;
-#      rdfs:subPropertyOf schema:funder .
-
-
-### --- Properties definition of dsp-repo:DataManagementPlan ---
-# # http://ns.dasch.swiss/repository#hasURL
-# dsp-repo:hasURL 
-#     a rdf:Property ;
-#     rdfs:subPropertyOf schema:url .
-
-# # http://ns.dasch.swiss/repository#hasDescription
-# dsp-repo:hasDescription
-#     a rdfs:Property .
 
 ##### CLASS DEFINITIONS #####
 ### --- Class definition of dsp-repo:Project --- 
@@ -307,7 +248,6 @@ dsp-repo:Organization
     rdfs:label "dsp-repo:Organization"@en ;
     rdfs:subClassOf schema:Organization , prov:Agent . 
 
-
 ### --- Class definition of dsp-repo:Grant --- 
 # http://ns.dasch.swiss/repository#Grant
 dsp-repo:Grant 
@@ -323,7 +263,6 @@ dsp-repo:DataManagementPlan
     rdfs:comment "A Data Management Plan"@en ;
     rdfs:label "dsp-repo:DataManagementPlan"@en ;
     rdfs:subClassOf schema:Thing .
-
 
 ##### SHAPES #####
 ### --- Shape of dsp-repo:Project ---
@@ -446,7 +385,6 @@ dsp-repo:ProjectShape
     ] ;
     sh:closed true ;
     sh:ignoredProperties (rdf:type) .
-
 
 ### --- Shape of dsp-repo:Dataset ---
 dsp-repo:DatasetShape
@@ -666,7 +604,6 @@ dsp-repo:OrganizationShape
         sh:name "Identifier" ;
         sh:description "Identifier of the organization from https://www.grid.ac/"@en ;
         sh:class schema:URL ;
-        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
         sh:maxCount 1 ;
     ] ;
     sh:property [

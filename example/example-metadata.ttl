@@ -38,7 +38,6 @@
    ] ;
    schema:url "http://skos.um.es/unesco6/11" ;
 ] .
-
 <test-project> dsp-repo:hasStartDate "2000-07-26T21:32:52"^^xsd:dateTime . 
 <test-project> dsp-repo:hasEndDate "2001-01-26T21:32:52"^^xsd:dateTime . 
 <test-project> dsp-repo:hasTemporalCoverage [
@@ -49,8 +48,6 @@
    ] ;
    schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
 ] .
-
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -62,7 +59,6 @@
             schema:url "https://www.geonames.org/6255148/europe.html" ; 
         ]
     ].
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -74,7 +70,6 @@
             schema:url "https://www.geonames.org/2017370/russian-federation.html" ; 
         ]
     ].
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -86,7 +81,6 @@
             schema:url "https://www.geonames.org/3017382/republic-of-france.html" ; 
         ]
     ].
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -98,7 +92,6 @@
             schema:url "https://www.geonames.org/2658434/switzerland.html" ; 
         ]
     ].
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -110,8 +103,6 @@
             schema:url "https://www.geonames.org/2921044/federal-republic-of-germany.html" ; 
         ]
     ].
-
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -123,7 +114,6 @@
             schema:url "https://www.geonames.org/3175395/italian-republic.html" ; 
         ]
     ].
-
 <test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
@@ -135,16 +125,12 @@
             schema:url "https://www.geonames.org/6269131/england.html" ; 
         ]
     ].
-
-
-
 <test-project> dsp-repo:hasFunder <test-funder> . 
 <test-project> dsp-repo:hasGrant <test-grant> .
 <test-project> dsp-repo:hasURL [
    a schema:URL ;
    schema:url "https://test.dasch.swiss/" ;
 ] .
-
 <test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
 <test-project> dsp-repo:hasAlternateName "test"^^xsd:string  .
 <test-project> dsp-repo:hasDataManagementPlan [
@@ -155,7 +141,6 @@
     ] ;
     dsp-repo:hasDescription "Yes" ;
 ] .
-
 <test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
 <test-project> dsp-repo:hasContactPoint  [
         a schema:ContactPoint ; 
@@ -174,12 +159,10 @@
        a schema:URL ;
        schema:url "http://testark.dasch.swiss/" ;
    ].
-
 <test-dataset> dsp-repo:sameAs [
        a schema:URL ;
        schema:url "https://test.dasch.swiss/" ;
    ].
-
 <test-dataset> dsp-repo:hasTitle "Testprojekt" .
 <test-dataset> dsp-repo:hasAlternativeTitle "test" .
 <test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
@@ -204,6 +187,7 @@
 #         schema:description "All images are public domain." ;
 #         schema:obviouselyInvalid "can't be"  # FIXME: this should not be valid! How can we ensure this doesn't validate?
 #     ] .
+
 <test-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
 <test-dataset> dsp-repo:hasHowToCite "Testprojekt (test), 2002, https://test.dasch.swiss" .
 <test-dataset> dsp-repo:hasStatus "ongoing" . 
@@ -218,31 +202,26 @@
     a schema:DataDownload ;
     schema:url "https://test.dasch.swiss" ;
 ].
-
 <test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
     prov:agent <test-abraham>;
     dsp-repo:hasRole "editor";
 ] .
-
 <test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
     prov:agent <test-jones>;
     dsp-repo:hasRole "editor";
 ] .
-
 <test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
     prov:agent <test-hart>;
     dsp-repo:hasRole "contributor";
 ] .
-
 <test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
     prov:agent <test-berry>;
     dsp-repo:hasRole "contributor";
 ] .
-
 <test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
     prov:agent <test-coleman>;
@@ -261,7 +240,6 @@
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
 
-
 # <test-abraham> dsp-repo:hasIdentifier [
 #         a schema:PropertyValue ;
 #         schema:name "ORCID" ;
@@ -279,7 +257,6 @@
 #     ] .
 <test-abraham> dsp-repo:hasRole "Editor" .
 
-
 <test-jones> rdf:type dsp-repo:Person . 
 <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string . 
 <test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string . 
@@ -291,7 +268,6 @@
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-
 <test-jones> dsp-repo:hasRole "Editor"^^xsd:string .
 
 <test-hart> rdf:type dsp-repo:Person . 
@@ -305,7 +281,6 @@
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-
 <test-hart> dsp-repo:hasRole "Editor" .
 
 <test-berry> rdf:type dsp-repo:Person . 
@@ -319,7 +294,6 @@
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-
 <test-berry> dsp-repo:hasRole "Contributor" .
 
 <test-coleman> rdf:type dsp-repo:Person . 
@@ -333,7 +307,6 @@
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-
 <test-coleman> dsp-repo:hasRole "Contributor" . 
 
 <test-dasch> rdf:type dsp-repo:Organization . 
@@ -341,7 +314,6 @@
        a schema:URL ;
        schema:url "TEST" ;
    ].
-
 <test-dasch> dsp-repo:hasName "TEST" .
 <test-dasch> dsp-repo:hasEmail "info@dasch.swiss" . 
 <test-dasch> dsp-repo:hasAddress "Teststrasse, 4000 Basel" .
@@ -356,7 +328,6 @@
        a schema:URL ;
        schema:url "http://p3.snf.ch/testproject" ;
    ].
-
 <test-grant> dsp-repo:hasNumber "0123456789"^^xsd:string .
 <test-grant> dsp-repo:hasFunder <test-funder> .
 
@@ -372,6 +343,7 @@
        a schema:URL ;
        schema:url "http://www.utoronto.ca/" ;
    ].
+
 
 # <test-funder> dsp-repo:hasBooBoo "booboo" .
 
@@ -391,7 +363,6 @@
  #       a schema:URL ;
  #       schema:url "http://www.test.ch" ;
   #  ].
-
 
 #<test-dataset> dsp-repo:hasQualifiedAttribution [
    # a prov:Attribution;
