@@ -113,9 +113,9 @@ dsp-repo:sameAs
 dsp-repo:hasTitle
     a rdf:Property .
 
-# # http://ns.dasch.swiss/repository#hasAlternativeTitle
-# dsp-repo:hasAlternativeTitle
-#     a rdf:Property .
+# http://ns.dasch.swiss/repository#hasAlternativeTitle
+dsp-repo:hasAlternativeTitle
+    a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasAbstract
 dsp-repo:hasAbstract
@@ -191,7 +191,8 @@ dsp-repo:hasEmail
 
 # http://ns.dasch.swiss/repository#hasAddress
 dsp-repo:hasAddress
-    a rdf:Property .
+    a rdf:Property ;
+    rdfs:subPropertyOf schema:address .
 
 # http://ns.dasch.swiss/repository#isMemberOf
 dsp-repo:isMemberOf
@@ -360,7 +361,7 @@ dsp-repo:ProjectShape
      sh:property [
         sh:path dsp-repo:hasAlternateName ;
         sh:name "Alternate Name" ;
-        sh:description "Alternative name of the project in case of a long SNF name"@en ;
+        sh:description "Alternative name of the project in case of a long name"@en ;
         sh:datatype xsd:string ;
     ] ;
      sh:property [
@@ -373,16 +374,16 @@ dsp-repo:ProjectShape
      sh:property [
         sh:path dsp-repo:hasPublication ;
         sh:name "Publication" ;
-        sh:description "Publications resulted during the lifetime of the project"@en ;
+        sh:description "Publications produced during the lifetime of the project"@en ;
         sh:datatype xsd:string ;
     ] ;
-    sh:property [
-        sh:path dsp-repo:hasContactPoint ;
-        sh:name "Contact point" ;
-        sh:description "Contact information"@en ;
-        sh:class schema:ContactPoint ;
-        sh:maxCount 1 ;
-    ] ;
+    # sh:property [
+    #     sh:path dsp-repo:hasContactPoint ;
+    #     sh:name "Contact point" ;
+    #     sh:description "Contact information"@en ;
+    #     sh:class schema:ContactPoint ;
+    #     sh:maxCount 1 ;
+    # ] ;
     sh:closed true ;
     sh:ignoredProperties (rdf:type) .
 
@@ -468,7 +469,7 @@ dsp-repo:DatasetShape
     ] ;
     sh:property [
         sh:path dsp-repo:hasStatus ;
-        sh:name "Creative work status" ;
+        sh:name "Dataset status" ;
         sh:description "Current status of a dataset (testing phase, ongoing, finished)"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
@@ -483,7 +484,7 @@ dsp-repo:DatasetShape
     ] ;
     sh:property [
         sh:path dsp-repo:hasLanguage ;
-        sh:name "in Language" ;
+        sh:name "Language" ;
         sh:description "Language or languages of the data"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
@@ -556,7 +557,8 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasAddress ;
         sh:name "Address" ;
         sh:description "Postal address of the person"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:PostalAddress ;
+        # sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
      sh:property [
@@ -624,7 +626,7 @@ dsp-repo:OrganizationShape
         sh:path dsp-repo:hasAddress ;
         sh:name "Address" ;
         sh:description "Postal address of the organization"@en ;
-        sh:datatype xsd:string ;
+        sh:class schema:PostalAddress ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
