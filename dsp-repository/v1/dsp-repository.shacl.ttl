@@ -483,7 +483,7 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasDatePublished ;
         sh:name "Date published" ;
         sh:description "Date of publication"@en ;
-        sh:datatype xsd:dateTime  ;
+        sh:datatype xsd:date  ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -512,14 +512,14 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasDateCreated ;
         sh:name "Date created" ;
         sh:description "Creation date of the dataset"@en ;
-        sh:datatype xsd:dateTime   ;
+        sh:datatype xsd:date  ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasDateModified ;
         sh:name "Date modified" ;
         sh:description "Modification date of the dataset"@en ;
-        sh:datatype xsd:dateTime   ;
+        sh:datatype xsd:date  ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
