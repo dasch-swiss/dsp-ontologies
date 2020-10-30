@@ -27,6 +27,10 @@ validate-example: ## validate example
 	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata.ttl
 	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl
 
+.PHONY: validate-example-with-check
+validate-example-with-check: ## validate example and check validation report 
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl | grep -q "sh:conforms  true"
+
 .PHONY: validate
 validate: validate-ontology validate-shape validate-example ## validate all
 
