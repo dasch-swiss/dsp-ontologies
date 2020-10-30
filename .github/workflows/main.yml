@@ -12,5 +12,7 @@ jobs:
             fetch-depth: 1
         - name: install jena
           run: make install
-        - name: validate example data
+        - name: validate everything
           run: make validate
+        - name: validate example with check
+          run: make validate-example-with-check

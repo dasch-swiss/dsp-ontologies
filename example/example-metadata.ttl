@@ -1,4 +1,4 @@
-# Metadata BEOL, MLS, Parzival and Dietrich
+# Metadata test project
 #
 
 @prefix dsp-repo: <http://ns.dasch.swiss/repository#> .
@@ -22,308 +22,399 @@
 @base <http://ns.dasch.swiss/repository#> .
 
 
-### BEOL ###
-<beol> rdf:type dsp-repo:Project .
-<beol> dsp-repo:hasName "Bernoulli-Euler Online (BEOL)" .
-<beol> dsp-repo:hasDescription "The project Bernoulli-Euler Online (BEOL) integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) into one digital platform available on the web. In addition, Jacob Bernoulli's scientific notebook Meditationes - a document of outstanding significance for the history of mathematics at its turning point around 1700 - is published for the first time in its entirety on the BEOL platform as a region-based multilayer interactive digital edition providing access to facsimiles, transcriptions, translations, indices, and commentaries. Besides being an edition platform, BEOL is a virtual research environment for the study of early modern mathematics and science as a data graph using sophisticated analysis tools. Currently BEOL is connected to two third-party repositories: The Newton Project and the Briefportal Leibniz, initiating the formation of a network of digital editions of the early modern scientific correspondence data.The goal of BEOL is thus twofold: it focuses on the mathematics influenced by the Bernoulli dynasty and Leonhard Euler and undertakes a methodological effort to present these materials to the public and researchers in a highly functional way." .
-<beol> dsp-repo:hasKeywords "mathematics" .
-<beol> dsp-repo:hasKeywords "science" .
-<beol> dsp-repo:hasKeywords "history of science" .
-<beol> dsp-repo:hasKeywords "history of mathematics" .
-<beol> dsp-repo:hasKeywords "Bernoulli" .
-<beol> dsp-repo:hasKeywords "Euler" .
-<beol> dsp-repo:hasKeywords "Newton" .
-<beol> dsp-repo:hasKeywords "Leibniz" .
-<beol> dsp-repo:hasCategories "mathematics" .
-<beol> dsp-repo:hasStartDate "2016.07" . 
-<beol> dsp-repo:hasEndDate "2020.01" . 
-<beol> dsp-repo:hasTemporalCoverage "17th century and 18th century CE" . 
-<beol> dsp-repo:hasSpatialCoverage "Europe" .
-<beol> dsp-repo:hasSpatialCoverage "Russia" .
-<beol> dsp-repo:hasSpatialCoverage "France" .
-<beol> dsp-repo:hasSpatialCoverage "Switzerland" .
-<beol> dsp-repo:hasSpatialCoverage "Germany" .
-<beol> dsp-repo:hasSpatialCoverage "Italy" .
-<beol> dsp-repo:hasSpatialCoverage "England" .
-<beol> dsp-repo:hasFunder "Schweizerischer Nationalfonds (SNSF)" . 
-<beol> dsp-repo:hasGrant <beol-grant> .
-<beol> dsp-repo:hasURL "https://beol.dasch.swiss/" . 
-<beol> dsp-repo:hasDateCreated "09.2017" . 
-<beol> dsp-repo:hasDateModified "04.2020" . 
-<beol> dsp-repo:hasShortcode "0801" . 
-<beol> dsp-repo:hasAlternateName "beol" .
+### test project ###
+<test-project> rdf:type dsp-repo:Project .
+<test-project> dsp-repo:hasName "Testprojektname (test)"^^xsd:string .
+<test-project> dsp-repo:hasDescription "Dies ist ein Testprojekt...alle Properties wurden verwendet, um diese zu testen"^^xsd:string .
+<test-project> dsp-repo:hasKeywords "mathematics"^^xsd:string .
+<test-project> dsp-repo:hasKeywords "science"^^xsd:string .
+<test-project> dsp-repo:hasKeywords "history of science"^^xsd:string .
+<test-project> dsp-repo:hasKeywords "history of mathematics"^^xsd:string .
+<test-project> dsp-repo:hasDiscipline [
+   a schema:URL ;
+   schema:propertyID [
+       a schema:PropertyValue ;
+       schema:propertyID "SKOS UNESCO Nomenclature" ;
+   ] ;
+   schema:url "http://skos.um.es/unesco6/11" ;
+] .
+<test-project> dsp-repo:hasStartDate "2000-07-26T21:32:52"^^xsd:dateTime . 
+<test-project> dsp-repo:hasEndDate "2001-01-26T21:32:52"^^xsd:dateTime . 
+<test-project> dsp-repo:hasTemporalCoverage [
+   a schema:URL ;
+   schema:propertyID [
+       a schema:PropertyValue ;
+       schema:propertyID "Chronontology Dainst" ;
+   ] ;
+   schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
+] .
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/6255148/europe.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2017370/russian-federation.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/3017382/republic-of-france.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2658434/switzerland.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/2921044/federal-republic-of-germany.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/3175395/italian-republic.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/6269131/england.html" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasFunder <test-funder> . 
+<test-project> dsp-repo:hasGrant <test-grant> .
+<test-project> dsp-repo:hasURL [
+   a schema:URL ;
+   schema:url "https://test.dasch.swiss/" ;
+] .
+<test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
+<test-project> dsp-repo:hasAlternateName "test"^^xsd:string  .
+<test-project> dsp-repo:hasDataManagementPlan [
+    a dsp-repo:DataManagementPlan ;
+    dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "https://snf.ch" ;
+    ] ;
+    dsp-repo:isAvailable "Yes" ;
+] .
+<test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
+<test-project> dsp-repo:hasContactPoint <test-abraham> .
 
-<beol-dataset> rdf:type dsp-repo:Dataset .
-<beol-dataset> dsp-repo:hasIdentifier "http://ark.dasch.swiss/ark:/72163/1/0801" . 
-<beol-dataset> dsp-repo:hasAbstract "The Bernoulli-Euler Online (BEOL) project is a research platform for the study of early modern mathematics and science. This Beta release integrates the two edition projects Basler Edition der Bernoulli-Briefwechsel (BEBB) and Leonhardi Euleri Opera Omnia (LEOO) IVA/IV into one platform. As a next step, Jacob Bernoulli's scientific notebook Meditationes will be also integrated in this platform. Currently BEOL is connected to the repositories of The Newton Project and the Briefportal Leibniz initiating the formation of a network of digital editions of the correspondence among the early modern mathematicians." .
-<beol-dataset> dsp-repo:hasEncodingFormat "text" . 
-<beol-dataset> dsp-repo:hasEncodingFormat "image" . 
-<beol-dataset> dsp-repo:hasDocumentation "Work in progress" . 
-<beol-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
-<beol-dataset> dsp-repo:hasUsageInfo "Bernoulli-Euler Online (BEOL), 2019, https://beol.dasch.swiss" .
-<beol-dataset> dsp-repo:hasStatus "data will be added continuously" . 
-<beol-dataset> dsp-repo:hasDatePublished "09.2019" . 
-<beol-dataset> dsp-repo:hasLanguage "DE" .
-<beol-dataset> dsp-repo:hasLanguage "EN" .
-<beol-dataset> dsp-repo:hasLanguage "FR" .
-<beol-dataset> dsp-repo:isPartOf <beol> .
+# <test-project> dsp-repo:hasContactPoint  [
+#         a schema:ContactPoint ; 
+#         schema:url [
+#             a schema:URL ;
+#             schema:propertyID [
+#                 a schema:PropertyValue ;
+#                 schema:propertyID "Contact Point" ;
+#             ] ;
+#             schema:url "https://test.dasch.swiss/" ; 
+#         ]
+#     ].
 
-<beol-dataset> dsp-repo:hasQualifiedAttribution [
+<test-dataset> rdf:type dsp-repo:Dataset .
+# <test-dataset> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "http://testark.dasch.swiss/" ;
+#    ].
+<test-dataset> dsp-repo:sameAs [
+       a schema:URL ;
+       schema:url "https://test.dasch.swiss/" ;
+   ].
+<test-dataset> dsp-repo:hasTitle "Testprojekt" .
+<test-dataset> dsp-repo:hasAlternativeTitle "test" .
+<test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
+<test-dataset> dsp-repo:hasTypeOfDate "text" . 
+<test-dataset> dsp-repo:hasTypeOfDate "image" . 
+<test-dataset> dsp-repo:hasDocumentation "Work in progress" .
+<test-dataset> dsp-repo:hasLicense [
+       a schema:URL ;
+       schema:url "https://creativecommons.org/licenses/by/3.0" ;
+   ].
+
+# <test-dataset> dsp-repo:hasLicense [
+#         a schema:CreativeWork ;
+#         schema:url "https://creativecommons.org/licenses/by/3.0" ;
+#         schema:name "CC BY 3.0" ;
+#         schema:description "All transcriptions are published under CC BY 3.0 license."
+#     ] .
+# <test-dataset> dsp-repo:hasLicense [
+#         a schema:CreativeWork ;
+#         schema:url "https://creativecommons.org/publicdomain/zero/1.0" ;
+#         schema:name "CC" ;
+#         schema:description "All images are public domain." ;
+#         schema:obviouselyInvalid "can't be"  # FIXME: this should not be valid! How can we ensure this doesn't validate?
+#     ] .
+
+<test-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
+<test-dataset> dsp-repo:hasHowToCite "Testprojekt (test), 2002, https://test.dasch.swiss" .
+<test-dataset> dsp-repo:hasStatus "ongoing" . 
+<test-dataset> dsp-repo:hasDatePublished "2002-09-24"^^xsd:date . 
+<test-dataset> dsp-repo:hasLanguage "DE" .
+<test-dataset> dsp-repo:hasLanguage "EN" .
+<test-dataset> dsp-repo:hasLanguage "FR" .
+<test-dataset> dsp-repo:isPartOf <test-project> .
+<test-dataset> dsp-repo:hasDateCreated "2001-09-26"^^xsd:date .  
+<test-dataset> dsp-repo:hasDateModified "2020-04-26"^^xsd:date .  
+<test-dataset> dsp-repo:hasDistribution [
+    a schema:DataDownload ;
+    schema:url "https://test.dasch.swiss" ;
+].
+<test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <beol-mattmüller>;
+    prov:agent <test-abraham>;
     dsp-repo:hasRole "editor";
 ] .
-
-<beol-dataset> dsp-repo:hasQualifiedAttribution [
+<test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <beol-nagel>;
+    prov:agent <test-jones>;
+    dsp-repo:hasRole "editor";
+] .
+<test-dataset> dsp-repo:hasQualifiedAttribution [
+    a prov:Attribution;
+    prov:agent <test-hart>;
     dsp-repo:hasRole "contributor";
 ] .
-
-<beol-dataset> dsp-repo:hasQualifiedAttribution [
+<test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <beol-gehr>;
+    prov:agent <test-berry>;
     dsp-repo:hasRole "contributor";
 ] .
-
-<beol-dataset> dsp-repo:hasQualifiedAttribution [
+<test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <beol-schweizer>;
+    prov:agent <test-coleman>;
     dsp-repo:hasRole "editor";
 ] .
 
-<beol-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <beol-alassi>;
-    dsp-repo:hasRole "editor";
-] .
+<test-abraham> rdf:type dsp-repo:Person . 
+<test-abraham> dsp-repo:sameAs [
+       a schema:URL ;
+       schema:url "https://orcid.org/0000-0002-1825-0097" ;
+   ].
+<test-abraham> dsp-repo:hasGivenName "Stewart" . 
+<test-abraham> dsp-repo:hasFamilyName "Abraham" . 
+<test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" . 
+<test-abraham> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+<test-abraham> dsp-repo:isMemberOf <test-dasch> .
+<test-abraham> dsp-repo:hasJobTitle "Dr." .
+# <test-abraham> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 
-<beol-mattmüller> rdf:type dsp-repo:Person . 
-<beol-mattmüller> dsp-repo:hasGivenName "Martin" . 
-<beol-mattmüller> dsp-repo:hasFamilyname "Mattmüller" . 
+# <test-abraham> dsp-repo:hasIdentifier [
+#         a schema:PropertyValue ;
+#         schema:name "ORCID" ;
+#         schema:identifier "https://orcid.org/0000-0002-1825-0097"
+#     ] .
+# <test-abraham> dsp-repo:hasIdentifier [
+#         a schema:PropertyValue ;
+#         schema:name "VIAF" ;
+#         schema:identifier "69100561" ;
+#         schema:url "https://www.viaf.org/"
+#     ] .
+# <test-abraham> dsp-repo:hasIdentifier [
+#         a schema:PropertyValue ;
+#         schema:nanannananana "blah"  # TODO: this, again, should not be valid
+#     ] .
+<test-abraham> dsp-repo:hasRole "Editor" .
 
-<beol-nagel> rdf:type dsp-repo:Person . 
-<beol-nagel> dsp-repo:hasGivenName "Fritz" . 
-<beol-nagel> dsp-repo:hasFamilyname "Nagel" . 
-<beol-nagel> dsp-repo:hasJobTitle "Dr." . 
+<test-jones> rdf:type dsp-repo:Person . 
+<test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string . 
+<test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string . 
+<test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch"^^xsd:string . 
+<test-jones> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
 
-<beol-gehr> rdf:type dsp-repo:Person . 
-<beol-gehr> dsp-repo:hasGivenName "Sulamith" . 
-<beol-gehr> dsp-repo:hasFamilyname "Gehr" . 
+<test-jones> dsp-repo:isMemberOf <test-dasch> .
+<test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
+# <test-jones> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
+<test-jones> dsp-repo:hasRole "Editor"^^xsd:string .
 
-<beol-schweizer> rdf:type dsp-repo:Person . 
-<beol-schweizer> dsp-repo:hasGivenName "Tobias" . 
-<beol-schweizer> dsp-repo:hasFamilyname "Schweizer" . 
-<beol-schweizer> dsp-repo:isMemberOf <beol-dasch> . 
-<beol-schweizer> dsp-repo:hasJobTitle "Dr." . 
+<test-hart> rdf:type dsp-repo:Person . 
+<test-hart> dsp-repo:hasGivenName "Leonhard" . 
+<test-hart> dsp-repo:hasFamilyName "Hart" . 
+<test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" . 
+<test-hart> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+<test-hart> dsp-repo:isMemberOf <test-dasch> .
+<test-hart> dsp-repo:hasJobTitle "Prof." .
+# <test-hart> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
+<test-hart> dsp-repo:hasRole "Editor" .
 
-<beol-alassi> rdf:type dsp-repo:Person . 
-<beol-alassi> dsp-repo:hasGivenName "Sepideh" . 
-<beol-alassi> dsp-repo:hasFamilyname "Alassi" . 
-<beol-alassi> dsp-repo:hasEmail "sepideh.alassi@dasch.swiss" . 
-<beol-alassi> dsp-repo:isMemberOf <beol-dasch> . 
-<beol-alassi> dsp-repo:hasJobTitle "Dr. des." . 
+<test-berry> rdf:type dsp-repo:Person . 
+<test-berry> dsp-repo:hasGivenName "Lauren" . 
+<test-berry> dsp-repo:hasFamilyName "Berry" . 
+<test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" . 
+<test-berry> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+<test-berry> dsp-repo:isMemberOf <test-dasch> .
+<test-berry> dsp-repo:hasJobTitle "Dr." .
+# <test-berry> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
+<test-berry> dsp-repo:hasRole "Contributor" .
 
-<beol-dasch> rdf:type dsp-repo:Organization . 
-<beol-dasch> dsp-repo:hasOrganizationName "DaSCH" . 
-<beol-dasch> dsp-repo:hasOrganizationAddress "Gewerbestrasse 24, 4123 Allschwil" .
-<beol-dasch> dsp-repo:hasOrganizationURL "https://dasch.swiss" .
+<test-coleman> rdf:type dsp-repo:Person . 
+<test-coleman> dsp-repo:hasGivenName "James" . 
+<test-coleman> dsp-repo:hasFamilyName "Coleman" . 
+<test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .  
+<test-coleman> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+<test-coleman> dsp-repo:isMemberOf <test-dasch> .
+<test-coleman> dsp-repo:hasJobTitle "Dr. des." .
+# <test-coleman> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
+<test-coleman> dsp-repo:hasRole "Contributor" . 
 
-<beol-grant> rdf:type dsp-repo:Grant . 
-<beol-grant> schema:name "Prof. Lukas Rosenthaler, Prof. Helmut Harbrecht" .
-<beol-grant> schema:identifier "166072" .
-<beol-grant> schema:url "http://p3.snf.ch/project-166072" .
+<test-dasch> rdf:type dsp-repo:Organization . 
+# <test-dasch> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "TEST" ;
+#    ].
+<test-dasch> dsp-repo:hasName "TEST" .
+<test-dasch> dsp-repo:hasEmail "info@dasch.swiss" . 
+<test-dasch> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+<test-dasch> dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "https://test.swiss" ;
+   ].
 
+<test-grant> rdf:type dsp-repo:Grant . 
+<test-grant> dsp-repo:hasName "Prof. test test, Prof. test Harbtestrecht"^^xsd:string .
+<test-grant> dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "http://p3.snf.ch/testproject" ;
+   ].
+<test-grant> dsp-repo:hasNumber "0123456789"^^xsd:string .
+<test-grant> dsp-repo:hasFunder <test-funder> .
 
-### MLS ###
-<mls> rdf:type dsp-repo:Project .
-<mls> dsp-repo:hasName "MLS Musiklexikon der Schweiz" .
-<mls> dsp-repo:hasDescription  "Das Musiklexikon der Schweiz will fundierte und zeitgemässe Information über die Musikgeschichte in der Schweiz online unentgeltlich zur Verfügung stellen. Relevante Personen der Schweizer Musikgeschichte, Institutionen und musikbezogene Objekte zu allen Sparten des Musiklebens werden berücksichtigt: Volks- und Popularmusik, Klassik, Musikerziehung oder Festivals. In einem ersten Schritt ermöglicht das MLS den Zugang zur älteren Lexikographie und vernetzt die Information national und international mit wissenschaftlichen Informationsquellen. Rechtsfreie Lexika sind im Volltext digitalisiert zugänglich. Unentgeltlich zugängliche wissenschaftliche Online-Lexika werden verlinkt. Auf den Inhalt urheberrechtlich geschützter Lexika wird verwiesen, ohne den Text zur Verfügung zu stellen. Die Inhalte werden bei Verfall des Urheberschutzes laufend ergänzt. Wissenschaftliche Stichwortlisten sind als Platzhalter für neue Artikel berücksichtigt worden. Die vorhandene Lexikographie beschränkt sich auf Personenartikel, daher erscheinen in dieser Phase nur personenbezogene Inhalte. Damit kann der Leser die zeitliche Entwicklung musikhistorischen Wissens und den Vorgang der Informationsgewinnung und Verdichtung einfach und intuitiv erleben. Die nächste Phase soll neue Artikel zu Personen, Objekten und Institutionen hinzufügen." .
-<mls> dsp-repo:hasKeywords "Musik" .
-<mls> dsp-repo:hasKeywords "Schweiz" .
-<mls> dsp-repo:hasKeywords "Musikgeschichte" .
-<mls> dsp-repo:hasKeywords "Volksmusik" .
-<mls> dsp-repo:hasKeywords "Klassik" .
-<mls> dsp-repo:hasKeywords "Popularmusik" .
-<mls> dsp-repo:hasKeywords "Musikerziehung" .
-<mls> dsp-repo:hasKeywords "Festival" .
-<mls> dsp-repo:hasCategories "music" .
-<mls> dsp-repo:hasStartDate "2019" .
-<mls> dsp-repo:hasEndDate "2050" .
-<mls> dsp-repo:hasTemporalCoverage "8th-21st century CE".
-<mls> dsp-repo:hasSpatialCoverage "Switzerland".
-<mls> dsp-repo:hasFunder "SAGW" .
-<mls> dsp-repo:hasURL "https://mls.0807.dasch.swiss/home" .
-<mls> dsp-repo:hasPublication "Musinfo (https://musinfo.ch/de/)" .
-<mls> dsp-repo:hasPublication " Neo.mx3 (https://neo.mx3.ch/)" .
-<mls> dsp-repo:hasPublication "Österreichisches Musiklexikon" .
-<mls> dsp-repo:hasPublication "Bayerisches Musiklexikon" .
-<mls> dsp-repo:hasPublication "Historisches Lexikon der Schweiz" .
-<mls> dsp-repo:hasDateCreated "13.02.2020" .
-<mls> dsp-repo:hasDateModified "13.02.2020" .
-<mls> dsp-repo:hasShortcode "0807" .
-<mls> dsp-repo:hasAlternateName "mls" .
+<test-funder> rdf:type dsp-repo:Organization .
+# <test-funder> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://www.grid.ac/institutes/grid.17063.33" ;
+#    ].
+<test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
+<test-funder> dsp-repo:hasEmail "info@universityoftoronto"^^xsd:string .
+<test-funder> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "University of Toronto Street"^^xsd:string ;
+    schema:postalCode "40000"^^xsd:string ;
+    schema:addressLocality "Toronto"^^xsd:string ;
+].
 
-<mls-dataset> rdf:type dsp-repo:Dataset .
-<mls-dataset> dsp-repo:hasEncodingFormat "text" .
-<mls-dataset> dsp-repo:hasDocumentation "no" .
-<mls-dataset> dsp-repo:hasConditionsOfAccess "Open Access" .
-<mls-dataset> dsp-repo:hasUsageInfo "Musiklexikon der Schweiz Online (MLS Online), 2020, https://mls.0807.dasch.swiss/home".
-<mls-dataset> dsp-repo:hasStatus "data will be added continuously" .
-<mls-dataset> dsp-repo:hasDatePublished "2020" .
-<mls-dataset> dsp-repo:hasLanguage "DE" .
-<mls-dataset> dsp-repo:isPartOf <mls> .
-
-<mls-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <mls-christina-urchueguia>;
-    dsp-repo:hasRole "editor";
-] .
-
-<mls-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <mls-minder>;
-    dsp-repo:hasRole "contributor";
-] .
-
-<mls-christina-urchueguia> rdf:type dsp-repo:Person .       
-<mls-christina-urchueguia> dsp-repo:hasGivenName "Cristina" .        
-<mls-christina-urchueguia> dsp-repo:hasFamilyName "Urchueguía" .
-<mls-christina-urchueguia> dsp-repo:hasEmail "urchueguia@musik.unibe.ch" .
-<mls-christina-urchueguia> dsp-repo:hasAddress "GLAM Institution, Schweizerische musikforschende Gesellschaft, Hallerstr. 5, 3012 Bern" .
-<mls-christina-urchueguia> dsp-repo:isMemberOf <mls-organization> .
-<mls-christina-urchueguia> dsp-repo:hasJobTitle "Professor" .
-
-<mls-minder> rdf:type dsp-repo:Person .    
-<mls-minder> dsp-repo:hasGivenName "Irène" .        
-<mls-minder> dsp-repo:hasFamilyName "Minder-Jeanneret" .
-<mls-minder> dsp-repo:hasAddress "GLAM Institution, Schweizerische musikforschende Gesellschaft, Hallerstr. 5, 3012 Bern" .
-<mls-minder> dsp-repo:isMemberOf <mls-organization> .
-
-<mls-organization> rdf:type dsp-repo:Organization . 
-<mls-organization> dsp-repo:hasOrganizationName "Schweizerische musikforschende Gesellschaft" .
-<mls-organization> dsp-repo:hasOrganizationEmail "blbabla@blabl.ch" .
-<mls-organization> dsp-repo:hasOrganizationAddress "Hallerstr. 5, 3012 Bern" .
-<mls-organization> dsp-repo:hasOrganizationURL "http://blabla.ch" .
-
-### PARZIVAL ###
-<parzival> rdf:type dsp-repo:Project .
-<parzival> dsp-repo:hasName "Wolfram von Eschenbach, Parzival, Digitale Edition" .
-<parzival> dsp-repo:hasStartDate "01.2050" .
-<parzival> dsp-repo:hasEndDate "12.2050".
-<parzival> dsp-repo:hasTemporalCoverage "13th-15th century CE".
-<parzival> dsp-repo:hasSpatialCoverage "Ober- und niederdeutscher Sprachraum".
-<parzival> dsp-repo:hasFunder "SNF" .
-<parzival> dsp-repo:hasFunder "DfG" .
-<parzival> dsp-repo:hasGrant <parzival-grant> .
-<parzival> dsp-repo:hasURL "http://www.parzival.unibe.ch/parzdb/" .
-<parzival> dsp-repo:hasDateCreated "02.2050" .
-<parzival> dsp-repo:hasDateModified "03.2150" .
-<parzival> dsp-repo:hasShortcode "0000" .
-<parzival> dsp-repo:hasAlternateName "Parzival-Projekt" .
-<parzival> dsp-repo:hasPublication "yes" .
-
-<parzival-dataset> rdf:type dsp-repo:Dataset .
-<parzival-dataset> dsp-repo:hasIdentifier "fakeARKstring" .
-<parzival-dataset> dsp-repo:hasEncodingFormat "image" .
-<parzival-dataset> dsp-repo:hasEncodingFormat "text" .
-<parzival-dataset> dsp-repo:hasDocumentation "yes" .
-<parzival-dataset> dsp-repo:hasLicense "fakelicense" .
-<parzival-dataset> dsp-repo:hasConditionsOfAccess "Public Access" .
-<parzival-dataset> dsp-repo:hasUsageInfo "Wolfram von Eschenbach, ›Parzival‹, Digitale Edition, Parzival-Projekt, www.parzival.unibe.ch/parzDB/, (Zugriff: [aktuelles Datum])".
-<parzival-dataset> dsp-repo:hasStatus "data will be added continuously" .
-<parzival-dataset> dsp-repo:hasDatePublished "2019" .
-<parzival-dataset> dsp-repo:hasLanguage "DE" .
-<parzival-dataset> dsp-repo:isPartOf <parzival> .
-
-<parzival-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <parzival-stolz>;
-    dsp-repo:hasRole "creator";
-] .
-
-<parzival-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <parzival-hauenstein>;
-    dsp-repo:hasRole "creator";
-] .
-
-<parzival-stolz> rdf:type dsp-repo:Person .  
-<parzival-stolz> dsp-repo:hasGivenName "Michael" .        
-<parzival-stolz> dsp-repo:hasFamilyName "Stolz" .
-<parzival-stolz> dsp-repo:isMemberOf <parzival-organization> .
-<parzival-stolz> dsp-repo:hasJobTitle "Prof. Dr." .
-
-<parzival-hauenstein> rdf:type dsp-repo:Person . 
-<parzival-hauenstein> dsp-repo:hasGivenName "Jens" .        
-<parzival-hauenstein> dsp-repo:hasFamilyName "Hauenstein" .
-<parzival-hauenstein> dsp-repo:hasJobTitle "Prof. Dr." .
-
-<parzival-organization> rdf:type dsp-repo:Organization . 
-<parzival-organization> dsp-repo:hasOrganizationName "Universität Bern, Institut für Germanistik, Parzival-Projekt" .
-<parzival-organization> dsp-repo:hasOrganizationAddress "Länggasstr. 49, 3012 Bern, Schweiz" .
-
-<parzival-grant> rdf:type dsp-repo:Grant .
-<parzival-grant> schema:identifier "1223445" .
+<test-funder> dsp-repo:hasURL[
+       a schema:URL ;
+       schema:url "http://www.utoronto.ca/" ;
+   ].
 
 
-### JOSEPH DIETRICH ###
-<dietrich> rdf:type dsp-repo:Project .
-<dietrich> dsp-repo:hasName "Das Kloster-Tagebuch des Einsiedler Pater Joseph Dietrich, 1670-1704, Kommentierte Online-Edition" .
-<dietrich> dsp-repo:hasDescription "Das Einsiedler Klostertagebuch der Jahre 1670-1704 von Pater Joseph Dietrich (1645-1704) gehört mit seinen 18 Bänden und insgesamt 12‘000 Seiten zu den wichtigsten und vielfältigsten Quellen der damaligen Zentral- und Ostschweiz. Die digitale Edition erschliesst den Zugang zur detailreichen Beschreibung des klösterlichen Alltags und zum regionalen und überregionalen Geschehen. Die Edition ist an die Abteilung für Wirtschafts-, Sozial- und Umweltgeschichte (WSU) am Historischen Institut der Universität Bern angebunden. Die nun vorliegende Pilot-Version umfasst den Band 6 (ohne Index), der ausgewählt worden war, um die Editionsgrundsätze auf der Basis eines schon gefestigten Tagebuchschreibens zu entwickeln. Die Grundsätze sollen die Erstellung eines diplomatischen und textkritisch kommentierten Transkriptionstextes erlauben, der sowohl mittels Volltextsuche als auch per Schlagwortsuche abfragbar sein wird und somit interdisziplinären Fragestellungen leicht zugänglich ist. Die Interdisziplinarität bedingt aber auch einen lesefreundlichen Text mit einem erhöhten Aufwand an philologischen und sachspezifischen Kommentaren." .
-<dietrich> dsp-repo:hasKeywords "Kloster" .
-<dietrich> dsp-repo:hasStartDate "01.2015" .
-<dietrich> dsp-repo:hasEndDate "12.2050".
-<dietrich> dsp-repo:hasTemporalCoverage "17th century and 18th century CE".
-<dietrich> dsp-repo:hasSpatialCoverage "Switzerland".
-<dietrich> dsp-repo:hasFunder "Schweizerischer Nationalfonds SNF" .
-<dietrich> dsp-repo:hasFunder "Kanton Aargau (Lotteriefonds)" .
-<dietrich> dsp-repo:hasFunder "Kanton Schwyz (Lotteriefonds)" .
-<dietrich> dsp-repo:hasFunder "Kanton Thurgau (Kulturamt)" .
-<dietrich> dsp-repo:hasFunder "AVINA-Stiftung" .
-<dietrich> dsp-repo:hasFunder "Ernst Göhner-Stiftung" .
-<dietrich> dsp-repo:hasFunder "Cogito Stiftung" .
-<dietrich> dsp-repo:hasURL "http://www.dietrich-edition.unibe.ch/" .
-<dietrich> dsp-repo:hasShortcode "0000" .
-<dietrich> dsp-repo:hasAlternateName "Dietrich-Projekt" .
-<dietrich> dsp-repo:hasPublication "yes" .
+# <test-funder> dsp-repo:hasBooBoo "booboo" .
 
-<dietrich-dataset> rdf:type dsp-repo:Dataset .
-<dietrich-dataset> dsp-repo:hasIdentifier "fakeARKstring".
-<dietrich-dataset> dsp-repo:hasEncodingFormat "image" .
-<dietrich-dataset> dsp-repo:hasEncodingFormat "text" .
-<dietrich-dataset> dsp-repo:hasDocumentation "yes" .
-<dietrich-dataset> dsp-repo:hasLicense "fakelicense" .
-<dietrich-dataset> dsp-repo:hasConditionsOfAccess "Public Access" .
-<dietrich-dataset> dsp-repo:hasUsageInfo "fakecitation".
-<dietrich-dataset> dsp-repo:hasStatus "data will be added continuously" .
-<dietrich-dataset> dsp-repo:hasDatePublished "2019" .
-<dietrich-dataset> dsp-repo:hasLanguage "DE" .
-<dietrich-dataset> dsp-repo:isPartOf <dietrich> .
 
-<dietrich-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <dietrich-schwarz>;
-    dsp-repo:hasRole "editor";
-] .
 
-<dietrich-dataset> dsp-repo:hasQualifiedAttribution [
-    a prov:Attribution;
-    prov:agent <dietrich-rohr>;
-    dsp-repo:hasRole "editor";
-] .
+### Examples
+#<test-project> dsp-repo:hasDiscipline [
+  #  a schema:URL ;
+  #  schema:propertyID [
+  #      a schema:PropertyValue ;
+  #      schema:propertyID "SKOS UNESCO Nomenclature" ;
+  #  ] ;
+   # schema:url "http://skos.um.es/unesco6/11" ;
+#] .
 
-<dietrich-schwarz> rdf:type dsp-repo:Person .        
-<dietrich-schwarz> dsp-repo:hasGivenName "G." .        
-<dietrich-schwarz> dsp-repo:hasFamilyName "Schwarz-Zanetti" .
-<dietrich-schwarz> dsp-repo:isMemberOf <dietrich-organization> .
-<dietrich-schwarz> dsp-repo:hasJobTitle "Dr." .
+#<test-project> dsp-repo:hasURL [
+ #       a schema:URL ;
+ #       schema:url "http://www.test.ch" ;
+  #  ].
 
-<dietrich-rohr> rdf:type dsp-repo:Person .        
-<dietrich-rohr> dsp-repo:hasGivenName "Christian" .        
-<dietrich-rohr> dsp-repo:hasFamilyName "Rohr" .
-<dietrich-rohr> dsp-repo:isMemberOf <dietrich-organization> .
-<dietrich-rohr> dsp-repo:hasJobTitle "Prof. Dr." .
+#<test-dataset> dsp-repo:hasQualifiedAttribution [
+   # a prov:Attribution;
+   # prov:agent <test-schwarz>;
+   # dsp-repo:hasRole "editor";
+#] .
 
-<dietrich-organization> rdf:type dsp-repo:Organization . 
-<dietrich-organization> dsp-repo:hasOrganizationName "Universität Bern" .
+#<test-dataset> dsp-repo:hasQualifiedAttribution [
+  #  a prov:Attribution;
+   # prov:agent <test-rohr>;
+  #  dsp-repo:hasRole "editor";
+#] .
