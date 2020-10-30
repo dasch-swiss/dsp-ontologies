@@ -142,6 +142,8 @@
     dsp-repo:hasDescription "Yes" ;
 ] .
 <test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
+<test-project> dsp-repo:hasContactPoint <test-abraham> .
+
 # <test-project> dsp-repo:hasContactPoint  [
 #         a schema:ContactPoint ; 
 #         schema:url [
@@ -155,10 +157,10 @@
 #     ].
 
 <test-dataset> rdf:type dsp-repo:Dataset .
-<test-dataset> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "http://testark.dasch.swiss/" ;
-   ].
+# <test-dataset> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "http://testark.dasch.swiss/" ;
+#    ].
 <test-dataset> dsp-repo:sameAs [
        a schema:URL ;
        schema:url "https://test.dasch.swiss/" ;
@@ -234,16 +236,16 @@
 <test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" . 
 <test-abraham> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 <test-abraham> dsp-repo:isMemberOf <test-dasch> .
 <test-abraham> dsp-repo:hasJobTitle "Dr." .
-<test-abraham> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://orcid.org/0000-0002-1825-0097" ;
-   ].
+# <test-abraham> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 
 # <test-abraham> dsp-repo:hasIdentifier [
 #         a schema:PropertyValue ;
@@ -268,17 +270,17 @@
 <test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch"^^xsd:string . 
 <test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 
 <test-jones> dsp-repo:isMemberOf <test-dasch> .
 <test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
-<test-jones> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://orcid.org/0000-0002-1825-0097" ;
-   ].
+# <test-jones> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 <test-jones> dsp-repo:hasRole "Editor"^^xsd:string .
 
 <test-hart> rdf:type dsp-repo:Person . 
@@ -287,16 +289,16 @@
 <test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" . 
 <test-hart> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 <test-hart> dsp-repo:isMemberOf <test-dasch> .
 <test-hart> dsp-repo:hasJobTitle "Prof." .
-<test-hart> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://orcid.org/0000-0002-1825-0097" ;
-   ].
+# <test-hart> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 <test-hart> dsp-repo:hasRole "Editor" .
 
 <test-berry> rdf:type dsp-repo:Person . 
@@ -305,16 +307,16 @@
 <test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" . 
 <test-berry> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 <test-berry> dsp-repo:isMemberOf <test-dasch> .
 <test-berry> dsp-repo:hasJobTitle "Dr." .
-<test-berry> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://orcid.org/0000-0002-1825-0097" ;
-   ].
+# <test-berry> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 <test-berry> dsp-repo:hasRole "Contributor" .
 
 <test-coleman> rdf:type dsp-repo:Person . 
@@ -323,30 +325,30 @@
 <test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .  
 <test-coleman> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 <test-coleman> dsp-repo:isMemberOf <test-dasch> .
 <test-coleman> dsp-repo:hasJobTitle "Dr. des." .
-<test-coleman> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://orcid.org/0000-0002-1825-0097" ;
-   ].
+# <test-coleman> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://orcid.org/0000-0002-1825-0097" ;
+#    ].
 <test-coleman> dsp-repo:hasRole "Contributor" . 
 
 <test-dasch> rdf:type dsp-repo:Organization . 
-<test-dasch> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "TEST" ;
-   ].
+# <test-dasch> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "TEST" ;
+#    ].
 <test-dasch> dsp-repo:hasName "TEST" .
 <test-dasch> dsp-repo:hasEmail "info@dasch.swiss" . 
 <test-dasch> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "Teststrasse" ;
-    schema:postalCode "4000" ;
-    schema:addressLocality "Basel" ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
 ].
 <test-dasch> dsp-repo:hasURL [
        a schema:URL ;
@@ -363,17 +365,17 @@
 <test-grant> dsp-repo:hasFunder <test-funder> .
 
 <test-funder> rdf:type dsp-repo:Organization .
-<test-funder> dsp-repo:hasIdentifier [
-       a schema:URL ;
-       schema:url "https://www.grid.ac/institutes/grid.17063.33" ;
-   ].
+# <test-funder> dsp-repo:hasIdentifier [
+#        a schema:URL ;
+#        schema:url "https://www.grid.ac/institutes/grid.17063.33" ;
+#    ].
 <test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
 <test-funder> dsp-repo:hasEmail "info@universityoftoronto"^^xsd:string .
 <test-funder> dsp-repo:hasAddress [
     a schema:PostalAddress ;
-    schema:streetAddress "University of Toronto Street" ;
-    schema:postalCode "40000" ;
-    schema:addressLocality "Toronto" ;
+    schema:streetAddress "University of Toronto Street"^^xsd:string ;
+    schema:postalCode "40000"^^xsd:string ;
+    schema:addressLocality "Toronto"^^xsd:string ;
 ].
 
 <test-funder> dsp-repo:hasURL[
