@@ -533,6 +533,12 @@ dsp-repo:PersonShape
     a sh:NodeShape ;
     sh:targetClass dsp-repo:Person ;
     sh:property [
+        sh:path dsp-repo:sameAs ;
+        sh:name "Alternative URL" ;
+        sh:description "Alternative URL"@en ;
+        sh:class schema:URL ;
+    ] ;
+    sh:property [
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
         sh:description "Given name of the person"@en ;

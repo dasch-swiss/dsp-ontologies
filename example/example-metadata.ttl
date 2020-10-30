@@ -231,6 +231,10 @@
 ] .
 
 <test-abraham> rdf:type dsp-repo:Person . 
+<test-abraham> dsp-repo:sameAs [
+       a schema:URL ;
+       schema:url "https://orcid.org/0000-0002-1825-0097" ;
+   ].
 <test-abraham> dsp-repo:hasGivenName "Stewart" . 
 <test-abraham> dsp-repo:hasFamilyName "Abraham" . 
 <test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" . 
