@@ -139,7 +139,7 @@
        a schema:URL ;
        schema:url "https://snf.ch" ;
     ] ;
-    dsp-repo:hasDescription "Yes" ;
+    dsp-repo:isAvailable "Yes" ;
 ] .
 <test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
 <test-project> dsp-repo:hasContactPoint <test-abraham> .
@@ -168,8 +168,8 @@
 <test-dataset> dsp-repo:hasTitle "Testprojekt" .
 <test-dataset> dsp-repo:hasAlternativeTitle "test" .
 <test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
-<test-dataset> dsp-repo:hasEncodingFormat "text" . 
-<test-dataset> dsp-repo:hasEncodingFormat "image" . 
+<test-dataset> dsp-repo:hasTypeOfDate "text" . 
+<test-dataset> dsp-repo:hasTypeOfDate "image" . 
 <test-dataset> dsp-repo:hasDocumentation "Work in progress" .
 <test-dataset> dsp-repo:hasLicense [
        a schema:URL ;

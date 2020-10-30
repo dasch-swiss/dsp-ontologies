@@ -212,6 +212,10 @@ dsp-repo:hasRole
 dsp-repo:hasNumber
     a rdf:Property .
 
+# http://ns.dasch.swiss/repository#isAvailable
+dsp-repo:isAvailable
+    a rdf:Property .
+
 # # http://ns.dasch.swiss/repository#hasBooBoo
 # dsp-repo:hasBooBoo
 #     a rdf:Property .
@@ -263,7 +267,7 @@ dsp-repo:DataManagementPlan
     a rdfs:Class ;
     rdfs:comment "A Data Management Plan"@en ;
     rdfs:label "dsp-repo:DataManagementPlan"@en ;
-    rdfs:subClassOf schema:Thing .
+    rdfs:subClassOf schema:CreativeWork .
 
 ##### SHAPES #####
 ### --- Shape of dsp-repo:Project ---
@@ -429,9 +433,9 @@ dsp-repo:DatasetShape
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasEncodingFormat ;
-        sh:name "Encoding format" ;
-        sh:description "Kind of data related to the dataset: XML, Text, Image, Movie, Audio"@en ;
+        sh:path dsp-repo:hasTypeOfDate ;
+        sh:name "Type of data" ;
+        sh:description "Type of data related to the dataset: XML, Text, Image, Movie, Audio"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
@@ -439,7 +443,7 @@ dsp-repo:DatasetShape
         sh:path dsp-repo:hasDocumentation ;
         sh:name "Documentation" ;
         sh:description "Additional documentation"@en ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:class schema:URL ] ) ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasLicense ;
@@ -686,13 +690,13 @@ dsp-repo:DataManagementPlanShape
     sh:targetClass dsp-repo:DataManagementPlan ;
     sh:property [
         sh:path dsp-repo:hasURL ;
-        sh:name "URL" ;
+        sh:name "Link to DMP" ;
         sh:description "URL of the data management plan"@en ;
         sh:class schema:URL ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasDescription ;
+        sh:path dsp-repo:isAvailable ;
         sh:name "Description" ;
         sh:description "Data Management Plan available [Yes/No]"@en ;
         sh:datatype xsd:string ;
