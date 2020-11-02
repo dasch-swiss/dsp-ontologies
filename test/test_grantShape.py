@@ -136,7 +136,7 @@ class grantNumberTestCase(unittest.TestCase):
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
 
-    #TODO: add more tests for number here
+    # TODO: add more tests for number here
 
 ####### Tests for name of grant  #######
 class grantFunderTestCase(unittest.TestCase):
@@ -154,7 +154,7 @@ class grantFunderTestCase(unittest.TestCase):
                                              serialize_report_graph=True)
         self.assertTrue(conforms)
 
-    #TODO: add more tests for funder here
+    # TODO: add more tests for funder here
 
 ####### Tests for URL of grant  #######
 class grantURLTestCase(unittest.TestCase):

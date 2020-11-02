@@ -90,7 +90,7 @@ class organizationNameTestCase(unittest.TestCase):
 
     #TODO: add more tests for name here
 
-####### Tests for email of funder  #######
+####### Tests for email of organization  #######
 class organizationEmailTestCase(unittest.TestCase):
 
     # should accept email given as IRI
@@ -108,7 +108,7 @@ class organizationEmailTestCase(unittest.TestCase):
 
     # TODO: add more tests for email here
 
-####### Tests for address of funder  #######
+####### Tests for address of organization  #######
 class organizationAddressTestCase(unittest.TestCase):
 
     # should accept the address as string
@@ -126,7 +126,7 @@ class organizationAddressTestCase(unittest.TestCase):
 
     # TODO: add more tests for address here
 
-####### Tests for URL of funder  #######
+####### Tests for URL of organization  #######
 class organizationURLTestCase(unittest.TestCase):
 
     # should accept the URL as string
