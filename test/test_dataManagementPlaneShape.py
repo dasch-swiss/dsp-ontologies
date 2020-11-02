@@ -59,7 +59,7 @@ def makeDataManagementPlanData(test_plan):
 ####### Tests for name of data management plan  #######
 class planURLTestCase(unittest.TestCase):
 
-    # should accept URL as string
+    # should not accept URL as string
     def test_planHasURL_As_String(self):
         testDMPlan = DataManagementPlan()
         testDMPlan.hasURL = '"http://example.com/"^^xsd:string'
@@ -70,7 +70,7 @@ class planURLTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
     #TODO: add more tests for name here
 

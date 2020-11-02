@@ -111,7 +111,7 @@ class organizationEmailTestCase(unittest.TestCase):
 ####### Tests for address of organization  #######
 class organizationAddressTestCase(unittest.TestCase):
 
-    # should accept the address as string
+    # should not accept the address as string
     def test_organizationHasAddress_As_String(self):
         testOrganization = Organization()
         testOrganization.hasAddress = '"Outer Rim territories, Naboo"^^xsd:string'
@@ -122,7 +122,7 @@ class organizationAddressTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
     # TODO: add more tests for address here
 
@@ -140,7 +140,7 @@ class organizationURLTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
     # TODO: add more tests for URL here
 

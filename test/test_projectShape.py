@@ -274,7 +274,7 @@ class ProjectKeywordsTestCase(unittest.TestCase):
         self.assertFalse(conforms)
 
     # should fail when an empty keyword given
-    def test_projectKeywords_missing(self):
+    def test_projectKeywords_empty(self):
         testProject = Project()
         testProject.keywords = '""^^xsd:string'
         test_data = makeProjectData(testProject)

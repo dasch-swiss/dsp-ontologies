@@ -159,7 +159,7 @@ class grantFunderTestCase(unittest.TestCase):
 ####### Tests for URL of grant  #######
 class grantURLTestCase(unittest.TestCase):
 
-    # should accept the URL as string
+    # should not accept the URL as string
     def test_organizationHasURL_As_String(self):
         testGrant = Grant()
         testGrant.hasURL = '"http://www.jediSchool.org/"^^xsd:string'
@@ -170,7 +170,7 @@ class grantURLTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
     # TODO: add more tests for URL here
 
