@@ -698,8 +698,8 @@ dsp-repo:DataManagementPlanShape
     sh:property [
         sh:path dsp-repo:isAvailable ;
         sh:name "Description" ;
-        sh:description "Data Management Plan available [Yes/No]"@en ;
-        sh:datatype xsd:string ;
+        sh:description "Data Management Plan available [True/False]"@en ;
+        sh:datatype xsd:boolean ;
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;

@@ -139,7 +139,7 @@
        a schema:URL ;
        schema:url "https://snf.ch" ;
     ] ;
-    dsp-repo:isAvailable "Yes" ;
+    dsp-repo:isAvailable "true"^^xsd:boolean ;
 ] .
 <test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
 <test-project> dsp-repo:hasContactPoint <test-abraham> .
@@ -155,6 +155,13 @@
 #             schema:url "https://test.dasch.swiss/" ; 
 #         ]
 #     ].
+
+<test-plan> rdf:type dsp-repo:DataManagementPlan .
+<test-plan> dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "https://snf.ch" ;
+    ] .
+<test-plan> dsp-repo:isAvailable "false"^^xsd:boolean .
 
 <test-dataset> rdf:type dsp-repo:Dataset .
 # <test-dataset> dsp-repo:hasIdentifier [
