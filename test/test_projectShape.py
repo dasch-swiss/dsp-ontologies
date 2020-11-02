@@ -58,8 +58,7 @@ class Project:
         self.hasName = '"test"^^xsd:string'
         self.hasDescription = '"testen"^^xsd:string'
         self.keywords = '"mathematics"^^xsd:string'
-        self.hasDiscipline = '''
-                                [
+        self.hasDiscipline = '''[
                                    a schema:URL ;
                                    schema:propertyID [
                                        a schema:PropertyValue ;
@@ -69,27 +68,24 @@ class Project:
                                 ]'''
 
         self.hasStartDate = '"2000-07-26T21:32:52"^^xsd:dateTime'
-        self.hasTemporalCoverage = '''
-                                [
-                                   a schema:URL ;
-                                   schema:propertyID [
-                                       a schema:PropertyValue ;
-                                       schema:propertyID "Chronontology Dainst" ;
-                                   ] ;
-                                   schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
-                                ]'''
+        self.hasTemporalCoverage = '''[
+                                       a schema:URL ;
+                                       schema:propertyID [
+                                           a schema:PropertyValue ;
+                                           schema:propertyID "Chronontology Dainst" ;
+                                       ] ;
+                                       schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
+                                    ]'''
 
         self.hasFunder = "<test-funder>"
-        self.hasURL =  '''
-                            [
+        self.hasURL =  '''[
                                a schema:URL ;
                                schema:url "https://test.dasch.swiss/" ;
                             ]'''
 
         self.hasShortcode = '"0000"^^xsd:string'
 
-        self.hasSpatialCoverage = '''
-                                        [
+        self.hasSpatialCoverage = '''[
                                                 a schema:Place ;
                                                 schema:url [
                                                     a schema:URL ;
@@ -149,9 +145,9 @@ class ProjectNameTestCase(unittest.TestCase):
 
     # should accept name as string
     def test_projectHasName_with_String(self):
-        projectWithStringName = Project()
-        projectWithStringName.hasName = '"a name"^^xsd:string'
-        test_data = makeProjectData(projectWithStringName)
+        testProject = Project()
+        testProject.hasName = '"a name"^^xsd:string'
+        test_data = makeProjectData(testProject)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
@@ -162,9 +158,9 @@ class ProjectNameTestCase(unittest.TestCase):
 
     # should fail for name as IRI
     def test_projectHasName_with_IRI(self):
-        projectWithIriName = Project()
-        projectWithIriName.hasName = '<anIRI>'
-        test_data = makeProjectData(projectWithIriName)
+        testProject = Project()
+        testProject.hasName = '<anIRI>'
+        test_data = makeProjectData(testProject)
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
                                              shacl_graph_format='turtle',
@@ -174,9 +170,9 @@ class ProjectNameTestCase(unittest.TestCase):
 
     #should fail when name is missing
     def test_projectHasName_missing(self):
-        projectWithoutName = Project()
-        delattr(projectWithoutName, 'hasName')
-        test_data = makeProjectData(projectWithoutName)
+        testProject = Project()
+        delattr(testProject, 'hasName')
+        test_data = makeProjectData(testProject)
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
                                              shacl_graph_format='turtle',
