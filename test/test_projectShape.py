@@ -105,40 +105,37 @@ class Project:
 
 def makeProjectData(testProject):
 
-    projectData = prefix_list + test_Funder + \
-        '''
-            <test-project> rdf:type dsp-repo:Project .
-        ''' + \
-        '''
-            <test-project> dsp-repo:hasName
-        ''' + testProject.hasName + ' .' + \
-        '''
-            <test-project> dsp-repo:hasDescription
-        ''' + testProject.hasDescription + ' .' + \
-        '''
-            <test-project> dsp-repo:hasKeywords
-        ''' + testProject.keywords + ' .' + \
-        '''
-            <test-project> dsp-repo:hasDiscipline
-        ''' + testProject.hasDiscipline + ' .' + \
-        '''
-            <test-project> dsp-repo:hasStartDate
-        ''' + testProject.hasStartDate  + ' .' + \
-        '''
-            <test-project> dsp-repo:hasTemporalCoverage
-        ''' + testProject.hasTemporalCoverage  + ' .' + \
-        '''
-            <test-project> dsp-repo:hasSpatialCoverage
-        ''' + testProject.hasSpatialCoverage + ' .' + \
-        '''
-            <test-project> dsp-repo:hasFunder
-        ''' + testProject.hasFunder + ' .' + \
-        '''
-            <test-project> dsp-repo:hasURL
-        ''' + testProject.hasURL + ' .' + \
-        '''
-            <test-project> dsp-repo:hasShortcode
-        ''' + testProject.hasShortcode + ' .'
+    projectData = prefix_list + test_Funder + '''<test-project> rdf:type dsp-repo:Project .\n'''
+
+    if hasattr(testProject, 'hasName'):
+        projectData += '''<test-project> dsp-repo:hasName''' + testProject.hasName + ' .\n'
+
+    if hasattr(testProject, 'hasDescription'):
+        projectData += '''<test-project> dsp-repo:hasDescription''' + testProject.hasDescription + ' .\n'
+
+    if hasattr(testProject, 'keywords'):
+        projectData += '''<test-project> dsp-repo:hasKeywords''' + testProject.keywords + ' .\n'
+
+    if hasattr(testProject, 'hasDiscipline'):
+        projectData += '''<test-project> dsp-repo:hasDiscipline''' + testProject.hasDiscipline + ' .\n'
+
+    if hasattr(testProject, 'hasStartDate'):
+        projectData += '''<test-project> dsp-repo:hasStartDate''' + testProject.hasStartDate  + ' .\n'
+
+    if hasattr(testProject, 'hasTemporalCoverage'):
+        projectData += '''<test-project> dsp-repo:hasTemporalCoverage''' + testProject.hasTemporalCoverage  + ' .\n'
+
+    if hasattr(testProject, 'hasSpatialCoverage'):
+        projectData += '''<test-project> dsp-repo:hasSpatialCoverage''' + testProject.hasSpatialCoverage + ' .\n'
+
+    if hasattr(testProject, 'hasFunder'):
+        projectData += '''<test-project> dsp-repo:hasFunder''' + testProject.hasFunder + ' .\n'
+
+    if hasattr(testProject, 'hasURL'):
+        projectData += '''<test-project> dsp-repo:hasURL''' + testProject.hasURL + ' .\n'
+
+    if hasattr(testProject, 'hasShortcode'):
+        projectData += '''<test-project> dsp-repo:hasShortcode''' + testProject.hasShortcode + ' .\n'
 
     return projectData
 
@@ -152,9 +149,9 @@ class ProjectNameTestCase(unittest.TestCase):
 
     # should accept name as string
     def test_projectHasName_with_String(self):
-        testProject = Project()
-        testProject.hasName = '"a name"^^xsd:string'
-        test_data = makeProjectData(testProject)
+        projectWithStringName = Project()
+        projectWithStringName.hasName = '"a name"^^xsd:string'
+        test_data = makeProjectData(projectWithStringName)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
@@ -165,9 +162,9 @@ class ProjectNameTestCase(unittest.TestCase):
 
     # should fail for name as IRI
     def test_projectHasName_with_IRI(self):
-        testProject = Project()
-        testProject.hasName = '<anIRI>'
-        test_data = makeProjectData(testProject)
+        projectWithIriName = Project()
+        projectWithIriName.hasName = '<anIRI>'
+        test_data = makeProjectData(projectWithIriName)
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
                                              shacl_graph_format='turtle',
@@ -175,7 +172,19 @@ class ProjectNameTestCase(unittest.TestCase):
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
 
-    # should fail for empty name
+    #should fail when name is missing
+    def test_projectHasName_missing(self):
+        projectWithoutName = Project()
+        delattr(projectWithoutName, 'hasName')
+        test_data = makeProjectData(projectWithoutName)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # should fail when name is empty
     def test_projectHasName_empty(self):
         testProject = Project()
         testProject.hasName = '""^^xsd:string'
@@ -212,6 +221,19 @@ class ProjectShortCodeTestCase(unittest.TestCase):
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
+
+    # should fail when shortcode is missing
+    def test_projectHasName_missing(self):
+        testProject = Project()
+        delattr(testProject, 'hasShortcode')
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
 
     # should fail for empty shortcode
     def test_projectShortCode_empty(self):
