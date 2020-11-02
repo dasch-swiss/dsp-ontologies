@@ -31,7 +31,7 @@ prefix_list = '''
 dsp_repo_shape = '../dsp-repository/v1/dsp-repository.shacl.ttl'
 shape_file = path.abspath(dsp_repo_shape)
 
-class Funder:
+class Organization:
     def __init__(self):
         self.hasName = '"test"^^xsd:string'
         self.hasEmail = '"test@example.com"^^xsd:string'
@@ -49,37 +49,37 @@ class Funder:
 
 
 
-def makeFunderData(testFunder):
+def makeOrganizationData(testOrganization):
 
-    funderData = prefix_list + '''<test-funder> rdf:type dsp-repo:Organization .\n'''
+    organizationData = prefix_list + '''<test-funder> rdf:type dsp-repo:Organization .\n'''
 
-    if hasattr(testFunder, 'hasName'):
-        funderData += '''<test-funder> dsp-repo:hasName''' + testFunder.hasName + ' .\n'
+    if hasattr(testOrganization, 'hasName'):
+        organizationData += '''<test-funder> dsp-repo:hasName''' + testOrganization.hasName + ' .\n'
 
-    if hasattr(testFunder, 'hasEmail'):
-        funderData += '''<test-funder> dsp-repo:hasEmail''' + testFunder.hasEmail + ' .\n'
+    if hasattr(testOrganization, 'hasEmail'):
+        organizationData += '''<test-funder> dsp-repo:hasEmail''' + testOrganization.hasEmail + ' .\n'
 
-    if hasattr(testFunder, 'hasAddress'):
-        funderData += '''<test-funder> dsp-repo:hasAddress''' + testFunder.hasAddress + ' .\n'
+    if hasattr(testOrganization, 'hasAddress'):
+        organizationData += '''<test-funder> dsp-repo:hasAddress''' + testOrganization.hasAddress + ' .\n'
 
-    if hasattr(testFunder, 'hasURL'):
-        funderData += '''<test-funder> dsp-repo:hasURL''' + testFunder.hasURL + ' .\n'
+    if hasattr(testOrganization, 'hasURL'):
+        organizationData += '''<test-funder> dsp-repo:hasURL''' + testOrganization.hasURL + ' .\n'
 
-    return funderData
+    return organizationData
 
 
 ############################################################
-######### TEST CLASSES FOR FUNDER PROPERTIES ##############
+######### TEST CLASSES FOR ORGANIZATION PROPERTIES ##############
 ############################################################
 
-####### Tests for name of funder  #######
-class funderNameTestCase(unittest.TestCase):
+####### Tests for name of organization  #######
+class organizationNameTestCase(unittest.TestCase):
 
     # should accept name as string
-    def test_funderHasName_As_String(self):
-        testFunder = Funder()
-        testFunder.hasName = '"a name"^^xsd:string'
-        test_data = makeFunderData(testFunder)
+    def test_organizationHasName_As_String(self):
+        testOrganization = Organization()
+        testOrganization.hasName = '"a name"^^xsd:string'
+        test_data = makeOrganizationData(testOrganization)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
@@ -91,13 +91,13 @@ class funderNameTestCase(unittest.TestCase):
     #TODO: add more tests for name here
 
 ####### Tests for email of funder  #######
-class funderEmailTestCase(unittest.TestCase):
+class organizationEmailTestCase(unittest.TestCase):
 
     # should accept email given as IRI
-    def test_funderHasAddress_As_IRI(self):
-        testFunder = Funder()
-        testFunder.hasEmail = '<test@example.com>'
-        test_data = makeFunderData(testFunder)
+    def test_organizationHasEmail_As_IRI(self):
+        testOrganization = Organization()
+        testOrganization.hasEmail = '<test@example.com>'
+        test_data = makeOrganizationData(testOrganization)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
@@ -109,13 +109,13 @@ class funderEmailTestCase(unittest.TestCase):
     # TODO: add more tests for email here
 
 ####### Tests for address of funder  #######
-class funderAddressTestCase(unittest.TestCase):
+class organizationAddressTestCase(unittest.TestCase):
 
     # should accept the address as string
-    def test_funderHasAddress_As_String(self):
-        testFunder = Funder()
-        testFunder.hasAddress = '"Outer Rim territories, Naboo"^^xsd:string'
-        test_data = makeFunderData(testFunder)
+    def test_organizationHasAddress_As_String(self):
+        testOrganization = Organization()
+        testOrganization.hasAddress = '"Outer Rim territories, Naboo"^^xsd:string'
+        test_data = makeOrganizationData(testOrganization)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
@@ -127,13 +127,13 @@ class funderAddressTestCase(unittest.TestCase):
     # TODO: add more tests for address here
 
 ####### Tests for URL of funder  #######
-class funderURLTestCase(unittest.TestCase):
+class organizationURLTestCase(unittest.TestCase):
 
     # should accept the URL as string
-    def test_funderHasURL_As_String(self):
-        testFunder = Funder()
-        testFunder.hasURL = '"http://www.jediSchool.org/"^^xsd:string'
-        test_data = makeFunderData(testFunder)
+    def test_organizationHasURL_As_String(self):
+        testOrganization = Organization()
+        testOrganization.hasURL = '"http://www.jediSchool.org/"^^xsd:string'
+        test_data = makeOrganizationData(testOrganization)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
                                              data_graph_format='turtle',
