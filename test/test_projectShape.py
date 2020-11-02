@@ -143,13 +143,12 @@ def makeProjectData(testProject):
     return projectData
 
 
-##########################################################
-######### TEST CLASS FOR PROJECT PROPERTIES ##############
-##########################################################
+############################################################
+######### TEST CLASSES FOR PROJECT PROPERTIES ##############
+############################################################
 
-class ProjectShapeTestCase(unittest.TestCase):
-
-    ####### Tests for project name #######
+####### Tests for project name #######
+class ProjectNameTestCase(unittest.TestCase):
 
     # should accept name as string
     def test_projectHasName_with_String(self):
@@ -176,7 +175,7 @@ class ProjectShapeTestCase(unittest.TestCase):
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
 
-    # should fail for name that is an empty strings
+    # should fail for empty name
     def test_projectHasName_empty(self):
         testProject = Project()
         testProject.hasName = '""^^xsd:string'
@@ -188,6 +187,43 @@ class ProjectShapeTestCase(unittest.TestCase):
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
 
+####### Tests for project shortcode #######
+class ProjectShortCodeTestCase(unittest.TestCase):
+    # should accept shortcode as string
+    def test_projectShortCode_String(self):
+        testProject = Project()
+        testProject.hasShortcode = '"0801"^^xsd:string'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertTrue(conforms)
+
+    # should fail for shortcode as integer
+    def test_projectShortCode_integer(self):
+        testProject = Project()
+        testProject.hasShortcode = '"0801"^^xsd:int'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # should fail for empty shortcode
+    def test_projectShortCode_empty(self):
+        testProject = Project()
+        testProject.hasShortcode = '""^^xsd:string'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
 
 if __name__ == '__main__':
     unittest.main()
