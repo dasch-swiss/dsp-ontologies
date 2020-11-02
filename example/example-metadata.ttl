@@ -175,8 +175,8 @@
 <test-dataset> dsp-repo:hasTitle "Testprojekt" .
 <test-dataset> dsp-repo:hasAlternativeTitle "test" .
 <test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
-<test-dataset> dsp-repo:hasTypeOfDate "text" . 
-<test-dataset> dsp-repo:hasTypeOfDate "image" . 
+<test-dataset> dsp-repo:hasTypeOfData "text" .
+<test-dataset> dsp-repo:hasTypeOfData "image" .
 <test-dataset> dsp-repo:hasDocumentation "Work in progress" .
 <test-dataset> dsp-repo:hasLicense [
        a schema:URL ;
