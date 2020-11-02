@@ -140,11 +140,11 @@ def makeProjectData(testProject):
 ######### TEST CLASSES FOR PROJECT PROPERTIES ##############
 ############################################################
 
-####### Tests for project name #######
+# ####### Tests for project name #######
 class ProjectNameTestCase(unittest.TestCase):
 
     # should accept name as string
-    def test_projectHasName_with_String(self):
+    def test_projectHasName_As_String(self):
         testProject = Project()
         testProject.hasName = '"a name"^^xsd:string'
         test_data = makeProjectData(testProject)
@@ -157,7 +157,7 @@ class ProjectNameTestCase(unittest.TestCase):
         self.assertTrue(conforms)
 
     # should fail for name as IRI
-    def test_projectHasName_with_IRI(self):
+    def test_projectHasName_As_IRI(self):
         testProject = Project()
         testProject.hasName = '<anIRI>'
         test_data = makeProjectData(testProject)
@@ -191,11 +191,13 @@ class ProjectNameTestCase(unittest.TestCase):
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
+#
+#     # Todo: add more tests for name here
 
 ####### Tests for project shortcode #######
 class ProjectShortCodeTestCase(unittest.TestCase):
     # should accept shortcode as string
-    def test_projectShortCode_String(self):
+    def test_projectShortCode_As_String(self):
         testProject = Project()
         testProject.hasShortcode = '"0801"^^xsd:string'
         test_data = makeProjectData(testProject)
@@ -207,7 +209,7 @@ class ProjectShortCodeTestCase(unittest.TestCase):
         self.assertTrue(conforms)
 
     # should fail for shortcode as integer
-    def test_projectShortCode_integer(self):
+    def test_projectShortCode_As_integer(self):
         testProject = Project()
         testProject.hasShortcode = '"0801"^^xsd:int'
         test_data = makeProjectData(testProject)
@@ -242,6 +244,90 @@ class ProjectShortCodeTestCase(unittest.TestCase):
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
         self.assertFalse(conforms)
+
+    # TODO: add more tests for shortcode here
+
+####### Tests for project keywords #######
+class ProjectKeywordsTestCase(unittest.TestCase):
+    # should accept keywords as string
+    def test_projectKeywords_As_String(self):
+        testProject = Project()
+        testProject.keywords = '"a test keyword"^^xsd:string'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertTrue(conforms)
+
+    # should fail when no keyword given
+    def test_projectKeywords_missing(self):
+        testProject = Project()
+        delattr(testProject, 'keywords')
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # should fail when an empty keyword given
+    def test_projectKeywords_missing(self):
+        testProject = Project()
+        testProject.keywords = '""^^xsd:string'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # TODO: add more tests for keywords here
+
+####### Tests for project description #######
+class ProjectDescriptionTestCase(unittest.TestCase):
+    # should accept description as string
+    def test_projectDescription_As_String(self):
+        testProject = Project()
+        testProject.hasDescription = '"bla bla bla"^^xsd:string'
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertTrue(conforms)
+
+    # should fail when no descrition given
+    def test_projectKeywords_missing(self):
+        testProject = Project()
+        delattr(testProject, 'hasDescription')
+        test_data = makeProjectData(testProject)
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+
+    # should fail when multuiple description given
+    def test_projectDescription_multipleEntries(self):
+        testProject = Project()
+        testProject.hasDescription = '"first description"^^xsd:string'
+        test_data = makeProjectData(testProject)
+        test_data += '''<test-project> dsp-repo:hasDescription "second description"^^xsd:string .\n'''
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # TODO: add more tests for description here
 
 if __name__ == '__main__':
     unittest.main()
