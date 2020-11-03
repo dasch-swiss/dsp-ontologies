@@ -32,48 +32,20 @@ dsp_repo_shape = '../dsp-repository/v1/dsp-repository.shacl.ttl'
 shape_file = path.abspath(dsp_repo_shape)
 
 
-test_organization = '''
-                <test-dasch> rdf:type dsp-repo:Organization .
-                <test-dasch> dsp-repo:hasName "TEST" .
-                <test-dasch> dsp-repo:hasEmail "info@dasch.swiss" .
-                <test-dasch> dsp-repo:hasAddress [
-                    a schema:PostalAddress ;
-                    schema:streetAddress "Teststrasse"^^xsd:string ;
-                    schema:postalCode "4000"^^xsd:string ;
-                    schema:addressLocality "Basel"^^xsd:string ;
-                ].
-                <test-dasch> dsp-repo:hasURL [
-                       a schema:URL ;
-                       schema:url "https://test.swiss" ;
-                   ].
-            '''
+with open('test_data/prefix_list.ttl', 'r') as content_file:
+    prefix_list = content_file.read()
 
-test_person = '''
-                <test-jones> rdf:type dsp-repo:Person .
-                <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
-                <test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
-                <test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch"^^xsd:string .
-                <test-jones> dsp-repo:hasAddress [
-                    a schema:PostalAddress ;
-                    schema:streetAddress "Teststrasse"^^xsd:string ;
-                    schema:postalCode "4000"^^xsd:string ;
-                    schema:addressLocality "Basel"^^xsd:string ;
-                ].
+with open('test_data/organization.ttl', 'r') as content_file:
+    test_organization = content_file.read()
 
-                <test-jones> dsp-repo:isMemberOf <test-dasch> .
-                <test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
-                # <test-jones> dsp-repo:hasIdentifier [
-                #        a schema:URL ;
-                #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
-                #    ].
-                <test-jones> dsp-repo:hasRole "Editor"^^xsd:string .
+with open('test_data/person.ttl', 'r') as content_file:
+    test_person = content_file.read()
 
-'''
 class Grant:
     def __init__(self):
         self.hasName = '"test"^^xsd:string'
         self.hasNumber = '"0123456789"^^xsd:string'
-        self.hasFunder = "<test-dasch>"
+        self.hasFunder = "<test-funder>"
         self.hasURL =  '''[
                            a schema:URL ;
                            schema:url "http://p3.snf.ch/testproject" ;
