@@ -435,8 +435,9 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasTypeOfData ;
         sh:name "Type of data" ;
-        sh:description "Type of data related to the dataset: XML, Text, Image, Movie, Audio"@en ;
+        sh:description "Type of data related to the dataset: xml, text, image, movie, audio"@en ;
         sh:datatype xsd:string ;
+        sh:in ("xml" "text" "image" "movie" "audio") ;
         sh:minCount 1 ;
     ] ;
     sh:property [
