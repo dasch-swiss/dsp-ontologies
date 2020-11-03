@@ -2,11 +2,13 @@ import unittest
 from pyshacl import validate
 from os import path
 
-with open('test_data/prefix_list.ttl', 'r') as content_file:
-    prefix_list = content_file.read()
+ws = path.dirname(__file__)
 
-dsp_repo_shape = '../dsp-repository/v1/dsp-repository.shacl.ttl'
-shape_file = path.abspath(dsp_repo_shape)
+dsp_repo_shape = path.join(ws, '../dsp-repository/v1/dsp-repository.shacl.ttl')
+
+
+with open(path.join(ws, 'test_data/prefix_list.ttl'), 'r') as content_file:
+    prefix_list = content_file.read()
 
 class DataManagementPlan:
     def __init__(self):

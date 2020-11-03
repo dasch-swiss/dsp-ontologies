@@ -2,20 +2,21 @@ import unittest
 from pyshacl import validate
 from os import path
 
+ws = path.dirname(__file__)
 
-dsp_repo_shape = '../dsp-repository/v1/dsp-repository.shacl.ttl'
-shape_file = path.abspath(dsp_repo_shape)
+dsp_repo_shape = path.join(ws, '../dsp-repository/v1/dsp-repository.shacl.ttl')
 
-with open('test_data/prefix_list.ttl', 'r') as content_file:
+
+with open(path.join(ws, 'test_data/prefix_list.ttl'), 'r') as content_file:
     prefix_list = content_file.read()
 
-with open('test_data/organization.ttl', 'r') as content_file:
+with open(path.join(ws, 'test_data/organization.ttl'), 'r') as content_file:
     test_organization = content_file.read()
 
-with open('test_data/project.ttl', 'r') as content_file:
+with open(path.join(ws, 'test_data/project.ttl'), 'r') as content_file:
     test_project = content_file.read()
 
-with open('test_data/person.ttl', 'r') as content_file:
+with open(path.join(ws, 'test_data/person.ttl'), 'r') as content_file:
     test_person = content_file.read()
 
 class DataSet:
@@ -263,7 +264,26 @@ class datasethasAbstractTestCase(unittest.TestCase):
 
         # TODO: add more tests for hasAbstract here
 
+####### Tests for hasTypeOfData property of dataset #######
+class datasethasTypeOfDataTestCase(unittest.TestCase):
 
+    # should accept json as type of data
+    def test_dataset_hasTypeOfData_json(self):
+        testDataSet = DataSet()
+        testDataSet.hasTypeOfData = '"json"'
+        test_data = makeDataset(testDataSet)
+
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+        # TODO: add more tests for hasTypeOfData here
+
+
+## TODO: Add tests for remaining properties #####
 
 if __name__ == '__main__':
     unittest.main()
