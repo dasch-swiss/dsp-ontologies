@@ -1,0 +1,58 @@
+package(default_visibility = ["//visibility:public"])
+
+# make the python rules available
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+py_test(
+    name = "test_dataManagementPlaneShape",
+    srcs = ["test_dataManagementPlaneShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
+
+py_test(
+    name = "test_datasetShape",
+    srcs = ["test_datasetShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
+
+py_test(
+    name = "test_grantShape",
+    srcs = ["test_grantShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
+
+py_test(
+    name = "test_organizationShape",
+    srcs = ["test_organizationShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
+
+py_test(
+    name = "test_personShape",
+    srcs = ["test_personShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
+
+py_test(
+    name = "test_projectShape",
+    srcs = ["test_projectShape.py"],
+    data = [
+        "//dsp-repository/v1:shacl_shape",
+        "//test/test_data:test_data",
+    ],
+)
