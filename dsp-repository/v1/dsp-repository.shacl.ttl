@@ -569,8 +569,6 @@ dsp-repo:PersonShape
         sh:name "Address" ;
         sh:description "Postal address of the person"@en ;
         sh:class schema:PostalAddress ;
-        # sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:isMemberOf ;
