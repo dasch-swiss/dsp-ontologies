@@ -11,7 +11,7 @@ with open('test_data/prefix_list.ttl', 'r') as content_file:
 class Organization:
     def __init__(self):
         self.hasName = '"test"^^xsd:string'
-        self.hasEmail = '"test@example.com"^^xsd:string'
+        self.hasEmail = '<test@example.com>'
         self.hasAddress = '''[
                             a schema:PostalAddress ;
                             schema:streetAddress "University of Toronto Street"^^xsd:string ;
