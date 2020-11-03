@@ -48,6 +48,6 @@ install-requirements: ## install python requirements
 		
 .PHONY: test
 test: ## runs all tests
-	bazel test //test/...
+	bazel test --test_output=all //test/...
 
 .DEFAULT_GOAL := help
