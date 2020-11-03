@@ -423,13 +423,12 @@ dsp-repo:DatasetShape
         sh:description "Alternative title of the dataset"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasAbstract ;
         sh:name "Abstract" ;
         sh:description "Description of the dataset"@en ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:class schema:URL ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [

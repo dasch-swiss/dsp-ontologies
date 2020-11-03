@@ -227,7 +227,7 @@ class datasethasAlternativeTitleTestCase(unittest.TestCase):
 
 
     # dataset might not have an alternative title
-    def test_dataset_hasAlternativeTitle_as_String(self):
+    def test_dataset_hasAlternativeTitle_missing(self):
         testDataSet = DataSet()
         delattr(testDataSet, 'hasAlternativeTitle')
         test_data = makeDataset(testDataSet)
