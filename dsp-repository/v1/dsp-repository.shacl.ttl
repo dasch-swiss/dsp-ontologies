@@ -308,7 +308,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasStartDate ;
         sh:name "Start date" ;
         sh:description "Start date of the project"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:date ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
     ] ;
@@ -316,7 +316,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasEndDate ;
         sh:name "End date" ;
         sh:description "End date of the project"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:date ;
         sh:maxCount 1 ;
     ] ;
     sh:property [

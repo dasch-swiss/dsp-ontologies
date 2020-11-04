@@ -27,7 +27,7 @@ class Project:
                                    schema:url "http://skos.um.es/unesco6/11" ;
                                 ]'''
 
-        self.hasStartDate = '"2000-07-26T21:32:52"^^xsd:dateTime'
+        self.hasStartDate = '"2000-07-26"^^xsd:date'
         self.hasTemporalCoverage = '''[
                                        a schema:URL ;
                                        schema:propertyID [

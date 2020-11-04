@@ -38,8 +38,8 @@
    ] ;
    schema:url "http://skos.um.es/unesco6/11" ;
 ] .
-<test-project> dsp-repo:hasStartDate "2000-07-26T21:32:52"^^xsd:dateTime . 
-<test-project> dsp-repo:hasEndDate "2001-01-26T21:32:52"^^xsd:dateTime . 
+<test-project> dsp-repo:hasStartDate "2000-07-26"^^xsd:date . 
+<test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date . 
 <test-project> dsp-repo:hasTemporalCoverage [
    a schema:URL ;
    schema:propertyID [
