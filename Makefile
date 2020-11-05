@@ -42,4 +42,12 @@ clean: ## remove temporary artifacts
 help: ## this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
 
+.PHONY: install-requirements
+install-requirements: ## install python requirements
+		pip3 install -r requirements.txt
+		
+.PHONY: test
+test: ## runs all tests
+	bazel test --test_output=all //test/...
+
 .DEFAULT_GOAL := help

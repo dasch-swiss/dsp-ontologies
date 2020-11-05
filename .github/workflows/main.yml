@@ -16,3 +16,27 @@ jobs:
           run: make validate
         - name: validate example with check
           run: make validate-example-with-check
+
+  test-unittest:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Install dependencies
+        run: |
+          npm install --global @bazel/bazelisk
+      - name: Set up Python 3.8.5
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.5
+      - name: run test-unittest
+        run: |
+          make install-requirements
+          make test

@@ -308,7 +308,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasStartDate ;
         sh:name "Start date" ;
         sh:description "Start date of the project"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:date ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
     ] ;
@@ -316,7 +316,7 @@ dsp-repo:ProjectShape
         sh:path dsp-repo:hasEndDate ;
         sh:name "End date" ;
         sh:description "End date of the project"@en ;
-        sh:datatype xsd:dateTime ;
+        sh:datatype xsd:date ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -423,20 +423,20 @@ dsp-repo:DatasetShape
         sh:description "Alternative title of the dataset"@en ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path dsp-repo:hasAbstract ;
         sh:name "Abstract" ;
         sh:description "Description of the dataset"@en ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:class schema:URL ] ) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:path dsp-repo:hasTypeOfDate ;
+        sh:path dsp-repo:hasTypeOfData ;
         sh:name "Type of data" ;
-        sh:description "Type of data related to the dataset: XML, Text, Image, Movie, Audio"@en ;
+        sh:description "Type of data related to the dataset: xml, text, image, movie, audio"@en ;
         sh:datatype xsd:string ;
+        sh:in ("xml" "text" "image" "movie" "audio") ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -560,7 +560,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasEmail ;
         sh:name "E-mail" ;
         sh:description "E-mail address of the person"@en ;
-        sh:datatype xsd:string ;
+        sh:nodeKind sh:IRI ;
         sh:maxCount 2 ;
     ] ;
      sh:property [
@@ -568,8 +568,6 @@ dsp-repo:PersonShape
         sh:name "Address" ;
         sh:description "Postal address of the person"@en ;
         sh:class schema:PostalAddress ;
-        # sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:isMemberOf ;
@@ -629,7 +627,7 @@ dsp-repo:OrganizationShape
         sh:path dsp-repo:hasEmail ;
         sh:name "Organization e-mail" ;
         sh:description "E-mail address of the organization"@en ;
-        sh:datatype xsd:string ;
+        sh:nodeKind sh:IRI ;
         sh:maxCount 1 ;
     ] ;
     sh:property [
@@ -698,8 +696,8 @@ dsp-repo:DataManagementPlanShape
     sh:property [
         sh:path dsp-repo:isAvailable ;
         sh:name "Description" ;
-        sh:description "Data Management Plan available [Yes/No]"@en ;
-        sh:datatype xsd:string ;
+        sh:description "Data Management Plan available [True/False]"@en ;
+        sh:datatype xsd:boolean ;
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;

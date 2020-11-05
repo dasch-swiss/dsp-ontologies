@@ -1,0 +1,14 @@
+<test-funder> rdf:type dsp-repo:Organization .
+<test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
+<test-funder> dsp-repo:hasEmail <info@universityoftoronto.ca> .
+<test-funder> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "University of Toronto Street"^^xsd:string ;
+    schema:postalCode "40000"^^xsd:string ;
+    schema:addressLocality "Toronto"^^xsd:string ;
+].
+
+<test-funder> dsp-repo:hasURL[
+       a schema:URL ;
+       schema:url "http://www.utoronto.ca/" ;
+   ] .

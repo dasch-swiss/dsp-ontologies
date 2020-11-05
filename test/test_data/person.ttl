@@ -1,0 +1,14 @@
+<test-jones> rdf:type dsp-repo:Person .
+<test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
+<test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
+<test-jones> dsp-repo:hasEmail <benjamin.jones@test.ch> .
+<test-jones> dsp-repo:hasAddress [
+    a schema:PostalAddress ;
+    schema:streetAddress "Teststrasse"^^xsd:string ;
+    schema:postalCode "4000"^^xsd:string ;
+    schema:addressLocality "Basel"^^xsd:string ;
+].
+
+<test-jones> dsp-repo:isMemberOf <test-funder> .
+<test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
+<test-jones> dsp-repo:hasRole "Editor"^^xsd:string .

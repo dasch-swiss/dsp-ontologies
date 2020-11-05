@@ -1,0 +1,40 @@
+### test project ###
+<test-project> rdf:type dsp-repo:Project .
+<test-project> dsp-repo:hasName "Testprojektname (test)"^^xsd:string .
+<test-project> dsp-repo:hasDescription "Dies ist ein Testprojekt...alle Properties wurden verwendet, um diese zu testen"^^xsd:string .
+<test-project> dsp-repo:hasKeywords "mathematics"^^xsd:string .
+<test-project> dsp-repo:hasDiscipline [
+   a schema:URL ;
+   schema:propertyID [
+       a schema:PropertyValue ;
+       schema:propertyID "SKOS UNESCO Nomenclature" ;
+   ] ;
+   schema:url "http://skos.um.es/unesco6/11" ;
+] .
+<test-project> dsp-repo:hasStartDate "2000-07-26"^^xsd:date .
+<test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date .
+<test-project> dsp-repo:hasTemporalCoverage [
+   a schema:URL ;
+   schema:propertyID [
+       a schema:PropertyValue ;
+       schema:propertyID "Chronontology Dainst" ;
+   ] ;
+   schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
+] .
+<test-project> dsp-repo:hasSpatialCoverage [
+        a schema:Place ;
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Geonames" ;
+            ] ;
+            schema:url "https://www.geonames.org/6255148/europe.html" ;
+        ]
+    ].
+<test-project> dsp-repo:hasFunder <test-funder> .
+<test-project> dsp-repo:hasURL [
+   a schema:URL ;
+   schema:url "https://test.dasch.swiss/" ;
+] .
+<test-project> dsp-repo:hasShortcode "0000"^^xsd:string .
