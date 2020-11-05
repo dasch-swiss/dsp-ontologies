@@ -58,7 +58,17 @@ $ make install-requirements
 ```
 
 The unit tests can be executed standalone in a python environment or using [Bazel](https://bazel.build/) build tools. 
-If you would like to run the tests using bazel, install bazel build tools with
+If you would like to run the tests using Bazel, [install Bazel build tools](https://docs.bazel.build/versions/master/install.html). On macOs run:
+
+```
+$ brew install bazel
+```
+
+Alternatively, you can install Bazel build tools using 
+[bazelisk](https://github.com/bazelbuild/bazelisk) which is
+a wrapper to the `bazel` binary. It will, when `bazel` is run on the command line,
+automatically install the supported Bazel version, defined in the `.bazelversion`
+file in the root of the `dsp-ontologies` repository. With npm installed, you can get bazelisk with
  
 ```
 $ npm install -g @bazel/bazelisk
