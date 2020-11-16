@@ -1,0 +1,121 @@
+digraph metadata {
+    // dsp-repo Datatypes
+    Dataset [color=blue];
+    Project [color=blue];
+    Person [color=blue];
+    Organization [color=blue];
+    Grant [color=blue];
+    DataManagementPlan [color=blue];
+
+    // other Datatypes
+    Attribution [color=green];
+    DataDownload [color=green];
+    PostalAddress [color=green];
+
+    Attribution -> agent;
+    agent -> Person;
+    agent -> Organization;
+
+    DataDownload -> URL;
+
+    PostalAddress -> streetAddress
+    PostalAddress -> postalCode
+    PostalAddress -> addressLocality
+
+    // Enum
+    Types [color=brown, shape=record, label="{xml | text | image | movie | audio}"];
+
+
+    // Dataset
+    // -------
+    Dataset -> sameAs [label="0-n"];
+    Dataset -> hasTitle [label="1"];
+    Dataset -> hasAlternativeTitle [label="0-1"];
+    Dataset -> hasAbstract [label="1-n"];
+    Dataset -> hasTypeOfData [label="1-n"];
+    hasTypeOfData -> Types
+    Dataset -> hasDocumentation [label="0-n"];
+    Dataset -> hasLicense [label="1-n"];
+    Dataset -> hasConditionsOfAccess [label="1"];
+    Dataset -> hasHowToCite [label="1"];
+    Dataset -> hasStatus [label="1"];
+    Dataset -> hasDataPublished [label="0-1"];
+    Dataset -> hasLanguage [label="1-n"];
+    Dataset -> isPartOf [label="1"];
+    isPartOf -> Project
+    Dataset -> hasQualifiedAttribution [label="1-n"];
+    hasQualifiedAttribution -> Attribution
+    Dataset -> hasDateCreated [label="0-1"];
+    Dataset -> hasDateModified [label="0-1"];
+    Dataset -> hasDistribution [label="0-1"];
+    hasDistribution -> DataDownload
+
+
+    // Project
+    // -------
+    Project -> hasName [label="1"];
+    Project -> hasDescription [label="1"];
+    Project -> hasKeywords [label="1-n"];
+    Project -> hasDiscipline [label="1-n"];
+    Project -> hasStartDate [label="1"];
+    Project -> hasEndDate [label="0-1"];
+    Project -> hasTemporalCoverage [label="1-n"];
+    Project -> hasSpacialCoverage [label="1-n"];
+    Project -> hasFunder [label="1-n"];
+    hasFunder -> Person;
+    hasFunder -> Organization;
+    Project -> hasGrant [label="1-n"];
+    hasGrant -> Grant;
+    Project -> hasURL [label="1-2"];
+    Project -> hasShortcode [label="1"];
+    Project -> hasAlternativeName [label="0-n"];
+    Project -> hasDataManagementPlan [label="0-1"];
+    hasDataManagementPlan -> DataManagementPlan;
+    Project -> hasPublication [label="0-n"];
+    Project -> hasContactPoint [label="0-n"];
+    hasContactPoint -> Person;
+    hasContactPoint -> Organization;
+
+
+    // Person
+    // ------
+    sameAs2 [label="sameAs"];
+    Person -> sameAs2 [label="1"];
+    Person -> hasGivenName [label="1-n"];
+    Person -> hasFamilyName [label="1-n"];
+    Person -> hasEmail [label="0-2"];
+    Person -> hasAddress [label="0-n"];
+    hasAddress -> PostalAddress
+    Person -> isMemberOf [label="1-n"];
+    isMemberOf -> Organization
+    Person -> hasJobTitle [label="1-n"];
+    Person -> hasRole [label="1-n"];
+
+
+    // Organization
+    // ------------
+    hasName2 [label="hasName"];
+    Organization -> hasName2 [label="1-n"];
+    hasEmail2 [label="hasEmail"];
+    Organization -> hasEmail2 [label="0-1"];
+    hasAddress2 [label="hasAddress"];
+    Organization -> hasAddress2 [label="0-1"];
+    hasURL2 [label="hasURL"];
+    Organization -> hasURL2 [label="0-1"];
+
+
+    // Grant
+    // -----
+    hasName3 [label="hasName"];
+    Grant -> hasName3 [label="0-1"];
+    hasURL3 [label="hasURL"];
+    Grant -> hasURL3 [label="0-1"];
+    Grant -> hasNumber [label="0-1"]
+    Grant -> hasFunder [label="0-1"]
+
+
+    // Data Management Plan
+    // --------------------
+    DataManagementPlan -> hasURL [label="0-1"]
+    DataManagementPlan -> isAvailable [label="0-1"]
+}
