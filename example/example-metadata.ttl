@@ -133,14 +133,7 @@
 ] .
 <test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
 <test-project> dsp-repo:hasAlternateName "test"^^xsd:string  .
-<test-project> dsp-repo:hasDataManagementPlan [
-    a dsp-repo:DataManagementPlan ;
-    dsp-repo:hasURL [
-       a schema:URL ;
-       schema:url "https://snf.ch" ;
-    ] ;
-    dsp-repo:isAvailable "true"^^xsd:boolean ;
-] .
+<test-project> dsp-repo:hasDataManagementPlan <test-plan> .
 <test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
 <test-project> dsp-repo:hasContactPoint <test-abraham> .
 
