@@ -1,4 +1,6 @@
 digraph metadata {
+    rankdir="LR";
+
     // dsp-repo Datatypes
     Dataset [color=blue];
     Project [color=blue];
