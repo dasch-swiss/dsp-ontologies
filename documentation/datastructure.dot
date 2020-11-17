@@ -24,8 +24,11 @@ digraph metadata {
     URL_ [label="URL"];
     Place -> URL_;
 
+    streetAddress [label="streetAddress\nString"];
     PostalAddress -> streetAddress
+    postalCode [label="postalCode\nString"];
     PostalAddress -> postalCode
+    addressLocality [label="addressLocality\nString"];
     PostalAddress -> addressLocality
 
     // Enum
