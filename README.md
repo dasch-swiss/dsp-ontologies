@@ -11,6 +11,9 @@ Each project hosted on the DSP (DaSCH Service Platform) must provide metadata co
 This will allow project data hosted on the DSP to be findable and searchable by a well-defined set of metadata.  
 It will furthermore provide human-readable information that can be displayed to the user browsing the DSP.
 
+![Datastructure](documentation/datastructure.svg)  
+(Created from `.dot` using `graphviz` in VS Code)
+
 
 ## Other Data
 
