@@ -595,13 +595,6 @@ dsp-repo:PersonShape
     #     #         [ sh:nodeKind sh:BlankNode ] ) ; # TODO: no idea, whether or not that's a good idea. probably, that just allows everything
     #             ## add Orcid, GND, ISNI, VIAF, NACO
     #  ] ; # it is a system property and it is only allowed once.
-     sh:property [
-        sh:path dsp-repo:hasRole ;
-        sh:name "Role" ;
-        sh:description "Role  of the person within the project/dataset"@en ;
-        sh:datatype xsd:string ;
-        sh:minCount 1 ;
-    ] ;
     sh:closed true ;
     sh:ignoredProperties (rdf:type) . # TODO: check, if there is a more appropriate usage for this
 
@@ -703,3 +696,14 @@ dsp-repo:DataManagementPlanShape
     sh:closed true ;
     sh:ignoredProperties (rdf:type) .
 
+### --- Shape of prov:Attribution ---
+dsp-repo:AttributionShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Attribution ;
+    sh:property [
+        sh:path dsp-repo:hasRole ;
+        sh:name "Role" ;
+        sh:description "Role of the person within the dataset"@en ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] .
