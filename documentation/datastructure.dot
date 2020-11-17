@@ -16,6 +16,7 @@ digraph metadata {
     Place [color=green];
 
     Attribution -> agent;
+    Attribution -> hasRole;
     agent -> Person;
     agent -> Organization;
 
