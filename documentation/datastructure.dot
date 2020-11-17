@@ -67,8 +67,8 @@ digraph metadata {
     hasStatus [label="hasStatus\nString"];
     Dataset -> hasStatus [label="1"];
 
-    hasDataPublished [label="hasDataPublished\nDate"];
-    Dataset -> hasDataPublished [label="0-1"];
+    hasDatePublished [label="hasDatePublished\nDate"];
+    Dataset -> hasDatePublished [label="0-1"];
 
     hasLanguage [label="hasLanguage\nString"];
     Dataset -> hasLanguage [label="1-n"];
@@ -112,8 +112,8 @@ digraph metadata {
     hasTemporalCoverage [label="hasTemporalCoverage\nString | URL"];
     Project -> hasTemporalCoverage [label="1-n"];
 
-    Project -> hasSpacialCoverage [label="1-n"];
-    hasSpacialCoverage -> Place
+    Project -> hasSpatialCoverage [label="1-n"];
+    hasSpatialCoverage -> Place
 
     Project -> hasFunder [label="1-n"];
     hasFunder -> Person;
@@ -128,8 +128,8 @@ digraph metadata {
     hasShortcode [label="hasShortcode\nString"];
     Project -> hasShortcode [label="1"];
 
-    hasAlternativeName [label="hasAlternativeName\nString"];
-    Project -> hasAlternativeName [label="0-n"];
+    hasAlternateName [label="hasAlternateName\nString"];
+    Project -> hasAlternateName [label="0-n"];
 
     Project -> hasDataManagementPlan [label="0-1"];
     hasDataManagementPlan -> DataManagementPlan;

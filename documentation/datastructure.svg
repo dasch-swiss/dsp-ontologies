@@ -154,16 +154,16 @@
 <polygon fill="#000000" stroke="#000000" points="190.8076,-610.6658 199.008,-603.9574 188.414,-604.0877 190.8076,-610.6658"/>
 <text text-anchor="middle" x="107.3122" y="-646.0776" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
 </g>
-<!-- hasDataPublished -->
+<!-- hasDatePublished -->
 <g id="node28" class="node">
-<title>hasDataPublished</title>
+<title>hasDatePublished</title>
 <ellipse fill="none" stroke="#000000" cx="241.0755" cy="-511.8776" rx="82.4859" ry="29.3315"/>
-<text text-anchor="middle" x="241.0755" y="-516.0776" font-family="Times,serif" font-size="14.00" fill="#000000">hasDataPublished</text>
+<text text-anchor="middle" x="241.0755" y="-516.0776" font-family="Times,serif" font-size="14.00" fill="#000000">hasDatePublished</text>
 <text text-anchor="middle" x="241.0755" y="-499.2776" font-family="Times,serif" font-size="14.00" fill="#000000">Date</text>
 </g>
-<!-- Dataset&#45;&gt;hasDataPublished -->
+<!-- Dataset&#45;&gt;hasDatePublished -->
 <g id="edge20" class="edge">
-<title>Dataset&#45;&gt;hasDataPublished</title>
+<title>Dataset&#45;&gt;hasDatePublished</title>
 <path fill="none" stroke="#000000" d="M50.2806,-648.1897C65.6517,-623.2052 96.8826,-577.6467 134.6425,-550.8776 144.1747,-544.1199 155.0107,-538.399 166.0328,-533.5974"/>
 <polygon fill="#000000" stroke="#000000" points="167.3961,-536.8212 175.3106,-529.7777 164.7311,-530.3483 167.3961,-536.8212"/>
 <text text-anchor="middle" x="107.3122" y="-587.0776" font-family="Times,serif" font-size="14.00" fill="#000000">0&#45;1</text>
@@ -353,17 +353,17 @@
 <polygon fill="#000000" stroke="#000000" points="893.7888,-450.6788 901.4005,-443.309 890.8543,-444.3235 893.7888,-450.6788"/>
 <text text-anchor="middle" x="840.5135" y="-495.0776" font-family="Times,serif" font-size="14.00" fill="#000000">1&#45;n</text>
 </g>
-<!-- hasSpacialCoverage -->
+<!-- hasSpatialCoverage -->
 <g id="node42" class="node">
-<title>hasSpacialCoverage</title>
-<ellipse fill="none" stroke="#000000" cx="977.5588" cy="-358.8776" rx="89.1646" ry="18"/>
-<text text-anchor="middle" x="977.5588" y="-354.6776" font-family="Times,serif" font-size="14.00" fill="#000000">hasSpacialCoverage</text>
+<title>hasSpatialCoverage</title>
+<ellipse fill="none" stroke="#000000" cx="977.5588" cy="-358.8776" rx="87.9587" ry="18"/>
+<text text-anchor="middle" x="977.5588" y="-354.6776" font-family="Times,serif" font-size="14.00" fill="#000000">hasSpatialCoverage</text>
 </g>
-<!-- Project&#45;&gt;hasSpacialCoverage -->
+<!-- Project&#45;&gt;hasSpatialCoverage -->
 <g id="edge37" class="edge">
-<title>Project&#45;&gt;hasSpacialCoverage</title>
-<path fill="none" stroke="#000000" d="M704.6478,-713.7511C715.2483,-655.9084 756.4233,-474.3555 867.8438,-385.8776 875.0638,-380.1443 883.3309,-375.6061 892.0171,-372.0174"/>
-<polygon fill="#000000" stroke="#000000" points="893.4107,-375.2338 901.5774,-368.4844 890.9842,-368.6678 893.4107,-375.2338"/>
+<title>Project&#45;&gt;hasSpatialCoverage</title>
+<path fill="none" stroke="#000000" d="M704.6478,-713.7511C715.2483,-655.9084 756.4233,-474.3555 867.8438,-385.8776 875.3116,-379.9475 883.8996,-375.2959 892.913,-371.6512"/>
+<polygon fill="#000000" stroke="#000000" points="894.2191,-374.9008 902.4308,-368.2061 891.8366,-368.3187 894.2191,-374.9008"/>
 <text text-anchor="middle" x="840.5135" y="-417.0776" font-family="Times,serif" font-size="14.00" fill="#000000">1&#45;n</text>
 </g>
 <!-- hasFunder -->
@@ -421,18 +421,18 @@
 <polygon fill="#000000" stroke="#000000" points="907.8738,-1157.854 918.4686,-1157.9031 910.2169,-1151.2578 907.8738,-1157.854"/>
 <text text-anchor="middle" x="840.5135" y="-1113.0776" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
 </g>
-<!-- hasAlternativeName -->
+<!-- hasAlternateName -->
 <g id="node47" class="node">
-<title>hasAlternativeName</title>
-<ellipse fill="none" stroke="#000000" cx="977.5588" cy="-1092.8776" rx="92.8457" ry="29.3315"/>
-<text text-anchor="middle" x="977.5588" y="-1097.0776" font-family="Times,serif" font-size="14.00" fill="#000000">hasAlternativeName</text>
+<title>hasAlternateName</title>
+<ellipse fill="none" stroke="#000000" cx="977.5588" cy="-1092.8776" rx="84.9438" ry="29.3315"/>
+<text text-anchor="middle" x="977.5588" y="-1097.0776" font-family="Times,serif" font-size="14.00" fill="#000000">hasAlternateName</text>
 <text text-anchor="middle" x="977.5588" y="-1080.2776" font-family="Times,serif" font-size="14.00" fill="#000000">String</text>
 </g>
-<!-- Project&#45;&gt;hasAlternativeName -->
+<!-- Project&#45;&gt;hasAlternateName -->
 <g id="edge46" class="edge">
-<title>Project&#45;&gt;hasAlternativeName</title>
-<path fill="none" stroke="#000000" d="M713.021,-749.0767C735.1511,-783.1901 784.3325,-862.3952 813.1832,-934.8776 824.9038,-964.3237 817.7063,-975.1928 831.1832,-1003.8776 843.0536,-1029.1433 845.4611,-1038.196 867.8438,-1054.8776 876.1114,-1061.0394 885.4555,-1066.256 895.1158,-1070.659"/>
-<polygon fill="#000000" stroke="#000000" points="893.878,-1073.936 904.4498,-1074.6355 896.6216,-1067.4961 893.878,-1073.936"/>
+<title>Project&#45;&gt;hasAlternateName</title>
+<path fill="none" stroke="#000000" d="M713.021,-749.0767C735.1511,-783.1901 784.3325,-862.3952 813.1832,-934.8776 824.9038,-964.3237 817.7063,-975.1928 831.1832,-1003.8776 843.0536,-1029.1433 845.4611,-1038.196 867.8438,-1054.8776 877.0319,-1061.7255 887.5496,-1067.4059 898.3532,-1072.0996"/>
+<polygon fill="#000000" stroke="#000000" points="897.3127,-1075.4546 907.8947,-1075.975 899.9468,-1068.9692 897.3127,-1075.4546"/>
 <text text-anchor="middle" x="840.5135" y="-1041.0776" font-family="Times,serif" font-size="14.00" fill="#000000">0&#45;n</text>
 </g>
 <!-- hasDataManagementPlan -->
@@ -890,11 +890,11 @@
 <path fill="none" stroke="#000000" d="M311.7777,-124.8776C395.4589,-124.8776 534.4493,-124.8776 621.894,-124.8776"/>
 <polygon fill="#000000" stroke="#000000" points="622.0318,-128.3777 632.0317,-124.8776 622.0317,-121.3777 622.0318,-128.3777"/>
 </g>
-<!-- hasSpacialCoverage&#45;&gt;Place -->
+<!-- hasSpatialCoverage&#45;&gt;Place -->
 <g id="edge38" class="edge">
-<title>hasSpacialCoverage&#45;&gt;Place</title>
-<path fill="none" stroke="#000000" d="M1054.1684,-368.2625C1100.817,-373.977 1158.62,-381.058 1196.9896,-385.7584"/>
-<polygon fill="#000000" stroke="#000000" points="1196.9196,-389.2759 1207.271,-387.0179 1197.7708,-382.3278 1196.9196,-389.2759"/>
+<title>hasSpatialCoverage&#45;&gt;Place</title>
+<path fill="none" stroke="#000000" d="M1053.1144,-368.1334C1099.943,-373.87 1158.3288,-381.0224 1196.9878,-385.7582"/>
+<polygon fill="#000000" stroke="#000000" points="1196.9911,-389.2847 1207.3425,-387.0266 1197.8423,-382.3366 1196.9911,-389.2847"/>
 </g>
 <!-- hasFunder&#45;&gt;Person -->
 <g id="edge40" class="edge">
