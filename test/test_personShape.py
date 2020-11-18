@@ -44,7 +44,7 @@ class Person:
                             ]'''
         self.isMemberOf = '<galactic-empire>'
         self.hasJobTitle = '"Sith Lord"'
-        self.hasRole = '"Emperors Enforcer"'
+        # self.hasRole = '"Emperors Enforcer"'
 
 
 def makePersonData(testPerson):
@@ -73,8 +73,8 @@ def makePersonData(testPerson):
     if hasattr(testPerson, 'hasJobTitle'):
         testData += '''<darthVador> dsp-repo:hasJobTitle''' + testPerson.hasJobTitle + ' .\n'
 
-    if hasattr(testPerson, 'hasRole'):
-        testData += '''<darthVador> dsp-repo:hasRole''' + testPerson.hasRole + ' .\n'
+    # if hasattr(testPerson, 'hasRole'):
+    #     testData += '''<darthVador> dsp-repo:hasRole''' + testPerson.hasRole + ' .\n'
 
     return testData
 
@@ -226,24 +226,6 @@ class personHasJobTitleTestCase(unittest.TestCase):
         self.assertFalse(conforms)
 
     #TODO: add more tests for hasJobTitle here
-
-####### Tests for role of person #######
-class personHasRoleTestCase(unittest.TestCase):
-
-    # should fail of role of a person is missing
-    def test_person_hasRole_missing(self):
-        person = Person()
-        delattr(person, 'hasRole')
-        test_data = makePersonData(person)
-
-        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
-                                             data_graph_format='turtle',
-                                             shacl_graph_format='turtle',
-                                             inference='rdfs', debug=True,
-                                             serialize_report_graph=True)
-        self.assertFalse(conforms)
-
-    #TODO: add more tests for hasRole here
 
 
 
