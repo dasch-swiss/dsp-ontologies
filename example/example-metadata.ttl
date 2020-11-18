@@ -266,7 +266,6 @@
 #         a schema:PropertyValue ;
 #         schema:nanannananana "blah"  # TODO: this, again, should not be valid
 #     ] .
-<test-abraham> dsp-repo:hasRole "Editor" .
 
 <test-jones> rdf:type dsp-repo:Person . 
 <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string . 
@@ -285,7 +284,6 @@
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
-<test-jones> dsp-repo:hasRole "Editor"^^xsd:string .
 
 <test-hart> rdf:type dsp-repo:Person . 
 <test-hart> dsp-repo:hasGivenName "Leonhard" . 
@@ -303,7 +301,6 @@
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
-<test-hart> dsp-repo:hasRole "Editor" .
 
 <test-berry> rdf:type dsp-repo:Person . 
 <test-berry> dsp-repo:hasGivenName "Lauren" . 
@@ -321,7 +318,6 @@
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
-<test-berry> dsp-repo:hasRole "Contributor" .
 
 <test-coleman> rdf:type dsp-repo:Person . 
 <test-coleman> dsp-repo:hasGivenName "James" . 
@@ -339,7 +335,6 @@
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
-<test-coleman> dsp-repo:hasRole "Contributor" . 
 
 <test-dasch> rdf:type dsp-repo:Organization . 
 # <test-dasch> dsp-repo:hasIdentifier [
