@@ -706,4 +706,12 @@ dsp-repo:AttributionShape
         sh:description "Role of the person within the dataset"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
+    # ] ;
+    # sh:property [
+    #     sh:path prov:Agent ;
+    #     sh:name "Agent" ;
+    #     sh:description "The person or organization to whom the agency of the role is attributed"@en ;
+    #     sh:or ( [ sh:datatype dsp-repo:Person ] [ sh:datatype dsp-repo:Organization ] ) ;
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
     ] .
