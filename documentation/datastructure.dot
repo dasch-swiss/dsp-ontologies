@@ -15,8 +15,6 @@ digraph metadata {
     PostalAddress [color=green];
     Place [color=green];
 
-    Attribution -> agent;
-    Attribution -> hasRole;
     agent -> Person;
     agent -> Organization;
 
@@ -50,6 +48,7 @@ digraph metadata {
     hasAbstract [label="hasAbstract\nString | URL"];
     Dataset -> hasAbstract [label="1-n"];
 
+    hasTypeOfData [label="hasTypeOfData\nEnum[String]"];
     Dataset -> hasTypeOfData [label="1-n"];
     hasTypeOfData -> Types;
 
@@ -74,9 +73,11 @@ digraph metadata {
     hasLanguage [label="hasLanguage\nString"];
     Dataset -> hasLanguage [label="1-n"];
 
+    isPartOf [label="isPartOf\nProject"];
     Dataset -> isPartOf [label="1"];
     isPartOf -> Project;
 
+    hasQualifiedAttribution [label="hasQualifiedAttribution\nAttribution"]
     Dataset -> hasQualifiedAttribution [label="1-n"];
     hasQualifiedAttribution -> Attribution;
 
@@ -86,6 +87,7 @@ digraph metadata {
     hasDateModified [label="hasDateModified\nDate"];
     Dataset -> hasDateModified [label="0-1"];
 
+    hasDistribution [label="hasDistribution\nDataDownload"];
     Dataset -> hasDistribution [label="0-1"];
     hasDistribution -> DataDownload
 
@@ -113,6 +115,7 @@ digraph metadata {
     hasTemporalCoverage [label="hasTemporalCoverage\nString | URL"];
     Project -> hasTemporalCoverage [label="1-n"];
 
+    hasSpatialCoverage [label="hasSpatialCoverage\nPlace"];
     Project -> hasSpatialCoverage [label="1-n"];
     hasSpatialCoverage -> Place
 
@@ -167,7 +170,8 @@ digraph metadata {
     Person -> hasJobTitle [label="1-n"];
 
     hasRole [label="hasRole\nString"];
-    Person -> hasRole [label="1-n"];
+    Attribution -> agent;
+    Attribution -> hasRole [label="1-n"];
 
 
     // Organization
@@ -197,7 +201,7 @@ digraph metadata {
     hasNumber [label="hasNumber\nString"];
     Grant -> hasNumber [label="0-1"]
 
-    hasFunder [label="hasFunder\nString"];
+    hasFunder [label="hasFunder"];
     Grant -> hasFunder [label="0-1"]
 
 
