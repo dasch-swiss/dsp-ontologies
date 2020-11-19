@@ -1,0 +1,214 @@
+digraph metadata {
+    rankdir="LR";
+
+    // dsp-repo Datatypes
+    Dataset [color=blue];
+    Project [color=blue];
+    Person [color=blue];
+    Organization [color=blue];
+    Grant [color=blue];
+    DataManagementPlan [color=blue];
+
+    // other Datatypes
+    Attribution [color=green];
+    DataDownload [color=green];
+    PostalAddress [color=green];
+    Place [color=green];
+
+    agent -> Person;
+    agent -> Organization;
+
+    DataDownload -> URL;
+
+    URL_ [label="URL"];
+    Place -> URL_;
+
+    streetAddress [label="streetAddress\nString"];
+    PostalAddress -> streetAddress
+    postalCode [label="postalCode\nString"];
+    PostalAddress -> postalCode
+    addressLocality [label="addressLocality\nString"];
+    PostalAddress -> addressLocality
+
+    // Enum
+    Types [color=brown, shape=record, label="{xml | text | image | movie | audio}"];
+
+
+    // Dataset
+    // -------
+    sameAs [label="sameAs\nURL"];
+    Dataset -> sameAs [label="0-n"];
+
+    hasTitle [label="hasTitle\nString"];
+    Dataset -> hasTitle [label="1"];
+
+    hasAlternativeTitle [label="hasAlternativeTitle\nString"];
+    Dataset -> hasAlternativeTitle [label="0-1"];
+
+    hasAbstract [label="hasAbstract\nString | URL"];
+    Dataset -> hasAbstract [label="1-n"];
+
+    hasTypeOfData [label="hasTypeOfData\nEnum[String]"];
+    Dataset -> hasTypeOfData [label="1-n"];
+    hasTypeOfData -> Types;
+
+    hasDocumentation [label="hasDocumentation\nString | URL"];
+    Dataset -> hasDocumentation [label="0-n"];
+
+    hasLicense [label="hasLicense\nURL"];
+    Dataset -> hasLicense [label="1-n"];
+
+    hasConditionsOfAccess [label="hasConditionsOfAccess\nString"];
+    Dataset -> hasConditionsOfAccess [label="1"];
+
+    hasHowToCite [label="hasHowToCite\nString"];
+    Dataset -> hasHowToCite [label="1"];
+
+    hasStatus [label="hasStatus\nString"];
+    Dataset -> hasStatus [label="1"];
+
+    hasDatePublished [label="hasDatePublished\nDate"];
+    Dataset -> hasDatePublished [label="0-1"];
+
+    hasLanguage [label="hasLanguage\nString"];
+    Dataset -> hasLanguage [label="1-n"];
+
+    isPartOf [label="isPartOf\nProject"];
+    Dataset -> isPartOf [label="1"];
+    isPartOf -> Project;
+
+    hasQualifiedAttribution [label="hasQualifiedAttribution\nAttribution"]
+    Dataset -> hasQualifiedAttribution [label="1-n"];
+    hasQualifiedAttribution -> Attribution;
+
+    hasDateCreated [label="hasDateCreated\nDate"];
+    Dataset -> hasDateCreated [label="0-1"];
+
+    hasDateModified [label="hasDateModified\nDate"];
+    Dataset -> hasDateModified [label="0-1"];
+
+    hasDistribution [label="hasDistribution\nDataDownload"];
+    Dataset -> hasDistribution [label="0-1"];
+    hasDistribution -> DataDownload
+
+
+    // Project
+    // -------
+    hasName [label="hasName\nString"];
+    Project -> hasName [label="1"];
+
+    hasDescription [label="hasDescription\nString"];
+    Project -> hasDescription [label="1"];
+
+    hasKeywords [label="hasKeywords\nString"];
+    Project -> hasKeywords [label="1-n"];
+
+    hasDiscipline [label="hasDiscipline\nString | URL"];
+    Project -> hasDiscipline [label="1-n"];
+
+    hasStartDate [label="hasStartDate\nDate"];
+    Project -> hasStartDate [label="1"];
+
+    hasEndDate [label="hasEndDate\nDate"];
+    Project -> hasEndDate [label="0-1"];
+
+    hasTemporalCoverage [label="hasTemporalCoverage\nString | URL"];
+    Project -> hasTemporalCoverage [label="1-n"];
+
+    hasSpatialCoverage [label="hasSpatialCoverage\nPlace"];
+    Project -> hasSpatialCoverage [label="1-n"];
+    hasSpatialCoverage -> Place
+
+    Project -> hasFunder [label="1-n"];
+    hasFunder -> Person;
+    hasFunder -> Organization;
+
+    Project -> hasGrant [label="0-n"];
+    hasGrant -> Grant;
+
+    hasURL [label="hasURL\nURL"];
+    Project -> hasURL [label="1-2"];
+
+    hasShortcode [label="hasShortcode\nString"];
+    Project -> hasShortcode [label="1"];
+
+    hasAlternateName [label="hasAlternateName\nString"];
+    Project -> hasAlternateName [label="0-n"];
+
+    Project -> hasDataManagementPlan [label="0-1"];
+    hasDataManagementPlan -> DataManagementPlan;
+
+    hasPublication [label="hasPublication\nString"];
+    Project -> hasPublication [label="0-n"];
+
+    Project -> hasContactPoint [label="0-1"];
+    hasContactPoint -> Person;
+    hasContactPoint -> Organization;
+
+
+    // Person
+    // ------
+    sameAs2 [label="sameAs\nURL"];
+    Person -> sameAs2 [label="0-n"];
+
+    hasGivenName [label="hasGivenName\nString"];
+    Person -> hasGivenName [label="1-n"];
+
+    hasFamilyName [label="hasFamilyName\nString"];
+    Person -> hasFamilyName [label="1-n"];
+
+    hasEmail [label="hasEmail\nIRI"];
+    Person -> hasEmail [label="0-2"];
+
+    Person -> hasAddress [label="0-n"];
+    hasAddress -> PostalAddress
+
+    Person -> isMemberOf [label="1-n"];
+    isMemberOf -> Organization
+
+    hasJobTitle [label="hasJobTitle\nString"];
+    Person -> hasJobTitle [label="1-n"];
+
+    hasRole [label="hasRole\nString"];
+    Attribution -> agent;
+    Attribution -> hasRole [label="1-n"];
+
+
+    // Organization
+    // ------------
+    hasName2 [label="hasName\nString"];
+    Organization -> hasName2 [label="1-n"];
+
+    hasEmail2 [label="hasEmail\nIRI"];
+    Organization -> hasEmail2 [label="0-1"];
+
+    hasAddress2 [label="hasAddress"];
+    Organization -> hasAddress2 [label="0-1"];
+    hasAddress2 -> PostalAddress;
+
+    hasURL2 [label="hasURL\nURL"];
+    Organization -> hasURL2 [label="0-1"];
+
+
+    // Grant
+    // -----
+    hasName3 [label="hasName\nString"];
+    Grant -> hasName3 [label="0-1"];
+
+    hasURL3 [label="hasURL\nURL"];
+    Grant -> hasURL3 [label="0-1"];
+
+    hasNumber [label="hasNumber\nString"];
+    Grant -> hasNumber [label="0-1"]
+
+    hasFunder [label="hasFunder"];
+    Grant -> hasFunder [label="0-1"]
+
+
+    // Data Management Plan
+    // --------------------
+    hasURL4 [label="hasURL\nURL"];
+    DataManagementPlan -> hasURL4 [label="0-1"]
+    isAvailable [label="isAvailable\nBoolean"];
+    DataManagementPlan -> isAvailable [label="0-1"]
+}
