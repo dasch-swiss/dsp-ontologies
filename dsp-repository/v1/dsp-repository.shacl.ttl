@@ -121,8 +121,8 @@ dsp-repo:hasAlternativeTitle
 dsp-repo:hasAbstract
     a rdf:Property .
 
-# http://ns.dasch.swiss/repository#hasEncodingFormat
-dsp-repo:hasEncodingFormat
+# http://ns.dasch.swiss/repository#hasTypeOfData
+dsp-repo:hasTypeOfData
     a rdf:Property .
 
 # http://ns.dasch.swiss/repository#hasDocumentation
