@@ -1,0 +1,140 @@
+# Incorrect Metadata Project
+#
+
+@prefix dsp-repo: <http://ns.dasch.swiss/repository#> .
+@prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
+@prefix knora-admin: <http://www.knora.org/ontology/knora-admin#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+@prefix vowl: <http://purl.org/vowl/spec/v2/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unesco6: <http://skos.um.es/unesco6/> .
+@base <http://ns.dasch.swiss/repository#> .
+
+
+### test project ###
+<test-project> rdf:type dsp-repo:Project .
+<test-project> dsp-repo:hasName "Testprojektdererstename"^^xsd:string .
+<test-project> dsp-repo:hasName "Testprojektderzweitename"^^xsd:string .
+<test-project> dsp-repo:hasName "Testprojektderdritteename"^^xsd:string .
+<test-project> dsp-repo:hasName "2000-01-10"^^xsd:date .
+<test-project> dsp-repo:hasName [
+   a schema:URL ;
+   schema:url "https://test.dasch.test.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasDescription "Dies ist wieder ein Testprojekt"^^xsd:string .
+<test-project> dsp-repo:hasDescription "Dies ist ein Testprojekt...alle Properties wurden verwendet, um diese zu testen"^^xsd:string .
+
+
+<test-project> dsp-repo:hasKeywords [
+   a schema:URL ;
+   schema:url "https://test.dasch.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasDiscipline "http://skos.um.es/unesco6/11" .
+
+<test-project> dsp-repo:hasStartDate "2000-07-26"^^xsd:date . 
+<test-project> dsp-repo:hasStartDate "2000-10"^^xsd:date .
+<test-project> dsp-repo:hasStartDate "2000-07-12"^^xsd:date .
+<test-project> dsp-repo:hasStartDate "2000-07-26" .
+
+<test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date . 
+<test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date .
+<test-project> dsp-repo:hasEndDate "2001-01"^^xsd:date .
+<test-project> dsp-repo:hasEndDate "2001-01-26" .
+
+<test-project> dsp-repo:hasTemporalCoverage "Testlink" .
+<test-project> dsp-repo:hasTemporalCoverage "http://chronontology.dainst.org/period/Ef9SyESSafJ1" .
+<test-project> dsp-repo:hasTemporalCoverage "2001-01-26"^^xsd:date .
+
+
+
+<test-project> dsp-repo:hasSpatialCoverage "https://www.geonames.org/6255148/europe.html" . 
+<test-project> dsp-repo:hasSpatialCoverage [
+   a schema:URL ;
+   schema:url "https://test.test.swiss/" ;
+] .
+    
+
+<test-project> dsp-repo:hasFunder "PersonOrOrganization" .
+<test-project> dsp-repo:hasFunder "2001-01-26"^^xsd:date . 
+
+<test-project> dsp-repo:hasGrant "PersonOrOrganization" .
+<test-project> dsp-repo:hasGrant "https://testtesttest.dasch.swiss/" .
+
+<test-project> dsp-repo:hasURL [
+   a schema:URL ;
+   schema:url "https://test.dasch.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasURL [
+   a schema:URL ;
+   schema:url "https://testtest.dasch.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasURL [
+   a schema:URL ;
+   schema:url "https://testtesttest.dasch.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasURL "https://testtesttest.dasch.swiss/" .
+
+<test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
+<test-project> dsp-repo:hasShortcode "0123"^^xsd:string .
+<test-project> dsp-repo:hasShortcode "2345"^^xsd:string .
+<test-project> dsp-repo:hasShortcode "3456"^^xsd:string .
+<test-project> dsp-repo:hasShortcode "3456" .
+<test-project> dsp-repo:hasShortcode [
+   a schema:URL ;
+   schema:url "https://testtest.dasch..test.swiss/" ;
+] .
+
+<test-project> dsp-repo:hasDataManagementPlan [
+    a dsp-repo:DataManagementPlan ;
+    dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "https://snf.ch" ;
+    ] ;
+    dsp-repo:isAvailable "Yes" ;
+] .
+
+<test-project> dsp-repo:hasDataManagementPlan [
+    a dsp-repo:DataManagementPlan ;
+    dsp-repo:hasURL [
+       a schema:URL ;
+       schema:url "https://xyz.ch" ;
+    ] ;
+    dsp-repo:isAvailable "No" ;
+] .
+
+<test-project> dsp-repo:hasDataManagementPlan "testDMP" .
+
+<test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
+
+<test-project> dsp-repo:hasContactPoint <test-abraham> .
+<test-project> dsp-repo:hasContactPoint "PersonOrOganization" .
+<test-project> dsp-repo:hasContactPoint <test-jones> .
+<test-project> dsp-repo:hasContactPoint  [
+        a schema:ContactPoint ; 
+        schema:url [
+            a schema:URL ;
+            schema:propertyID [
+                a schema:PropertyValue ;
+                schema:propertyID "Contact Point" ;
+            ] ;
+            schema:url "https://test.dasch.swiss/" ; 
+        ]
+    ].
+<test-project> dsp-repo:hasContactPoint "2001-01-26"^^xsd:date .
+
