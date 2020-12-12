@@ -671,7 +671,7 @@ dsp-repo:GrantShape
         sh:name "Funder" ;
         sh:description "Funder of the grant"@en ;
         sh:or( [ sh:class dsp-repo:Person ] [ sh:class dsp-repo:Organization ] ) ;
-        sh:maxCount 1 ;
+        sh:minCount 1 ;
     ] ; 
     sh:closed true ;
     sh:ignoredProperties (rdf:type) .
