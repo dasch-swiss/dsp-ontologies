@@ -10,7 +10,7 @@ CURRENT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 install: clean ## install jena tools
 	@mkdir $(CURRENT_DIR)/.tmp
 	cd $(CURRENT_DIR)/.tmp && \
-		wget https://downloads.apache.org/jena/binaries/apache-jena-3.16.0.tar.gz && \
+		wget https://downloads.apache.org/jena/binaries/apache-jena-3.17.0.tar.gz && \
 		tar xzf apache-jena-3.16.0.tar.gz && \
 		ln -s apache-jena-3.16.0 jena
 
