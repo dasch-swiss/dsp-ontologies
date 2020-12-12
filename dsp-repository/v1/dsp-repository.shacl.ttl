@@ -434,9 +434,9 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasTypeOfData ;
         sh:name "Type of data" ;
-        sh:description "Type of data related to the dataset: xml, text, image, movie, audio"@en ;
+        sh:description "Type of data related to the dataset: Xml, Text, Image, Movie, Audio"@en ;
         sh:datatype xsd:string ;
-        sh:in ("xml" "text" "image" "movie" "audio") ;
+        sh:in ("XML" "Text" "Image" "Movie" "Audio") ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -474,8 +474,9 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasStatus ;
         sh:name "Dataset status" ;
-        sh:description "Current status of a dataset (testing phase, ongoing, finished)"@en ;
+        sh:description "Current status of a dataset: In planning, Ongoing, On hold, Finished"@en ;
         sh:datatype xsd:string ;
+        sh:in ("In planning" "Ongoing" "On hold" "Finished") ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
     ] ;
