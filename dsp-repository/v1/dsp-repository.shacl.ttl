@@ -450,9 +450,6 @@ dsp-repo:DatasetShape
         sh:name "License" ;
         sh:description "The license terms of the dataset"@en ;
         sh:class schema:URL ;
-        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
-        # sh:datatype xsd:string ; ##blanknode? link and description needed
-        # sh:datatype schema:CreativeWork ;  FIXME: this clearly doesn't do the trick.
         sh:minCount 1 ;
     ] ;
     sh:property [

@@ -168,8 +168,8 @@
 <test-dataset> dsp-repo:hasTitle "Testprojekt" .
 <test-dataset> dsp-repo:hasAlternativeTitle "test" .
 <test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
-<test-dataset> dsp-repo:hasTypeOfData "text" .
-<test-dataset> dsp-repo:hasTypeOfData "image" .
+<test-dataset> dsp-repo:hasTypeOfData "Text" .
+<test-dataset> dsp-repo:hasTypeOfData "Image" .
 <test-dataset> dsp-repo:hasDocumentation "Work in progress" .
 <test-dataset> dsp-repo:hasLicense [
        a schema:URL ;
@@ -192,7 +192,7 @@
 
 <test-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
 <test-dataset> dsp-repo:hasHowToCite "Testprojekt (test), 2002, https://test.dasch.swiss" .
-<test-dataset> dsp-repo:hasStatus "ongoing" . 
+<test-dataset> dsp-repo:hasStatus "Ongoing" . 
 <test-dataset> dsp-repo:hasDatePublished "2002-09-24"^^xsd:date . 
 <test-dataset> dsp-repo:hasLanguage "DE" .
 <test-dataset> dsp-repo:hasLanguage "EN" .

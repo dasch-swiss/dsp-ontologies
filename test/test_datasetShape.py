@@ -28,7 +28,7 @@ class DataSet:
         self.hasTitle = '"Testprojekt"'
         self.hasAlternativeTitle = '"alternative title"'
         self.hasAbstract = '"some abstract"'
-        self.hasTypeOfData = '"text"'
+        self.hasTypeOfData = '"Text"'
         self.hasDocumentation = '"wip"'
         self.hasLicense = '''[
                                a schema:URL ;
@@ -36,7 +36,7 @@ class DataSet:
                             ]'''
         self.hasConditionsOfAccess = '"open source"'
         self.hasHowToCite = '"Testprojekt (test), 2002, https://test.dasch.swiss"'
-        self.hasStatus = '"on going"'
+        self.hasStatus = '"Ongoing"'
         self.hasDatePublished = '"2002-09-24"^^xsd:date'
         self.hasLanguage = '"de"'
         self.isPartOf = '<test-project>'
