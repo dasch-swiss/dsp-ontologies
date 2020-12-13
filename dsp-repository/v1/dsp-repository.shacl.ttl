@@ -544,7 +544,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
         sh:description "Given name of the person"@en ;
-        sh:datatype xsd:string ;
+        sh:datatype xsd:string ;  # TODO: should be list
         sh:minCount 1 ;
     ] ;
      sh:property [

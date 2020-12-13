@@ -14,10 +14,6 @@ install: clean ## install jena tools
 		tar xzf apache-jena-3.17.0.tar.gz && \
 		ln -s apache-jena-3.17.0 jena
 
-.PHONY: validate-ontology
-validate-ontology: ## validate ontology
-	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.owl.ttl
-
 .PHONY: validate-shape
 validate-shape: ## validate shape
 	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl
@@ -32,7 +28,7 @@ validate-example-with-check: ## validate example and check validation report
 	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl | grep -q "sh:conforms  true"
 
 .PHONY: validate
-validate: validate-ontology validate-shape validate-example ## validate all
+validate: validate-shape validate-example ## validate all
 
 .PHONY: clean
 clean: ## remove temporary artifacts
