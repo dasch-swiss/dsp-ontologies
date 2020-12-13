@@ -286,7 +286,7 @@
 #    ].
 
 <test-hart> rdf:type dsp-repo:Person . 
-<test-hart> dsp-repo:hasGivenName "Leonhard" . 
+<test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
 <test-hart> dsp-repo:hasFamilyName "Hart" . 
 <test-hart> dsp-repo:hasEmail <leonhard.hart@test.ch> .
 <test-hart> dsp-repo:hasAddress [
