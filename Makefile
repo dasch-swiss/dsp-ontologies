@@ -10,13 +10,9 @@ CURRENT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 install: clean ## install jena tools
 	@mkdir $(CURRENT_DIR)/.tmp
 	cd $(CURRENT_DIR)/.tmp && \
-		wget https://downloads.apache.org/jena/binaries/apache-jena-3.16.0.tar.gz && \
-		tar xzf apache-jena-3.16.0.tar.gz && \
-		ln -s apache-jena-3.16.0 jena
-
-.PHONY: validate-ontology
-validate-ontology: ## validate ontology
-	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.owl.ttl
+		wget https://downloads.apache.org/jena/binaries/apache-jena-3.17.0.tar.gz && \
+		tar xzf apache-jena-3.17.0.tar.gz && \
+		ln -s apache-jena-3.17.0 jena
 
 .PHONY: validate-shape
 validate-shape: ## validate shape
@@ -32,7 +28,7 @@ validate-example-with-check: ## validate example and check validation report
 	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl | grep -q "sh:conforms  true"
 
 .PHONY: validate
-validate: validate-ontology validate-shape validate-example ## validate all
+validate: validate-shape validate-example ## validate all
 
 .PHONY: clean
 clean: ## remove temporary artifacts

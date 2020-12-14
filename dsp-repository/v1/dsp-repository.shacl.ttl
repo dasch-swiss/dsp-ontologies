@@ -434,9 +434,9 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasTypeOfData ;
         sh:name "Type of data" ;
-        sh:description "Type of data related to the dataset: xml, text, image, movie, audio"@en ;
+        sh:description "Type of data related to the dataset: Xml, Text, Image, Movie, Audio"@en ;
         sh:datatype xsd:string ;
-        sh:in ("xml" "text" "image" "movie" "audio") ;
+        sh:in ("XML"^^xsd:string "Text"^^xsd:string "Image"^^xsd:string "Movie"^^xsd:string "Audio"^^xsd:string) ;
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -450,9 +450,6 @@ dsp-repo:DatasetShape
         sh:name "License" ;
         sh:description "The license terms of the dataset"@en ;
         sh:class schema:URL ;
-        # sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
-        # sh:datatype xsd:string ; ##blanknode? link and description needed
-        # sh:datatype schema:CreativeWork ;  FIXME: this clearly doesn't do the trick.
         sh:minCount 1 ;
     ] ;
     sh:property [
@@ -474,8 +471,9 @@ dsp-repo:DatasetShape
     sh:property [
         sh:path dsp-repo:hasStatus ;
         sh:name "Dataset status" ;
-        sh:description "Current status of a dataset (testing phase, ongoing, finished)"@en ;
+        sh:description "Current status of a dataset: In planning, Ongoing, On hold, Finished"@en ;
         sh:datatype xsd:string ;
+        sh:in ("In planning"^^xsd:string "Ongoing"^^xsd:string "On hold"^^xsd:string "Finished"^^xsd:string ) ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
     ] ;
@@ -546,7 +544,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
         sh:description "Given name of the person"@en ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
         sh:minCount 1 ;
     ] ;
      sh:property [
@@ -670,7 +668,7 @@ dsp-repo:GrantShape
         sh:name "Funder" ;
         sh:description "Funder of the grant"@en ;
         sh:or( [ sh:class dsp-repo:Person ] [ sh:class dsp-repo:Organization ] ) ;
-        sh:maxCount 1 ;
+        sh:minCount 1 ;
     ] ; 
     sh:closed true ;
     sh:ignoredProperties (rdf:type) .

@@ -31,7 +31,8 @@ digraph metadata {
     PostalAddress -> addressLocality
 
     // Enum
-    Types [color=brown, shape=record, label="{xml | text | image | movie | audio}"];
+    Types [color=brown, shape=record, label="{XML | Text | Image | Movie | Audio}"];
+    Stati [color=brown, shape=record, label="{In planning | Ongoing | On hold | Finished}"];
 
 
     // Dataset
@@ -66,6 +67,7 @@ digraph metadata {
 
     hasStatus [label="hasStatus\nString"];
     Dataset -> hasStatus [label="1"];
+    hasStatus -> Stati
 
     hasDatePublished [label="hasDatePublished\nDate"];
     Dataset -> hasDatePublished [label="0-1"];
@@ -202,7 +204,7 @@ digraph metadata {
     Grant -> hasNumber [label="0-1"]
 
     hasFunder [label="hasFunder"];
-    Grant -> hasFunder [label="0-1"]
+    Grant -> hasFunder [label="1-n"]
 
 
     // Data Management Plan
