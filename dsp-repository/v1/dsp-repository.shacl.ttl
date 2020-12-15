@@ -546,19 +546,21 @@ dsp-repo:PersonShape
         sh:description "Given name of the person"@en ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
         sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasFamilyName ;
         sh:name "Family name" ;
         sh:description "Family name of the person"@en ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
         sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasEmail ;
         sh:name "E-mail" ;
         sh:description "E-mail address of the person"@en ;
-        sh:nodeKind sh:IRI ;
+        sh:datatype xsd:string ;
         sh:maxCount 2 ;
     ] ;
      sh:property [
@@ -618,7 +620,7 @@ dsp-repo:OrganizationShape
         sh:path dsp-repo:hasEmail ;
         sh:name "Organization e-mail" ;
         sh:description "E-mail address of the organization"@en ;
-        sh:nodeKind sh:IRI ;
+        sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
     sh:property [

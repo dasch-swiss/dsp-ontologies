@@ -1,7 +1,7 @@
 <test-jones> rdf:type dsp-repo:Person .
 <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
 <test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
-<test-jones> dsp-repo:hasEmail <benjamin.jones@test.ch> .
+<test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
 <test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;

@@ -12,7 +12,7 @@ with open(path.join(ws, 'test_data/prefix_list.ttl'), 'r') as content_file:
 class Organization:
     def __init__(self):
         self.hasName = '"test"^^xsd:string'
-        self.hasEmail = '<test@example.com>'
+        self.hasEmail = '"test@example.com"^^xsd:string'
         self.hasAddress = '''[
                             a schema:PostalAddress ;
                             schema:streetAddress "University of Toronto Street"^^xsd:string ;
@@ -71,10 +71,23 @@ class organizationNameTestCase(unittest.TestCase):
 ####### Tests for email of organization  #######
 class organizationEmailTestCase(unittest.TestCase):
 
-    # should accept email given as IRI
+    # should not accept email given as IRI
     def test_organizationHasEmail_As_IRI(self):
         testOrganization = Organization()
         testOrganization.hasEmail = '<test@example.com>'
+        test_data = makeOrganizationData(testOrganization)
+
+        conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,
+                                             data_graph_format='turtle',
+                                             shacl_graph_format='turtle',
+                                             inference='rdfs', debug=True,
+                                             serialize_report_graph=True)
+        self.assertFalse(conforms)
+
+    # should accept email given as string
+    def test_organizationHasEmail_As_IRI(self):
+        testOrganization = Organization()
+        testOrganization.hasEmail = '"test@example.com"^^xsd:string'
         test_data = makeOrganizationData(testOrganization)
 
         conforms, v_graph, v_text = validate(test_data, shacl_graph=dsp_repo_shape,

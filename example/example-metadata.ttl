@@ -237,7 +237,7 @@
    ].
 <test-abraham> dsp-repo:hasGivenName "Stewart" . 
 <test-abraham> dsp-repo:hasFamilyName "Abraham" . 
-<test-abraham> dsp-repo:hasEmail <stewart.abraham@test.ch> .
+<test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" .
 <test-abraham> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -270,7 +270,7 @@
 <test-jones> rdf:type dsp-repo:Person . 
 <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string . 
 <test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string . 
-<test-jones> dsp-repo:hasEmail <benjamin.jones@test.ch> .
+<test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
 <test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -288,7 +288,7 @@
 <test-hart> rdf:type dsp-repo:Person . 
 <test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
 <test-hart> dsp-repo:hasFamilyName "Hart" . 
-<test-hart> dsp-repo:hasEmail <leonhard.hart@test.ch> .
+<test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" .
 <test-hart> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -304,8 +304,8 @@
 
 <test-berry> rdf:type dsp-repo:Person . 
 <test-berry> dsp-repo:hasGivenName "Lauren" . 
-<test-berry> dsp-repo:hasFamilyName "Berry" . 
-<test-berry> dsp-repo:hasEmail <lauren.berry@unibas.ch> .
+<test-berry> dsp-repo:hasFamilyName ( "Berry" "Mackenzie" ) . 
+<test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" .
 <test-berry> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -322,7 +322,7 @@
 <test-coleman> rdf:type dsp-repo:Person . 
 <test-coleman> dsp-repo:hasGivenName "James" . 
 <test-coleman> dsp-repo:hasFamilyName "Coleman" . 
-<test-coleman> dsp-repo:hasEmail <james.coleman@dasch.swiss> .
+<test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .
 <test-coleman> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -342,7 +342,7 @@
 #        schema:url "TEST" ;
 #    ].
 <test-dasch> dsp-repo:hasName "TEST" .
-<test-dasch> dsp-repo:hasEmail <info@dasch.swiss>.
+<test-dasch> dsp-repo:hasEmail "info@dasch.swiss" .
 <test-dasch> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
@@ -369,7 +369,7 @@
 #        schema:url "https://www.grid.ac/institutes/grid.17063.33" ;
 #    ].
 <test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
-<test-funder> dsp-repo:hasEmail <info@universityoftoronto.ca> .
+<test-funder> dsp-repo:hasEmail "info@universityoftoronto.ca" .
 <test-funder> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "University of Toronto Street"^^xsd:string ;
