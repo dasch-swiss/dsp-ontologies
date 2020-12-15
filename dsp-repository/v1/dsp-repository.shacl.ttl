@@ -546,6 +546,7 @@ dsp-repo:PersonShape
         sh:description "Given name of the person"@en ;
         sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
         sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasFamilyName ;
