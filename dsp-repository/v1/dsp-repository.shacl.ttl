@@ -558,7 +558,7 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasEmail ;
         sh:name "E-mail" ;
         sh:description "E-mail address of the person"@en ;
-        sh:nodeKind sh:IRI ;
+        sh:datatype xsd:string ;
         sh:maxCount 2 ;
     ] ;
      sh:property [
@@ -618,7 +618,7 @@ dsp-repo:OrganizationShape
         sh:path dsp-repo:hasEmail ;
         sh:name "Organization e-mail" ;
         sh:description "E-mail address of the organization"@en ;
-        sh:nodeKind sh:IRI ;
+        sh:datatype xsd:string ;
         sh:maxCount 1 ;
     ] ;
     sh:property [

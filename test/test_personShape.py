@@ -12,7 +12,7 @@ with open(path.join(ws, 'test_data/prefix_list.ttl'), 'r') as content_file:
 galacticEmpire_organization = '''
                             <galactic-empire> rdf:type dsp-repo:Organization .
                             <galactic-empire> dsp-repo:hasName "Galactic Empire"^^xsd:string .
-                            <galactic-empire> dsp-repo:hasEmail <info@galactic-empire.com> .
+                            <galactic-empire> dsp-repo:hasEmail "info@galactic-empire.com"^^xsd:string .
                             <galactic-empire> dsp-repo:hasAddress [
                                 a schema:PostalAddress ;
                                 schema:streetAddress "Death Star"^^xsd:string ;
@@ -34,7 +34,7 @@ class Person:
                         ]'''
         self.hasGivenName = '"Anakin"'
         self.hasFamilyName = '"Skywalker"'
-        self.hasEmail = '<darthVador@galactic-empire.com>'
+        self.hasEmail = '"darthVador@galactic-empire.com"^^xsd:string'
         self.hasAddress = '''
                             [
                                 a schema:PostalAddress ;
@@ -141,7 +141,7 @@ class personHasFamilyNameTestCase(unittest.TestCase):
 ####### Tests for email property of person #######
 class personHasEmailTestCase(unittest.TestCase):
 
-    # should accept email value as IRI
+    # should not accept email value as IRI
     def test_person_hasEmail_as_IRI(self):
         person = Person()
         person.hasEmail = '<anakinSkywalker@jedi.org>'
@@ -152,9 +152,9 @@ class personHasEmailTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
-    # should fail for email value as String
+    # should accept email value as String
     def test_person_hasEmail_as_String(self):
         person = Person()
         person.hasEmail = '"anakinSkywalker@jedi.org"^^xsd:string'
@@ -165,7 +165,7 @@ class personHasEmailTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertFalse(conforms)
+        self.assertTrue(conforms)
 
     #TODO: add more tests for hasEmail here
 
