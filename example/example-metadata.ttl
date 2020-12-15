@@ -304,7 +304,7 @@
 
 <test-berry> rdf:type dsp-repo:Person . 
 <test-berry> dsp-repo:hasGivenName "Lauren" . 
-<test-berry> dsp-repo:hasFamilyName "Berry" . 
+<test-berry> dsp-repo:hasFamilyName ( "Berry" "Mackenzie" ) . 
 <test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" .
 <test-berry> dsp-repo:hasAddress [
     a schema:PostalAddress ;
