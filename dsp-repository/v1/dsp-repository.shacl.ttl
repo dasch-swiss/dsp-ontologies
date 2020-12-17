@@ -216,6 +216,18 @@ dsp-repo:hasNumber
 dsp-repo:isAvailable
     a rdf:Property .
 
+# http://ns.dasch.swiss/repository#hasListItem
+dsp-repo:hasListItem
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasValue
+dsp-repo:hasValue
+    a rdf:Property .
+
+# http://ns.dasch.swiss/repository#hasIndex
+dsp-repo:hasIndex
+    a rdf:Property .
+
 # # http://ns.dasch.swiss/repository#hasBooBoo
 # dsp-repo:hasBooBoo
 #     a rdf:Property .
@@ -268,6 +280,20 @@ dsp-repo:DataManagementPlan
     rdfs:comment "A Data Management Plan"@en ;
     rdfs:label "dsp-repo:DataManagementPlan"@en ;
     rdfs:subClassOf schema:CreativeWork .
+
+### --- Class definition of dsp-repo:List --- 
+# http://ns.dasch.swiss/repository#List
+dsp-repo:List
+    a rdfs:Class ;
+    rdfs:comment "A list with fixed order"@en ;
+    rdfs:label "dsp-repo:List"@en .
+
+### --- Class definition of dsp-repo:ListItem --- 
+# http://ns.dasch.swiss/repository#ListItem
+dsp-repo:ListItem
+    a rdfs:Class ;
+    rdfs:comment "A list item"@en ;
+    rdfs:label "dsp-repo:ListItem"@en .
 
 ##### SHAPES #####
 ### --- Shape of dsp-repo:Project ---
@@ -544,9 +570,10 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
         sh:description "Given name of the person"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
+        sh:class dsp-repo:List ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        # sh:nodeKind sh:IRI ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasFamilyName ;
@@ -714,4 +741,33 @@ dsp-repo:AttributionShape
     #     sh:or ( [ sh:datatype dsp-repo:Person ] [ sh:datatype dsp-repo:Organization ] ) ;
     #     sh:minCount 1 ;
     #     sh:maxCount 1 ;
+    ] .
+
+### --- Shape of dsp-repo:List ---
+dsp-repo:ListShape
+    a sh:NodeShape ;
+    sh:targetClass dsp-repo:List ;
+    sh:property [
+        sh:path dsp-repo:hasListItem ;
+        sh:name "Item" ;
+        sh:description "An item in the list"@en ;
+        sh:class dsp-repo:ListItem ;
+        # sh:nodeKind sh:IRI ;
+    ] .
+
+### --- Shape of dsp-repo:ListItem ---
+dsp-repo:ListItemShape
+    a sh:NodeShape ;
+    sh:targetClass dsp-repo:ListItem ;
+    sh:property [
+        sh:path dsp-repo:hasValue ;
+        sh:name "Value" ;
+        sh:description "Value of the list item"@en ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path dsp-repo:hasIndex ;
+        sh:name "Index" ;
+        sh:description "Index of the list item"@en ;
+        sh:datatype xsd:integer ;
     ] .
