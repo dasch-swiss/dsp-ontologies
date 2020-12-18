@@ -290,7 +290,6 @@
         dsp-repo:hasIndex "0"^^xsd:integer ;
     ] ;
 ] . 
-# <test-jones> dsp-repo:hasGivenName <test-jones-givenName> .
 <test-jones> dsp-repo:hasFamilyName [
     rdf:type dsp-repo:List ;
     dsp-repo:hasListItem [
