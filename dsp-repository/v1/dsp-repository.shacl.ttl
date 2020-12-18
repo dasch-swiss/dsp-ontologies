@@ -573,13 +573,12 @@ dsp-repo:PersonShape
         sh:class dsp-repo:List ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        # sh:nodeKind sh:IRI ;
     ] ;
      sh:property [
         sh:path dsp-repo:hasFamilyName ;
         sh:name "Family name" ;
         sh:description "Family name of the person"@en ;
-        sh:or ( [ sh:datatype xsd:string ] [ sh:node dash:ListShape ] ) ;
+        sh:class dsp-repo:List ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -623,7 +622,7 @@ dsp-repo:PersonShape
     #             ## add Orcid, GND, ISNI, VIAF, NACO
     #  ] ; # it is a system property and it is only allowed once.
     sh:closed true ;
-    sh:ignoredProperties (rdf:type) . # TODO: check, if there is a more appropriate usage for this
+    sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:Organization ---
 dsp-repo:OrganizationShape
@@ -753,7 +752,9 @@ dsp-repo:ListShape
         sh:description "An item in the list"@en ;
         sh:class dsp-repo:ListItem ;
         # sh:nodeKind sh:IRI ;
-    ] .
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:ListItem ---
 dsp-repo:ListItemShape
@@ -770,4 +771,6 @@ dsp-repo:ListItemShape
         sh:name "Index" ;
         sh:description "Index of the list item"@en ;
         sh:datatype xsd:integer ;
-    ] .
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) .
