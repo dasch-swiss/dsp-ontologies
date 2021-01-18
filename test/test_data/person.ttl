@@ -1,6 +1,22 @@
 <test-jones> rdf:type dsp-repo:Person .
 <test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
+# <test-jones> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Benjamin"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
+# <test-jones> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Jones"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
 <test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;

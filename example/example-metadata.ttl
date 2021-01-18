@@ -235,8 +235,24 @@
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-<test-abraham> dsp-repo:hasGivenName "Stewart" . 
-<test-abraham> dsp-repo:hasFamilyName "Abraham" . 
+<test-abraham> dsp-repo:hasGivenName "Steward"^^xsd:string .
+# <test-abraham> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Steward"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
+<test-abraham> dsp-repo:hasFamilyName "Abraham"^^xsd:string .
+# <test-abraham> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Abraham"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" .
 <test-abraham> dsp-repo:hasAddress [
     a schema:PostalAddress ;
@@ -268,8 +284,24 @@
 #     ] .
 
 <test-jones> rdf:type dsp-repo:Person . 
-<test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string . 
-<test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string . 
+<test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
+# <test-jones> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Benjamin"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
+<test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
+# <test-jones> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Jones"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
 <test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;
@@ -285,9 +317,38 @@
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
+# <test-jones-givenName> rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem <test-jones-givenName-0> .
+
+# <test-jones-givenName-0> rdf:type dsp-repo:ListItem ;
+#     dsp-repo:hasValue "Benjamin"^^xsd:string ;
+#     dsp-repo:hasIndex "0"^^xsd:integer .
+
 <test-hart> rdf:type dsp-repo:Person . 
-<test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
-<test-hart> dsp-repo:hasFamilyName "Hart" . 
+<test-hart> dsp-repo:hasGivenName "Leonhard;Aaron"^^xsd:string . 
+# <test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
+# <test-hart> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Leonhard"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Aaron"^^xsd:string ;
+#         dsp-repo:hasIndex "1"^^xsd:integer ;
+#     ] ;
+# ] . 
+<test-hart> dsp-repo:hasFamilyName "Hart"^^xsd:string .
+# <test-hart> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Hart"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" .
 <test-hart> dsp-repo:hasAddress [
     a schema:PostalAddress ;
@@ -303,8 +364,29 @@
 #    ].
 
 <test-berry> rdf:type dsp-repo:Person . 
-<test-berry> dsp-repo:hasGivenName "Lauren" . 
-<test-berry> dsp-repo:hasFamilyName ( "Berry" "Mackenzie" ) . 
+<test-berry> dsp-repo:hasGivenName "Lauren"^^xsd:string .
+# <test-berry> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Lauren"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] . 
+<test-berry> dsp-repo:hasFamilyName "Berry;Mackenzie"^^xsd:string .
+# <test-berry> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Berry"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Mackenzie"^^xsd:string ;
+#         dsp-repo:hasIndex "1"^^xsd:integer ;
+#     ] ;
+# ] . 
 <test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" .
 <test-berry> dsp-repo:hasAddress [
     a schema:PostalAddress ;
@@ -320,8 +402,24 @@
 #    ].
 
 <test-coleman> rdf:type dsp-repo:Person . 
-<test-coleman> dsp-repo:hasGivenName "James" . 
-<test-coleman> dsp-repo:hasFamilyName "Coleman" . 
+<test-coleman> dsp-repo:hasGivenName "James"^^xsd:string .
+# <test-coleman> dsp-repo:hasGivenName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "James"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] .  
+<test-coleman> dsp-repo:hasFamilyName "Coleman"^^xsd:string .
+# <test-coleman> dsp-repo:hasFamilyName [
+#     rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem [
+#         rdf:type dsp-repo:ListItem ;
+#         dsp-repo:hasValue "Coleman"^^xsd:string ;
+#         dsp-repo:hasIndex "0"^^xsd:integer ;
+#     ] ;
+# ] .
 <test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .
 <test-coleman> dsp-repo:hasAddress [
     a schema:PostalAddress ;

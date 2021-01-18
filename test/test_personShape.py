@@ -32,8 +32,8 @@ class Person:
                             a schema:URL ;
                             schema:url "https://darth-vador.galactic-empire.com" ;
                         ]'''
-        self.hasGivenName = '"Anakin"'
-        self.hasFamilyName = '"Skywalker"'
+        self.hasGivenName = '"Anakin"^^xsd:string'
+        self.hasFamilyName = '"Skywalker"^^xsd:string'
         self.hasEmail = '"darthVador@galactic-empire.com"^^xsd:string'
         self.hasAddress = '''
                             [
