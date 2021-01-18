@@ -19,18 +19,18 @@
 @prefix schema: <https://schema.org/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unesco6: <http://skos.um.es/unesco6/> .
-@base <http://ns.dasch.swiss/repository#> .
+@base <http://ns.dasch.swiss/repository> .
 
 
 ### test project ###
-<test-project> rdf:type dsp-repo:Project .
-<test-project> dsp-repo:hasName "Testprojektname (test)"^^xsd:string .
-<test-project> dsp-repo:hasDescription "Dies ist ein Testprojekt...alle Properties wurden verwendet, um diese zu testen"^^xsd:string .
-<test-project> dsp-repo:hasKeywords "mathematics"^^xsd:string .
-<test-project> dsp-repo:hasKeywords "science"^^xsd:string .
-<test-project> dsp-repo:hasKeywords "history of science"^^xsd:string .
-<test-project> dsp-repo:hasKeywords "history of mathematics"^^xsd:string .
-<test-project> dsp-repo:hasDiscipline [
+<#test-project> rdf:type dsp-repo:Project .
+<#test-project> dsp-repo:hasName "Testprojektname (test)"^^xsd:string .
+<#test-project> dsp-repo:hasDescription "Dies ist ein Testprojekt...alle Properties wurden verwendet, um diese zu testen"^^xsd:string .
+<#test-project> dsp-repo:hasKeywords "mathematics"^^xsd:string .
+<#test-project> dsp-repo:hasKeywords "science"^^xsd:string .
+<#test-project> dsp-repo:hasKeywords "history of science"^^xsd:string .
+<#test-project> dsp-repo:hasKeywords "history of mathematics"^^xsd:string .
+<#test-project> dsp-repo:hasDiscipline [
    a schema:URL ;
    schema:propertyID [
        a schema:PropertyValue ;
@@ -38,9 +38,9 @@
    ] ;
    schema:url "http://skos.um.es/unesco6/11" ;
 ] .
-<test-project> dsp-repo:hasStartDate "2000-07-26"^^xsd:date . 
-<test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date . 
-<test-project> dsp-repo:hasTemporalCoverage [
+<#test-project> dsp-repo:hasStartDate "2000-07-26"^^xsd:date . 
+<#test-project> dsp-repo:hasEndDate "2001-01-26"^^xsd:date . 
+<#test-project> dsp-repo:hasTemporalCoverage [
    a schema:URL ;
    schema:propertyID [
        a schema:PropertyValue ;
@@ -48,7 +48,7 @@
    ] ;
    schema:url "http://chronontology.dainst.org/period/Ef9SyESSafJ1" ;
 ] .
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -59,7 +59,7 @@
             schema:url "https://www.geonames.org/6255148/europe.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -70,7 +70,7 @@
             schema:url "https://www.geonames.org/2017370/russian-federation.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -81,7 +81,7 @@
             schema:url "https://www.geonames.org/3017382/republic-of-france.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -92,7 +92,7 @@
             schema:url "https://www.geonames.org/2658434/switzerland.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -103,7 +103,7 @@
             schema:url "https://www.geonames.org/2921044/federal-republic-of-germany.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -114,7 +114,7 @@
             schema:url "https://www.geonames.org/3175395/italian-republic.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasSpatialCoverage [
+<#test-project> dsp-repo:hasSpatialCoverage [
         a schema:Place ; 
         schema:url [
             a schema:URL ;
@@ -125,19 +125,19 @@
             schema:url "https://www.geonames.org/6269131/england.html" ; 
         ]
     ].
-<test-project> dsp-repo:hasFunder <test-funder> . 
-<test-project> dsp-repo:hasGrant <test-grant> .
-<test-project> dsp-repo:hasURL [
+<#test-project> dsp-repo:hasFunder <#test-funder> . 
+<#test-project> dsp-repo:hasGrant <#test-grant> .
+<#test-project> dsp-repo:hasURL [
    a schema:URL ;
    schema:url "https://test.dasch.swiss/" ;
 ] .
-<test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
-<test-project> dsp-repo:hasAlternateName "test"^^xsd:string  .
-<test-project> dsp-repo:hasDataManagementPlan <test-plan> .
-<test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
-<test-project> dsp-repo:hasContactPoint <test-abraham> .
+<#test-project> dsp-repo:hasShortcode "0000"^^xsd:string . 
+<#test-project> dsp-repo:hasAlternateName "test"^^xsd:string  .
+<#test-project> dsp-repo:hasDataManagementPlan <#test-plan> .
+<#test-project> dsp-repo:hasPublication "testpublication"^^xsd:string  .
+<#test-project> dsp-repo:hasContactPoint <#test-abraham> .
 
-# <test-project> dsp-repo:hasContactPoint  [
+# <#test-project> dsp-repo:hasContactPoint  [
 #         a schema:ContactPoint ; 
 #         schema:url [
 #             a schema:URL ;
@@ -149,40 +149,40 @@
 #         ]
 #     ].
 
-<test-plan> rdf:type dsp-repo:DataManagementPlan .
-<test-plan> dsp-repo:hasURL [
+<#test-plan> rdf:type dsp-repo:DataManagementPlan .
+<#test-plan> dsp-repo:hasURL [
        a schema:URL ;
        schema:url "https://snf.ch" ;
     ] .
-<test-plan> dsp-repo:isAvailable "false"^^xsd:boolean .
+<#test-plan> dsp-repo:isAvailable "false"^^xsd:boolean .
 
-<test-dataset> rdf:type dsp-repo:Dataset .
-# <test-dataset> dsp-repo:hasIdentifier [
+<#test-dataset> rdf:type dsp-repo:Dataset .
+# <#test-dataset> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "http://testark.dasch.swiss/" ;
 #    ].
-<test-dataset> dsp-repo:sameAs [
+<#test-dataset> dsp-repo:sameAs [
        a schema:URL ;
        schema:url "https://test.dasch.swiss/" ;
    ].
-<test-dataset> dsp-repo:hasTitle "Testprojekt" .
-<test-dataset> dsp-repo:hasAlternativeTitle "test" .
-<test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
-<test-dataset> dsp-repo:hasTypeOfData "Text" .
-<test-dataset> dsp-repo:hasTypeOfData "Image" .
-<test-dataset> dsp-repo:hasDocumentation "Work in progress" .
-<test-dataset> dsp-repo:hasLicense [
+<#test-dataset> dsp-repo:hasTitle "Testprojekt" .
+<#test-dataset> dsp-repo:hasAlternativeTitle "test" .
+<#test-dataset> dsp-repo:hasAbstract "Dies ist ein Testprojekt." .
+<#test-dataset> dsp-repo:hasTypeOfData "Text" .
+<#test-dataset> dsp-repo:hasTypeOfData "Image" .
+<#test-dataset> dsp-repo:hasDocumentation "Work in progress" .
+<#test-dataset> dsp-repo:hasLicense [
        a schema:URL ;
        schema:url "https://creativecommons.org/licenses/by/3.0" ;
    ].
 
-# <test-dataset> dsp-repo:hasLicense [
+# <#test-dataset> dsp-repo:hasLicense [
 #         a schema:CreativeWork ;
 #         schema:url "https://creativecommons.org/licenses/by/3.0" ;
 #         schema:name "CC BY 3.0" ;
 #         schema:description "All transcriptions are published under CC BY 3.0 license."
 #     ] .
-# <test-dataset> dsp-repo:hasLicense [
+# <#test-dataset> dsp-repo:hasLicense [
 #         a schema:CreativeWork ;
 #         schema:url "https://creativecommons.org/publicdomain/zero/1.0" ;
 #         schema:name "CC" ;
@@ -190,53 +190,53 @@
 #         schema:obviouselyInvalid "can't be"  # FIXME: this should not be valid! How can we ensure this doesn't validate?
 #     ] .
 
-<test-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
-<test-dataset> dsp-repo:hasHowToCite "Testprojekt (test), 2002, https://test.dasch.swiss" .
-<test-dataset> dsp-repo:hasStatus "Ongoing" . 
-<test-dataset> dsp-repo:hasDatePublished "2002-09-24"^^xsd:date . 
-<test-dataset> dsp-repo:hasLanguage "DE" .
-<test-dataset> dsp-repo:hasLanguage "EN" .
-<test-dataset> dsp-repo:hasLanguage "FR" .
-<test-dataset> dsp-repo:isPartOf <test-project> .
-<test-dataset> dsp-repo:hasDateCreated "2001-09-26"^^xsd:date .  
-<test-dataset> dsp-repo:hasDateModified "2020-04-26"^^xsd:date .  
-<test-dataset> dsp-repo:hasDistribution [
+<#test-dataset> dsp-repo:hasConditionsOfAccess "Open Access" . 
+<#test-dataset> dsp-repo:hasHowToCite "Testprojekt (test), 2002, https://test.dasch.swiss" .
+<#test-dataset> dsp-repo:hasStatus "Ongoing" . 
+<#test-dataset> dsp-repo:hasDatePublished "2002-09-24"^^xsd:date . 
+<#test-dataset> dsp-repo:hasLanguage "DE" .
+<#test-dataset> dsp-repo:hasLanguage "EN" .
+<#test-dataset> dsp-repo:hasLanguage "FR" .
+<#test-dataset> dsp-repo:isPartOf <#test-project> .
+<#test-dataset> dsp-repo:hasDateCreated "2001-09-26"^^xsd:date .  
+<#test-dataset> dsp-repo:hasDateModified "2020-04-26"^^xsd:date .  
+<#test-dataset> dsp-repo:hasDistribution [
     a schema:DataDownload ;
     schema:url "https://test.dasch.swiss" ;
 ].
-<test-dataset> dsp-repo:hasQualifiedAttribution [
+<#test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <test-abraham>;
+    prov:agent <#test-abraham>;
     dsp-repo:hasRole "editor";
 ] .
-<test-dataset> dsp-repo:hasQualifiedAttribution [
+<#test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <test-jones>;
+    prov:agent <#test-jones>;
     dsp-repo:hasRole "editor";
 ] .
-<test-dataset> dsp-repo:hasQualifiedAttribution [
+<#test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <test-hart>;
+    prov:agent <#test-hart>;
     dsp-repo:hasRole "contributor";
 ] .
-<test-dataset> dsp-repo:hasQualifiedAttribution [
+<#test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <test-berry>;
+    prov:agent <#test-berry>;
     dsp-repo:hasRole "contributor";
 ] .
-<test-dataset> dsp-repo:hasQualifiedAttribution [
+<#test-dataset> dsp-repo:hasQualifiedAttribution [
     a prov:Attribution;
-    prov:agent <test-coleman>;
+    prov:agent <#test-coleman>;
     dsp-repo:hasRole "editor";
 ] .
 
-<test-abraham> rdf:type dsp-repo:Person . 
-<test-abraham> dsp-repo:sameAs [
+<#test-abraham> rdf:type dsp-repo:Person . 
+<#test-abraham> dsp-repo:sameAs [
        a schema:URL ;
        schema:url "https://orcid.org/0000-0002-1825-0097" ;
    ].
-<test-abraham> dsp-repo:hasGivenName "Steward"^^xsd:string .
-# <test-abraham> dsp-repo:hasGivenName [
+<#test-abraham> dsp-repo:hasGivenName "Steward"^^xsd:string .
+# <#test-abraham> dsp-repo:hasGivenName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -244,8 +244,8 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-abraham> dsp-repo:hasFamilyName "Abraham"^^xsd:string .
-# <test-abraham> dsp-repo:hasFamilyName [
+<#test-abraham> dsp-repo:hasFamilyName "Abraham"^^xsd:string .
+# <#test-abraham> dsp-repo:hasFamilyName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -253,39 +253,39 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" .
-<test-abraham> dsp-repo:hasAddress [
+<#test-abraham> dsp-repo:hasEmail "stewart.abraham@test.ch" .
+<#test-abraham> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
-<test-abraham> dsp-repo:isMemberOf <test-dasch> .
-<test-abraham> dsp-repo:hasJobTitle "Dr." .
-# <test-abraham> dsp-repo:hasIdentifier [
+<#test-abraham> dsp-repo:isMemberOf <#test-dasch> .
+<#test-abraham> dsp-repo:hasJobTitle "Dr." .
+# <#test-abraham> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
-# <test-abraham> dsp-repo:hasIdentifier [
+# <#test-abraham> dsp-repo:hasIdentifier [
 #         a schema:PropertyValue ;
 #         schema:name "ORCID" ;
 #         schema:identifier "https://orcid.org/0000-0002-1825-0097"
 #     ] .
-# <test-abraham> dsp-repo:hasIdentifier [
+# <#test-abraham> dsp-repo:hasIdentifier [
 #         a schema:PropertyValue ;
 #         schema:name "VIAF" ;
 #         schema:identifier "69100561" ;
 #         schema:url "https://www.viaf.org/"
 #     ] .
-# <test-abraham> dsp-repo:hasIdentifier [
+# <#test-abraham> dsp-repo:hasIdentifier [
 #         a schema:PropertyValue ;
 #         schema:nanannananana "blah"  # TODO: this, again, should not be valid
 #     ] .
 
-<test-jones> rdf:type dsp-repo:Person . 
-<test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
-# <test-jones> dsp-repo:hasGivenName [
+<#test-jones> rdf:type dsp-repo:Person . 
+<#test-jones> dsp-repo:hasGivenName "Benjamin"^^xsd:string .
+# <#test-jones> dsp-repo:hasGivenName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -293,8 +293,8 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
-# <test-jones> dsp-repo:hasFamilyName [
+<#test-jones> dsp-repo:hasFamilyName "Jones"^^xsd:string .
+# <#test-jones> dsp-repo:hasFamilyName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -302,32 +302,32 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
-<test-jones> dsp-repo:hasAddress [
+<#test-jones> dsp-repo:hasEmail "benjamin.jones@test.ch" .
+<#test-jones> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
 
-<test-jones> dsp-repo:isMemberOf <test-dasch> .
-<test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
-# <test-jones> dsp-repo:hasIdentifier [
+<#test-jones> dsp-repo:isMemberOf <#test-dasch> .
+<#test-jones> dsp-repo:hasJobTitle "Dr. des."^^xsd:string .
+# <#test-jones> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
-# <test-jones-givenName> rdf:type dsp-repo:List ;
-#     dsp-repo:hasListItem <test-jones-givenName-0> .
+# <#test-jones-givenName> rdf:type dsp-repo:List ;
+#     dsp-repo:hasListItem <#test-jones-givenName-0> .
 
-# <test-jones-givenName-0> rdf:type dsp-repo:ListItem ;
+# <#test-jones-givenName-0> rdf:type dsp-repo:ListItem ;
 #     dsp-repo:hasValue "Benjamin"^^xsd:string ;
 #     dsp-repo:hasIndex "0"^^xsd:integer .
 
-<test-hart> rdf:type dsp-repo:Person . 
-<test-hart> dsp-repo:hasGivenName "Leonhard;Aaron"^^xsd:string . 
-# <test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
-# <test-hart> dsp-repo:hasGivenName [
+<#test-hart> rdf:type dsp-repo:Person . 
+<#test-hart> dsp-repo:hasGivenName "Leonhard;Aaron"^^xsd:string . 
+# <#test-hart> dsp-repo:hasGivenName ("Leonhard" "Aaron") . 
+# <#test-hart> dsp-repo:hasGivenName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -340,8 +340,8 @@
 #         dsp-repo:hasIndex "1"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-hart> dsp-repo:hasFamilyName "Hart"^^xsd:string .
-# <test-hart> dsp-repo:hasFamilyName [
+<#test-hart> dsp-repo:hasFamilyName "Hart"^^xsd:string .
+# <#test-hart> dsp-repo:hasFamilyName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -349,23 +349,23 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" .
-<test-hart> dsp-repo:hasAddress [
+<#test-hart> dsp-repo:hasEmail "leonhard.hart@test.ch" .
+<#test-hart> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
-<test-hart> dsp-repo:isMemberOf <test-dasch> .
-<test-hart> dsp-repo:hasJobTitle "Prof." .
-# <test-hart> dsp-repo:hasIdentifier [
+<#test-hart> dsp-repo:isMemberOf <#test-dasch> .
+<#test-hart> dsp-repo:hasJobTitle "Prof." .
+# <#test-hart> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
-<test-berry> rdf:type dsp-repo:Person . 
-<test-berry> dsp-repo:hasGivenName "Lauren"^^xsd:string .
-# <test-berry> dsp-repo:hasGivenName [
+<#test-berry> rdf:type dsp-repo:Person . 
+<#test-berry> dsp-repo:hasGivenName "Lauren"^^xsd:string .
+# <#test-berry> dsp-repo:hasGivenName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -373,8 +373,8 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-berry> dsp-repo:hasFamilyName "Berry;Mackenzie"^^xsd:string .
-# <test-berry> dsp-repo:hasFamilyName [
+<#test-berry> dsp-repo:hasFamilyName "Berry;Mackenzie"^^xsd:string .
+# <#test-berry> dsp-repo:hasFamilyName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -387,23 +387,23 @@
 #         dsp-repo:hasIndex "1"^^xsd:integer ;
 #     ] ;
 # ] . 
-<test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" .
-<test-berry> dsp-repo:hasAddress [
+<#test-berry> dsp-repo:hasEmail "lauren.berry@unibas.ch" .
+<#test-berry> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
-<test-berry> dsp-repo:isMemberOf <test-dasch> .
-<test-berry> dsp-repo:hasJobTitle "Dr." .
-# <test-berry> dsp-repo:hasIdentifier [
+<#test-berry> dsp-repo:isMemberOf <#test-dasch> .
+<#test-berry> dsp-repo:hasJobTitle "Dr." .
+# <#test-berry> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
-<test-coleman> rdf:type dsp-repo:Person . 
-<test-coleman> dsp-repo:hasGivenName "James"^^xsd:string .
-# <test-coleman> dsp-repo:hasGivenName [
+<#test-coleman> rdf:type dsp-repo:Person . 
+<#test-coleman> dsp-repo:hasGivenName "James"^^xsd:string .
+# <#test-coleman> dsp-repo:hasGivenName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -411,8 +411,8 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] .  
-<test-coleman> dsp-repo:hasFamilyName "Coleman"^^xsd:string .
-# <test-coleman> dsp-repo:hasFamilyName [
+<#test-coleman> dsp-repo:hasFamilyName "Coleman"^^xsd:string .
+# <#test-coleman> dsp-repo:hasFamilyName [
 #     rdf:type dsp-repo:List ;
 #     dsp-repo:hasListItem [
 #         rdf:type dsp-repo:ListItem ;
@@ -420,73 +420,73 @@
 #         dsp-repo:hasIndex "0"^^xsd:integer ;
 #     ] ;
 # ] .
-<test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .
-<test-coleman> dsp-repo:hasAddress [
+<#test-coleman> dsp-repo:hasEmail "james.coleman@dasch.swiss" .
+<#test-coleman> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
-<test-coleman> dsp-repo:isMemberOf <test-dasch> .
-<test-coleman> dsp-repo:hasJobTitle "Dr. des." .
-# <test-coleman> dsp-repo:hasIdentifier [
+<#test-coleman> dsp-repo:isMemberOf <#test-dasch> .
+<#test-coleman> dsp-repo:hasJobTitle "Dr. des." .
+# <#test-coleman> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://orcid.org/0000-0002-1825-0097" ;
 #    ].
 
-<test-dasch> rdf:type dsp-repo:Organization . 
-# <test-dasch> dsp-repo:hasIdentifier [
+<#test-dasch> rdf:type dsp-repo:Organization . 
+# <#test-dasch> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "TEST" ;
 #    ].
-<test-dasch> dsp-repo:hasName "TEST" .
-<test-dasch> dsp-repo:hasEmail "info@dasch.swiss" .
-<test-dasch> dsp-repo:hasAddress [
+<#test-dasch> dsp-repo:hasName "TEST" .
+<#test-dasch> dsp-repo:hasEmail "info@dasch.swiss" .
+<#test-dasch> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "Teststrasse"^^xsd:string ;
     schema:postalCode "4000"^^xsd:string ;
     schema:addressLocality "Basel"^^xsd:string ;
 ].
-<test-dasch> dsp-repo:hasURL [
+<#test-dasch> dsp-repo:hasURL [
        a schema:URL ;
        schema:url "https://test.swiss" ;
    ].
 
-<test-grant> rdf:type dsp-repo:Grant . 
-<test-grant> dsp-repo:hasName "Prof. test test, Prof. test Harbtestrecht"^^xsd:string .
-<test-grant> dsp-repo:hasURL [
+<#test-grant> rdf:type dsp-repo:Grant . 
+<#test-grant> dsp-repo:hasName "Prof. test test, Prof. test Harbtestrecht"^^xsd:string .
+<#test-grant> dsp-repo:hasURL [
        a schema:URL ;
        schema:url "http://p3.snf.ch/testproject" ;
    ].
-<test-grant> dsp-repo:hasNumber "0123456789"^^xsd:string .
-<test-grant> dsp-repo:hasFunder <test-funder> .
+<#test-grant> dsp-repo:hasNumber "0123456789"^^xsd:string .
+<#test-grant> dsp-repo:hasFunder <#test-funder> .
 
-<test-funder> rdf:type dsp-repo:Organization .
-# <test-funder> dsp-repo:hasIdentifier [
+<#test-funder> rdf:type dsp-repo:Organization .
+# <#test-funder> dsp-repo:hasIdentifier [
 #        a schema:URL ;
 #        schema:url "https://www.grid.ac/institutes/grid.17063.33" ;
 #    ].
-<test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
-<test-funder> dsp-repo:hasEmail "info@universityoftoronto.ca" .
-<test-funder> dsp-repo:hasAddress [
+<#test-funder> dsp-repo:hasName "University of Toronto"^^xsd:string .
+<#test-funder> dsp-repo:hasEmail "info@universityoftoronto.ca" .
+<#test-funder> dsp-repo:hasAddress [
     a schema:PostalAddress ;
     schema:streetAddress "University of Toronto Street"^^xsd:string ;
     schema:postalCode "40000"^^xsd:string ;
     schema:addressLocality "Toronto"^^xsd:string ;
 ].
 
-<test-funder> dsp-repo:hasURL[
+<#test-funder> dsp-repo:hasURL[
        a schema:URL ;
        schema:url "http://www.utoronto.ca/" ;
    ].
 
 
-# <test-funder> dsp-repo:hasBooBoo "booboo" .
+# <#test-funder> dsp-repo:hasBooBoo "booboo" .
 
 
 
 ### Examples
-#<test-project> dsp-repo:hasDiscipline [
+#<#test-project> dsp-repo:hasDiscipline [
   #  a schema:URL ;
   #  schema:propertyID [
   #      a schema:PropertyValue ;
@@ -495,19 +495,19 @@
    # schema:url "http://skos.um.es/unesco6/11" ;
 #] .
 
-#<test-project> dsp-repo:hasURL [
+#<#test-project> dsp-repo:hasURL [
  #       a schema:URL ;
  #       schema:url "http://www.test.ch" ;
   #  ].
 
-#<test-dataset> dsp-repo:hasQualifiedAttribution [
+#<#test-dataset> dsp-repo:hasQualifiedAttribution [
    # a prov:Attribution;
-   # prov:agent <test-schwarz>;
+   # prov:agent <#test-schwarz>;
    # dsp-repo:hasRole "editor";
 #] .
 
-#<test-dataset> dsp-repo:hasQualifiedAttribution [
+#<#test-dataset> dsp-repo:hasQualifiedAttribution [
   #  a prov:Attribution;
-   # prov:agent <test-rohr>;
+   # prov:agent <#test-rohr>;
   #  dsp-repo:hasRole "editor";
 #] .
