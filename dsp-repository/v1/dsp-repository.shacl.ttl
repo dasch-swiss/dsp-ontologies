@@ -283,17 +283,17 @@ dsp-repo:DataManagementPlan
 
 ### --- Class definition of dsp-repo:List --- 
 # http://ns.dasch.swiss/repository#List
-dsp-repo:List
-    a rdfs:Class ;
-    rdfs:comment "A list with fixed order"@en ;
-    rdfs:label "dsp-repo:List"@en .
+# dsp-repo:List
+#     a rdfs:Class ;
+#     rdfs:comment "A list with fixed order"@en ;
+#     rdfs:label "dsp-repo:List"@en .
 
 ### --- Class definition of dsp-repo:ListItem --- 
 # http://ns.dasch.swiss/repository#ListItem
-dsp-repo:ListItem
-    a rdfs:Class ;
-    rdfs:comment "A list item"@en ;
-    rdfs:label "dsp-repo:ListItem"@en .
+# dsp-repo:ListItem
+#     a rdfs:Class ;
+#     rdfs:comment "A list item"@en ;
+#     rdfs:label "dsp-repo:ListItem"@en .
 
 ##### SHAPES #####
 ### --- Shape of dsp-repo:Project ---
@@ -570,7 +570,8 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasGivenName ;
         sh:name "Given name" ;
         sh:description "Given name of the person"@en ;
-        sh:class dsp-repo:List ;
+        # sh:class dsp-repo:List ;
+        sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -578,7 +579,8 @@ dsp-repo:PersonShape
         sh:path dsp-repo:hasFamilyName ;
         sh:name "Family name" ;
         sh:description "Family name of the person"@en ;
-        sh:class dsp-repo:List ;
+        # sh:class dsp-repo:List ;
+        sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -732,6 +734,7 @@ dsp-repo:AttributionShape
         sh:description "Role of the person within the dataset"@en ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
+    ] .
     # ] ;
     # sh:property [
     #     sh:path prov:Agent ;
@@ -740,37 +743,36 @@ dsp-repo:AttributionShape
     #     sh:or ( [ sh:datatype dsp-repo:Person ] [ sh:datatype dsp-repo:Organization ] ) ;
     #     sh:minCount 1 ;
     #     sh:maxCount 1 ;
-    ] .
 
 ### --- Shape of dsp-repo:List ---
-dsp-repo:ListShape
-    a sh:NodeShape ;
-    sh:targetClass dsp-repo:List ;
-    sh:property [
-        sh:path dsp-repo:hasListItem ;
-        sh:name "Item" ;
-        sh:description "An item in the list"@en ;
-        sh:class dsp-repo:ListItem ;
-        # sh:nodeKind sh:IRI ;
-    ] ;
-    sh:closed true ;
-    sh:ignoredProperties (rdf:type) .
+# dsp-repo:ListShape
+#     a sh:NodeShape ;
+#     sh:targetClass dsp-repo:List ;
+#     sh:property [
+#         sh:path dsp-repo:hasListItem ;
+#         sh:name "Item" ;
+#         sh:description "An item in the list"@en ;
+#         sh:class dsp-repo:ListItem ;
+#         # sh:nodeKind sh:IRI ;
+#     ] ;
+#     sh:closed true ;
+#     sh:ignoredProperties (rdf:type) .
 
 ### --- Shape of dsp-repo:ListItem ---
-dsp-repo:ListItemShape
-    a sh:NodeShape ;
-    sh:targetClass dsp-repo:ListItem ;
-    sh:property [
-        sh:path dsp-repo:hasValue ;
-        sh:name "Value" ;
-        sh:description "Value of the list item"@en ;
-        sh:datatype xsd:string ;
-    ] ;
-    sh:property [
-        sh:path dsp-repo:hasIndex ;
-        sh:name "Index" ;
-        sh:description "Index of the list item"@en ;
-        sh:datatype xsd:integer ;
-    ] ;
-    sh:closed true ;
-    sh:ignoredProperties (rdf:type) .
+# dsp-repo:ListItemShape
+#     a sh:NodeShape ;
+#     sh:targetClass dsp-repo:ListItem ;
+#     sh:property [
+#         sh:path dsp-repo:hasValue ;
+#         sh:name "Value" ;
+#         sh:description "Value of the list item"@en ;
+#         sh:datatype xsd:string ;
+#     ] ;
+#     sh:property [
+#         sh:path dsp-repo:hasIndex ;
+#         sh:name "Index" ;
+#         sh:description "Index of the list item"@en ;
+#         sh:datatype xsd:integer ;
+#     ] ;
+#     sh:closed true ;
+#     sh:ignoredProperties (rdf:type) .

@@ -7,7 +7,7 @@ CURRENT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 # include vars.mk
 
 .PHONY: install
-install: clean ## install jena tools
+install: install ## install jena tools
 	@mkdir $(CURRENT_DIR)/.tmp
 	cd $(CURRENT_DIR)/.tmp && \
 		wget https://downloads.apache.org/jena/binaries/apache-jena-3.17.0.tar.gz && \

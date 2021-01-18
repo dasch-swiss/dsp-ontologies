@@ -8,8 +8,8 @@ digraph metadata {
     Organization [color=blue];
     Grant [color=blue];
     DataManagementPlan [color=blue];
-    List [color=blue];
-    ListItem [color=blue];
+    // List [color=blue];
+    // ListItem [color=blue];
 
     // other Datatypes
     Attribution [color=green];
@@ -155,19 +155,19 @@ digraph metadata {
     sameAs2 [label="sameAs\nURL"];
     Person -> sameAs2 [label="0-n"];
 
-    hasGivenName [label="hasGivenName\nList"];
+    hasGivenName [label="hasGivenName\nString"];
     Person -> hasGivenName [label="1"];
-    hasGivenName -> List;
-    List -> hasListItem [label="0-n"];
-    hasListItem -> ListItem;
-    ListItem -> hasValue [label="1"];
-    hasValue [label="hasValue\nString"];
-    ListItem -> hasIndex [label="1"];
+    // hasGivenName -> List;
+    // List -> hasListItem [label="0-n"];
+    // hasListItem -> ListItem;
+    // ListItem -> hasValue [label="1"];
+    // hasValue [label="hasValue\nString"];
+    // ListItem -> hasIndex [label="1"];
     hasIndex [label="hasIndex\nInteger"];
 
-    hasFamilyName [label="hasFamilyName\nList"];
+    hasFamilyName [label="hasFamilyName\nString"];
     Person -> hasFamilyName [label="1"];
-    hasFamilyName -> List;
+    // hasFamilyName -> List;
 
     hasEmail [label="hasEmail\nString"];
     Person -> hasEmail [label="0-2"];

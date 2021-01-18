@@ -32,22 +32,8 @@ class Person:
                             a schema:URL ;
                             schema:url "https://darth-vador.galactic-empire.com" ;
                         ]'''
-        self.hasGivenName = '''[
-                                a dsp-repo:List ;
-                                dsp-repo:hasListItem [
-                                    a dsp-repo:ListItem ;
-                                    dsp-repo:hasValue "Anakin"^^xsd:string ;
-                                    dsp-repo:hasIndex "0"^^xsd:integer ;
-                                ]
-                                ]'''
-        self.hasFamilyName = '''[
-                                a dsp-repo:List ;
-                                dsp-repo:hasListItem [
-                                    a dsp-repo:ListItem ;
-                                    dsp-repo:hasValue "Skywalker"^^xsd:string ;
-                                    dsp-repo:hasIndex "0"^^xsd:integer ;
-                                ]
-                                ]'''
+        self.hasGivenName = '"Anakin"^^xsd:string'
+        self.hasFamilyName = '"Skywalker"^^xsd:string'
         self.hasEmail = '"darthVador@galactic-empire.com"^^xsd:string'
         self.hasAddress = '''
                             [
