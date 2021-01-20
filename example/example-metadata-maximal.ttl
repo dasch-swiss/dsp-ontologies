@@ -1,0 +1,227 @@
+@base <http://ns.dasch.swiss/repository#> .
+@prefix dsp-repo: <http://ns.dasch.swiss/repository#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#dsp-9997-dataset-001> a <Dataset> ;
+    <hasAbstract> "just a bunch of texts"^^xsd:string ;
+    <hasAlternativeTitle> "Text part of the max project"^^xsd:string ;
+    <hasConditionsOfAccess> "do whatever you want"^^xsd:string ;
+    <hasDateCreated> "2021-01-04"^^xsd:date ;
+    <hasDateModified> "2021-01-11"^^xsd:date ;
+    <hasDatePublished> "2021-01-18"^^xsd:date ;
+    <hasDistribution> [ a schema:DataDownload ;
+            schema:url "download.dsp.dasch.swiss/9997/2" ] ;
+    <hasDocumentation> "none"^^xsd:string ;
+    <hasHowToCite> "please don't!"^^xsd:string ;
+    <hasLanguage> "en"^^xsd:string ;
+    <hasLicense> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "creativecommons.org" ] ;
+            schema:url "https://creativecommons.org/licenses/by/4.0" ] ;
+    <hasQualifiedAttribution> [ a prov:Attribution ;
+            <hasRole> "owner"^^xsd:string ;
+            prov:agent <#dsp-9997-person-001> ] ;
+    <hasStatus> "Finished"^^xsd:string ;
+    <hasTitle> "maximal-texts"^^xsd:string ;
+    <hasTypeOfData> "Text"^^xsd:string,
+        "XML"^^xsd:string ;
+    <isPartOf> <#dsp-9997-project> ;
+    <sameAs> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.maximum." ] ;
+            schema:url "www.maximum.io/texts" ] .
+
+<#dsp-9997-dataset-002> a <Dataset> ;
+    <hasAbstract> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "abstracts.io" ] ;
+            schema:url "http://www.abstracts.io/example-abstracts/01" ],
+        "This is all about lorem ipsum blah blah"^^xsd:string ;
+    <hasAlternativeTitle> "Media Part of the Maximum Project"^^xsd:string ;
+    <hasConditionsOfAccess> "open access"^^xsd:string ;
+    <hasDateCreated> "2021-01-04"^^xsd:date ;
+    <hasDateModified> "2021-01-05"^^xsd:date ;
+    <hasDatePublished> "2021-01-06"^^xsd:date ;
+    <hasDistribution> [ a schema:DataDownload ;
+            schema:url "download.dsp.dasch.swiss/9997" ] ;
+    <hasDocumentation> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "github.com" ] ;
+            schema:url "http://www.github.com/maximum/media/readme.md" ],
+        "totally not documented"^^xsd:string ;
+    <hasHowToCite> "media stuff citing"^^xsd:string ;
+    <hasLanguage> "de"^^xsd:string,
+        "en"^^xsd:string,
+        "it"^^xsd:string ;
+    <hasLicense> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "creativecommons.org" ] ;
+            schema:url "https://creativecommons.org/licenses/by/3.0" ],
+        [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "creativecommons.org" ] ;
+            schema:url "https://creativecommons.org/licenses/by/4.0" ] ;
+    <hasQualifiedAttribution> [ a prov:Attribution ;
+            <hasRole> "owner"^^xsd:string ;
+            prov:agent <#dsp-9997-person-001> ],
+        [ a prov:Attribution ;
+            <hasRole> "to blame for errors"^^xsd:string ;
+            prov:agent <#dsp-9997-person-002> ],
+        [ a prov:Attribution ;
+            <hasRole> "funder"^^xsd:string ;
+            prov:agent <#dsp-9997-organization-001> ] ;
+    <hasStatus> "On hold"^^xsd:string ;
+    <hasTitle> "maximal-media"^^xsd:string ;
+    <hasTypeOfData> "Audio"^^xsd:string,
+        "Image"^^xsd:string,
+        "Movie"^^xsd:string ;
+    <isPartOf> <#dsp-9997-project> ;
+    <sameAs> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.my-media" ] ;
+            schema:url "www.my-media.com/jmdoe" ],
+        [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.soundclo" ] ;
+            schema:url "www.soundcloud.com/users/jmd" ] .
+
+<#dsp-9997-dmp> a <DataManagementPlan> ;
+    <hasURL> [ a schema:URL ;
+            schema:url "www.public-data-management-plan.com/download" ] ;
+    <isAvailable> true .
+
+<#dsp-9997-grant-001> a <Grant> ;
+    <hasFunder> <#dsp-9997-organization-001> ;
+    <hasName> "Go for it!"^^xsd:string ;
+    <hasNumber> "00001"^^xsd:string ;
+    <hasURL> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "grants.snf.c" ] ;
+            schema:url "grants.snf.ch/goforit/q?n=00001" ] .
+
+<#dsp-9997-grant-002> a <Grant> ;
+    <hasFunder> <#dsp-9997-organization-002>,
+        <#dsp-9997-person-001> ;
+    <hasName> "Doe Pays"^^xsd:string ;
+    <hasNumber> "1234"^^xsd:string ;
+    <hasURL> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.doepays." ] ;
+            schema:url "www.doepays.com" ] .
+
+<#dsp-9997-person-002> a <Person> ;
+    <hasAddress> [ a schema:PostalAddress ;
+            schema:addressLocality "Bern"^^xsd:string ;
+            schema:postalCode "3000"^^xsd:string ;
+            schema:streetAddress "Musterstrasse 123"^^xsd:string ] ;
+    <hasEmail> "tasks@snf.ch",
+        "todo@snf.ch" ;
+    <hasFamilyName> "Mustermann"^^xsd:string ;
+    <hasGivenName> "Max;Markus"^^xsd:string ;
+    <hasJobTitle> "HiWi"^^xsd:string,
+        "PA"^^xsd:string ;
+    <isMemberOf> <#dsp-9997-organization-001> ;
+    <sameAs> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "letmegooglethat.com" ] ;
+            schema:url "http://letmegooglethat.com/?q=how+to+get+a+gnd+number" ] .
+
+<#dsp-9997-project> a <Project> ;
+    <hasAlternateName> "such project"^^xsd:string,
+        "super maximum metadata"^^xsd:string,
+        "wow"^^xsd:string ;
+    <hasContactPoint> <#dsp-9997-person-002> ;
+    <hasDataManagementPlan> <#dsp-9997-dmp> ;
+    <hasDescription> "This is a description."^^xsd:string ;
+    <hasDiscipline> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "SKOS UNESCO Nomenclature" ] ;
+            schema:url "https://skos.um.es/unesco6/110201/" ],
+        "Logik"^^xsd:string ;
+    <hasEndDate> "2021-01-21"^^xsd:date ;
+    <hasFunder> <#dsp-9997-organization-001>,
+        <#dsp-9997-organization-002>,
+        <#dsp-9997-person-001> ;
+    <hasGrant> <#dsp-9997-grant-001>,
+        <#dsp-9997-grant-002> ;
+    <hasKeywords> "a keyword"^^xsd:string,
+        "another keyword"^^xsd:string ;
+    <hasName> "maximal"^^xsd:string ;
+    <hasPublication> "Doe, J. M. (2020): How to write better metadata: A practical guide. Basel: Uniprint."^^xsd:string,
+        "Doe, J. M. (2021): \"Writing about metadata. What is there to say?\" In: Scientificc Publishing, 123.1, pp. 1-143."^^xsd:string ;
+    <hasShortcode> "9997"^^xsd:string ;
+    <hasSpatialCoverage> [ a schema:Place ;
+            schema:url [ a schema:URL ;
+                    schema:propertyID [ a schema:PropertyValue ;
+                            schema:propertyID "Geonames" ;
+                            schema:url "https://www.geonames.org/2661604" ] ] ],
+        [ a schema:Place ;
+            schema:url [ a schema:URL ;
+                    schema:propertyID [ a schema:PropertyValue ;
+                            schema:propertyID "Geonames" ;
+                            schema:url "https://www.geonames.org/2657896" ] ] ] ;
+    <hasStartDate> "2021-01-19"^^xsd:date ;
+    <hasTemporalCoverage> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "dainst.org" ] ;
+            schema:url "http://chronontology.dainst.org/period/iOasO0VSiqjj" ],
+        "Sometimes"^^xsd:string ;
+    <hasURL> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.test.io" ] ;
+            schema:url "www.test.io" ],
+        [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "test.com" ] ;
+            schema:url "http://www.test.com" ] .
+
+<#dsp-9997-organization-002> a <Organization> ;
+    <hasAddress> [ a schema:PostalAddress ;
+            schema:addressLocality "Bern"^^xsd:string ;
+            schema:postalCode "3000"^^xsd:string ;
+            schema:streetAddress "Mustergasse 121"^^xsd:string ] ;
+    <hasEmail> "no-reply@sagw.ch" ;
+    <hasName> "SAGW"^^xsd:string,
+        "Schweizerische Akademie der Geisteswissenschaften"^^xsd:string ;
+    <hasURL> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.sagw.ch" ] ;
+            schema:url "www.sagw.ch" ] .
+
+<#dsp-9997-person-001> a <Person> ;
+    <hasAddress> [ a schema:PostalAddress ;
+            schema:addressLocality "Bern"^^xsd:string ;
+            schema:postalCode "3000"^^xsd:string ;
+            schema:streetAddress "Musterstrasse 121-123"^^xsd:string ] ;
+    <hasEmail> "fanmail@snf.ch",
+        "president.sagw@sagw.ch" ;
+    <hasFamilyName> "Doe"^^xsd:string ;
+    <hasGivenName> "Jane;Mary"^^xsd:string ;
+    <hasJobTitle> "Benevolent Emperor for Life"^^xsd:string,
+        "President"^^xsd:string ;
+    <isMemberOf> <#dsp-9997-organization-001>,
+        <#dsp-9997-organization-002> ;
+    <sameAs> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "viaf.org" ] ;
+            schema:url "http://viaf.org/viaf/84036175/" ],
+        [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "d-nb.info" ] ;
+            schema:url "http://d-nb.info/gnd/118586998" ] .
+
+<#dsp-9997-organization-001> a <Organization> ;
+    <hasAddress> [ a schema:PostalAddress ;
+            schema:addressLocality "Bern"^^xsd:string ;
+            schema:postalCode "3000"^^xsd:string ;
+            schema:streetAddress "Mustergasse 123"^^xsd:string ] ;
+    <hasEmail> "no-reply@snf.ch" ;
+    <hasName> "SNF"^^xsd:string,
+        "Schweizerischer Nationalfonds"^^xsd:string ;
+    <hasURL> [ a schema:URL ;
+            schema:propertyID [ a schema:PropertyValue ;
+                    schema:propertyID "www.snf.ch" ] ;
+            schema:url "www.snf.ch" ] .
+
