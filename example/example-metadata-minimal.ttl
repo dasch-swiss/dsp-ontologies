@@ -4,52 +4,52 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<#dsp-9998-dataset-001> a <Dataset> ;
-    <hasAbstract> "This is an Abstract... Lorem ipsum"^^xsd:string ;
-    <hasConditionsOfAccess> "Do whatever you want"^^xsd:string ;
-    <hasHowToCite> "Don't cite me!"^^xsd:string ;
-    <hasLanguage> "English"^^xsd:string ;
-    <hasLicense> [ a schema:URL ;
+<#dsp-9998-dataset-001> a dsp-repo:Dataset ;
+    dsp-repo:hasAbstract "This is an Abstract... Lorem ipsum"^^xsd:string ;
+    dsp-repo:hasConditionsOfAccess "Do whatever you want"^^xsd:string ;
+    dsp-repo:hasHowToCite "Don't cite me!"^^xsd:string ;
+    dsp-repo:hasLanguage "English"^^xsd:string ;
+    dsp-repo:hasLicense [ a schema:URL ;
             schema:propertyID [ a schema:PropertyValue ;
                     schema:propertyID "creativecommons.org" ] ;
             schema:url "https://creativecommons.org/licenses/by/4.0" ] ;
-    <hasQualifiedAttribution> [ a prov:Attribution ;
-            <hasRole> "Dummie"^^xsd:string ;
+    dsp-repo:hasQualifiedAttribution [ a prov:Attribution ;
+            dsp-repo:hasRole "Dummie"^^xsd:string ;
             prov:agent <#dsp-9998-person-001> ] ;
-    <hasStatus> "In planning"^^xsd:string ;
-    <hasTitle> "Dataset of Minimal"^^xsd:string ;
-    <hasTypeOfData> "Text"^^xsd:string ;
-    <isPartOf> <#dsp-9998-project> .
+    dsp-repo:hasStatus "In planning"^^xsd:string ;
+    dsp-repo:hasTitle "Dataset of Minimal"^^xsd:string ;
+    dsp-repo:hasTypeOfData "Text"^^xsd:string ;
+    dsp-repo:isPartOf <#dsp-9998-project> .
 
-<#dsp-9998-grant-001> a <Grant> ;
-    <hasFunder> <#dsp-9998-organization-001> .
+<#dsp-9998-grant-001> a dsp-repo:Grant ;
+    dsp-repo:hasFunder <#dsp-9998-organization-001> .
 
-<#dsp-9998-project> a <Project> ;
-    <hasDescription> "Minimal test dataset"^^xsd:string ;
-    <hasDiscipline> "science"^^xsd:string ;
-    <hasFunder> <#dsp-9998-person-001> ;
-    <hasGrant> <#dsp-9998-grant-001> ;
-    <hasKeywords> "random-tag"^^xsd:string ;
-    <hasName> "minimal"^^xsd:string ;
-    <hasShortcode> "9998"^^xsd:string ;
-    <hasSpatialCoverage> [ a schema:Place ;
+<#dsp-9998-project> a dsp-repo:Project ;
+    dsp-repo:hasDescription "Minimal test dataset"^^xsd:string ;
+    dsp-repo:hasDiscipline "science"^^xsd:string ;
+    dsp-repo:hasFunder <#dsp-9998-person-001> ;
+    dsp-repo:hasGrant <#dsp-9998-grant-001> ;
+    dsp-repo:hasKeywords "random-tag"^^xsd:string ;
+    dsp-repo:hasName "minimal"^^xsd:string ;
+    dsp-repo:hasShortcode "9998"^^xsd:string ;
+    dsp-repo:hasSpatialCoverage [ a schema:Place ;
             schema:url [ a schema:URL ;
                     schema:propertyID [ a schema:PropertyValue ;
                             schema:propertyID "Geonames" ;
                             schema:url "https://www.geonames.org/2661604" ] ] ] ;
-    <hasStartDate> "2021-01-20"^^xsd:date ;
-    <hasTemporalCoverage> "modernity"^^xsd:string ;
-    <hasURL> [ a schema:URL ;
+    dsp-repo:hasStartDate "2021-01-20"^^xsd:date ;
+    dsp-repo:hasTemporalCoverage "modernity"^^xsd:string ;
+    dsp-repo:hasURL [ a schema:URL ;
             schema:propertyID [ a schema:PropertyValue ;
                     schema:propertyID "test.com" ] ;
             schema:url "http://www.test.com" ] .
 
-<#dsp-9998-organization-001> a <Organization> ;
-    <hasName> "DaSCH"^^xsd:string .
+<#dsp-9998-organization-001> a dsp-repo:Organization ;
+    dsp-repo:hasName "DaSCH"^^xsd:string .
 
-<#dsp-9998-person-001> a <Person> ;
-    <hasFamilyName> "Doe"^^xsd:string ;
-    <hasGivenName> "John"^^xsd:string ;
-    <hasJobTitle> "Head of nonsense"^^xsd:string ;
-    <isMemberOf> <#dsp-9998-organization-001> .
+<#dsp-9998-person-001> a dsp-repo:Person ;
+    dsp-repo:hasFamilyName "Doe"^^xsd:string ;
+    dsp-repo:hasGivenName "John"^^xsd:string ;
+    dsp-repo:hasJobTitle "Head of nonsense"^^xsd:string ;
+    dsp-repo:isMemberOf <#dsp-9998-organization-001> .
 
