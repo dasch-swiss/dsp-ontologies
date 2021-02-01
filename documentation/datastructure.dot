@@ -163,7 +163,7 @@ digraph metadata {
     // ListItem -> hasValue [label="1"];
     // hasValue [label="hasValue\nString"];
     // ListItem -> hasIndex [label="1"];
-    hasIndex [label="hasIndex\nInteger"];
+    // hasIndex [label="hasIndex\nInteger"];
 
     hasFamilyName [label="hasFamilyName\nString"];
     Person -> hasFamilyName [label="1"];
