@@ -552,7 +552,7 @@
 <title>Person&#45;&gt;hasAddress</title>
 <path fill="none" stroke="#000000" d="M1684.6759,-305.4703C1697.0546,-355.5714 1734.2624,-494.2364 1772.3436,-518.4156 1829.52,-554.7192 1864.4409,-549.272 1924.7316,-518.4156 1955.0994,-502.8736 1975.7969,-468.303 1987.3152,-443.7236"/>
 <polygon fill="#000000" stroke="#000000" points="1990.5382,-445.0897 1991.4181,-434.5314 1984.1461,-442.2365 1990.5382,-445.0897"/>
-<text text-anchor="middle" x="1745.0133" y="-499.6156" font-family="Times,serif" font-size="14.00" fill="#000000">0&#45;n</text>
+<text text-anchor="middle" x="1745.0133" y="-499.6156" font-family="Times,serif" font-size="14.00" fill="#000000">0&#45;1</text>
 </g>
 <!-- isMemberOf -->
 <g id="node58" class="node">

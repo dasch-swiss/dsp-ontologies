@@ -172,7 +172,7 @@ digraph metadata {
     hasEmail [label="hasEmail\nString"];
     Person -> hasEmail [label="0-2"];
 
-    Person -> hasAddress [label="0-n"];
+    Person -> hasAddress [label="0-1"];
     hasAddress -> PostalAddress
 
     Person -> isMemberOf [label="1-n"];
