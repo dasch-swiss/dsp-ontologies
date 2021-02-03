@@ -22,10 +22,16 @@ validate-shape: ## validate shape
 validate-example: ## validate example
 	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata.ttl
 	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata-minimal.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata-minimal.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/riot --validate $(CURRENT_DIR)/example/example-metadata-maximal.ttl
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata-maximal.ttl
 
 .PHONY: validate-example-with-check
 validate-example-with-check: ## validate example and check validation report 
 	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata.ttl | grep -q "sh:conforms  true"
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata-minimal.ttl | grep -q "sh:conforms  true"
+	$(CURRENT_DIR)/.tmp/jena/bin/shacl validate --shapes $(CURRENT_DIR)/dsp-repository/v1/dsp-repository.shacl.ttl --data $(CURRENT_DIR)/example/example-metadata-maximal.ttl | grep -q "sh:conforms  true"
 
 .PHONY: validate
 validate: validate-shape validate-example ## validate all

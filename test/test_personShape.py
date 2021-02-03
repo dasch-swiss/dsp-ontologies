@@ -172,7 +172,7 @@ class personHasEmailTestCase(unittest.TestCase):
 ####### Tests for address of person #######
 class personHasAddressTestCase(unittest.TestCase):
 
-    # should accept more than one address given for a person
+    # should not accept more than one address given for a person
     def test_person_hasAddress_multiple(self):
         person = Person()
         test_data = makePersonData(person)
@@ -187,7 +187,7 @@ class personHasAddressTestCase(unittest.TestCase):
                                              shacl_graph_format='turtle',
                                              inference='rdfs', debug=True,
                                              serialize_report_graph=True)
-        self.assertTrue(conforms)
+        self.assertFalse(conforms)
 
     #TODO: add more tests for address here
 
